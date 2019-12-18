@@ -10,6 +10,7 @@ import MuiLink from '@material-ui/core/Link';
 import ProTip from '../components/ProTip';
 import Profile from '../components/Profile';
 import About from '../components/About';
+import Experience from '../components/Experience';
 import Link from '../components/Link';
 import StickyFooter from '../components/StickyFooter';
 import ButtonAppBar from '../components/Appbar';
@@ -27,6 +28,7 @@ export default function Index() {
       </Grid>
       <Grid item xs={12} sm={7} md={8} lg={9}>
         <About />
+        <Experience />
       </Grid>
     </Grid>
     <StickyFooter />

@@ -3,6 +3,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import ExperienceCard from '../components/ExperienceCard';
 
 const useStyles = makeStyles(theme => ({
   subtitleFrame: {
@@ -30,9 +32,20 @@ export default function Experience() {
         </Typography>
       </Container>
       <Container className={classes.bodyFrame}>
-        <Typography variant="body1">
-          {aboutBody}
-        </Typography>
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={6}>
+            <ExperienceCard />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <ExperienceCard />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <ExperienceCard />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <ExperienceCard />
+          </Grid>
+        </Grid>
       </Container>
     </React.Fragment>
   );
