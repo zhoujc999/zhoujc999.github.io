@@ -3,6 +3,7 @@ import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -13,21 +14,20 @@ import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    margin: theme.spacing(2, 6),
+    margin: theme.spacing(2),
   },
   schoolName: {
     margin: theme.spacing(1, 1),
   },
   schoolDetails: {
-    margin: theme.spacing(0, 0),
+    margin: theme.spacing(0, 1),
   },
 }));
 
 const educationDetails = {
   school: "Duke University",
   class: "Class of 2021",
-  major1: "B.S. Computer Science and Economics",
-  major2: "B.S. Economics",
+  major: "B.S. in Computer Science",
   minor: "Mathematics Minor",
   location: "Durham, NC",
 }
@@ -36,7 +36,7 @@ export default function Education() {
   const classes = useStyles();
 
   return (
-      <div className={classes.root}>
+      <Container className={classes.root}>
         <Typography variant="h6" color="primary" align="center" className={classes.schoolName}>
           {educationDetails.school}
         </Typography>
@@ -45,7 +45,7 @@ export default function Education() {
             <ArrowRightIcon fontSize="small" />
           </Grid>
           <Grid item>
-            <Typography variant="body1" color="primary" align="left" className={classes.schoolDetails}>
+            <Typography variant="body2" color="primary" align="left" className={classes.schoolDetails}>
               {educationDetails.class}
             </Typography>
           </Grid>
@@ -54,9 +54,9 @@ export default function Education() {
           <Grid item>
             <ArrowRightIcon fontSize="small" />
           </Grid>
-          <Grid item wrap="wrap">
-            <Typography variant="body1" color="primary" align="left" className={classes.schoolDetails}>
-              {educationDetails.major1}
+          <Grid item>
+            <Typography variant="body2" color="primary" align="left" className={classes.schoolDetails}>
+              {educationDetails.major}
             </Typography>
           </Grid>
         </Grid>
@@ -80,6 +80,6 @@ export default function Education() {
             </Typography>
           </Grid>
         </Grid>
-      </div>
+      </Container>
   );
 }
