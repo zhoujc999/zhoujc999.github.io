@@ -1,0 +1,21 @@
+{
+  "name": "gatsby",
+  "version": "4.0.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "^4.5.1",
+    "gatsby": "latest",
+    "gatsby-plugin-material-ui": "latest",
+    "gatsby-plugin-react-helmet": "latest",
+    "mdi-material-ui": "^6.10.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-helmet": "latest"
+  },
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  }
+}
