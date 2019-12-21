@@ -2,8 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import ExperienceCard from '../components/ExperienceCard';
-import { experiences } from '../content/Experience';
+import InterestCard from '../components/InterestCard';
+import { interests } from '../content/Interests';
 
 const useStyles = makeStyles(theme => ({
   titleFrame: {
@@ -12,24 +12,23 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-
-export default function Experience(props) {
+export default function Interests(props) {
   const classes = useStyles();
-  const experiencesList = experiences;
+  const interestsList = interests;
 
   return (
     <Grid container direction="column" alignItems="flex-start" spacing={1}>
       <Grid item className={classes.titleFrame}>
         <Typography variant="h5" fontWeight="fontWeightBold" color="primary" gutterBottom>
-          {'My Experience'}
+          {'Some of My Interests'}
         </Typography>
       </Grid>
       <Grid item className={classes.bodyFrame}>
         <Grid container spacing={3}>
-          {experiencesList.map((value, index) => {
+          {interestsList.map((value, index) => {
             return (
-              <Grid item xs={12} md={6} key={index}>
-                <ExperienceCard details={value} key={index} />
+              <Grid item xs={12} md={6} lg={4} key={index}>
+                <InterestCard details={value} key={index} />
               </Grid>
             );
           })}

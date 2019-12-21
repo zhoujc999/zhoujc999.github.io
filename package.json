@@ -1,11 +1,11 @@
 {
-  "name": "gatsby",
+  "name": "zhoujc999-personal-site",
   "version": "4.0.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "^4.5.1",
-    "gatsby": "latest",
+    "gatsby": "^2.18.16",
     "gatsby-plugin-material-ui": "latest",
     "gatsby-plugin-react-helmet": "latest",
     "mdi-material-ui": "^6.10.0",

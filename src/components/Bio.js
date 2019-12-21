@@ -1,4 +1,5 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -9,62 +10,58 @@ import LocationCityIcon from '@material-ui/icons/LocationCity';
 import FileDocument from 'mdi-material-ui/FileDocument'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
-
-const bioDetails = {
-  name: "Jingchao Zhou",
-  githubText: "@zhoujc999",
-  githubLink: "https://github.com/zhoujc999",
-  emailText: "jingchao.zhou@duke.edu",
-  emailLink: "mailto:jingchao.zhou@duke.edu",
-  location: "United States",
-  resumeLink: "https://github.com/zhoujc999",
-  linkedinText: "jason-jingchao-zhou",
-  linkedinLink: "https://www.linkedin.com/in/jason-jingchao-zhou/",
-}
+const useStyles = makeStyles(theme => ({
+  listElement: {
+    margin: theme.spacing(-0.5, 0),
+  },
+}));
 
 function ListItemLink(props) {
   return <ListItem component="a" disableGutters dense {...props} />;
 }
 
-export default function Bio() {
+export default function Bio(props) {
+  const classes = useStyles();
+  const linkDict = props.details;
+
   return (
     <List>
-      <ListItem disableGutters dense>
+      <ListItem disableGutters dense className={classes.listElement}>
         <ListItemIcon>
           <GitHubIcon />
         </ListItemIcon>
-        <ListItemLink href={bioDetails.githubLink} target="_blank" rel="noreferrer">
-          <ListItemText primary={bioDetails.githubText} />
+        <ListItemLink href={linkDict.githubLink} target="_blank" rel="noreferrer">
+          <ListItemText primary={linkDict.githubText} />
         </ListItemLink>
       </ListItem>
-      <ListItem disableGutters dense>
+      <ListItem disableGutters dense className={classes.listElement}>
         <ListItemIcon>
           <EmailIcon />
         </ListItemIcon>
-        <ListItemLink href={bioDetails.emailLink} target="_blank" rel="noreferrer">
-          <ListItemText primary={bioDetails.emailText} />
+        <ListItemLink href={linkDict.emailLink} target="_blank" rel="noreferrer">
+          <ListItemText primary={linkDict.emailText} />
         </ListItemLink>
       </ListItem>
-      <ListItem disableGutters dense>
+      <ListItem disableGutters dense className={classes.listElement}>
         <ListItemIcon>
           <LocationCityIcon />
         </ListItemIcon>
-        <ListItemText primary={bioDetails.location} />
+        <ListItemText primary={linkDict.location} />
       </ListItem>
-      <ListItem disableGutters dense>
+      <ListItem disableGutters dense className={classes.listElement}>
         <ListItemIcon>
           <FileDocument />
         </ListItemIcon>
-        <ListItemLink href={bioDetails.resumeLink} target="_blank" rel="noreferrer">
+        <ListItemLink href={linkDict.resumeLink} target="_blank" rel="noreferrer">
           <ListItemText primary="Resume" />
         </ListItemLink>
       </ListItem>
-      <ListItem disableGutters dense>
+      <ListItem disableGutters dense className={classes.listElement}>
         <ListItemIcon>
           <LinkedInIcon />
         </ListItemIcon>
-        <ListItemLink href={bioDetails.linkedinLink} target="_blank" rel="noreferrer">
-          <ListItemText primary={bioDetails.linkedinText} />
+        <ListItemLink href={linkDict.linkedinLink} target="_blank" rel="noreferrer">
+          <ListItemText primary={linkDict.linkedinText} />
         </ListItemLink>
       </ListItem>
     </List>

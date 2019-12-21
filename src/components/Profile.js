@@ -1,19 +1,18 @@
 import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 
 import Education from '../components/Education'
 import Bio from '../components/Bio'
-// import logo from 'https://via.placeholder.com/150/09f/fff.png';
+
+import {bio, educations} from '../content/Profile';
+
 
 
 const useStyles = makeStyles(theme => ({
   avatarFrame: {
-    display: 'flex',
-    justifyContent: 'center',
   },
   avatar: {
     width: theme.spacing(20),
@@ -21,51 +20,41 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(4),
   },
   nameFrame: {
-    display: 'flex',
-    justifyContent: 'center',
+    margin: theme.spacing(0, 0, 1, 0),
   },
   bioFrame: {
-    display: 'flex',
-    justifyContent: 'center',
+    margin: theme.spacing(1, 0, 1)
   },
   educationFrame: {
-    display: 'flex',
-    justifyContent: 'center',
+    margin: theme.spacing(1, 0, 1)
   },
 }));
 
-const bioDetails = {
-  name: "Jingchao Zhou",
-  githubText: "@zhoujc999",
-  githubLink: "https://github.com/zhoujc999",
-  emailText: "jingchao.zhou@duke.edu",
-  emailLink: "mailto:jingchao.zhou@duke.edu",
-  location: "United States",
-  resumeLink: "https://github.com/zhoujc999",
-  linkedinText: "jason-jingchao-zhou",
-  linkedinLink: "https://www.linkedin.com/in/jason-jingchao-zhou/",
-}
-
-export default function Profile() {
+export default function Profile(props) {
   const classes = useStyles();
+  const bioDict = bio;
+  const educationList = educations;
 
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <Container className={classes.avatarFrame}>
-        <Avatar alt="Jingchao Zhou" src="https://via.placeholder.com/150/09f/fff.png" className={classes.avatar} />
-      </Container>
-      <Container className={classes.nameFrame}>
+    <Grid container direction="column" alignItems="center">
+      <Grid item className={classes.avatarFrame}>
+        <Avatar alt={bioDict.name} src={bioDict.avatarUrl} className={classes.avatar} />
+      </Grid>
+      <Grid item className={classes.nameFrame}>
         <Typography variant="h4" fontWeight="fontWeightBold" color="primary">
-          {bioDetails.name}
+          {bioDict.name}
         </Typography>
-      </Container>
-      <Container className={classes.bioFrame}>
-        <Bio />
-      </Container>
-      <Container className={classes.educationFrame}>
-        <Education />
-      </Container>
-    </React.Fragment>
+      </Grid>
+      <Grid item className={classes.bioFrame}>
+        <Bio details={bioDict}/>
+      </Grid>
+      {educationList.map((value, index) => {
+        return (
+          <Grid item className={classes.educationFrame} key={index}>
+            <Education details={value} key={index} />
+          </Grid>
+        );
+      })}
+    </Grid>
   );
 }

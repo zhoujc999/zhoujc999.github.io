@@ -2,36 +2,57 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
+import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
+
+const section = "About"
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
+  leftFrame: {
+    margin: theme.spacing(0, 3),
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
+  leftButton: {
+  },
+  titleFrame: {
+    margin: theme.spacing(0, 3),
   },
   title: {
-    flexGrow: 1,
+  },
+  rightFrame: {
+    margin: theme.spacing(0, 3),
+  },
+  rightButton: {
   },
 }));
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(props) {
   const classes = useStyles();
+  const sectionText = section;
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            News
+    <AppBar position="fixed">
+      <Grid container direction="row" wrap="nowrap" alignItems="center" justify="space-between">
+        <Grid item className={classes.leftFrame}>
+          <IconButton className={classes.leftButton} color="inherit" aria-label="left">
+            <KeyboardArrowLeftIcon />
+          </IconButton>
+        </Grid>
+        <Grid item className={classes.titleFrame}>
+          <Typography variant="h6" className={classes.title} noWrap>
+            {sectionText}
           </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
+        </Grid>
+        <Grid item className={classes.rightFrame}>
+          <IconButton className={classes.rightButton} color="inherit" aria-label="right">
+            <KeyboardArrowRightIcon />
+          </IconButton>
+        </Grid>
+      </Grid>
+    </AppBar>
   );
 }
 
