@@ -16,8 +16,6 @@ module.exports = {
 		{
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Jason Zhou",
-        short_name: "Jason Zhou",
         start_url: "/",
         background_color: "#ffffff",
         theme_color: "#ffffff",
@@ -30,6 +28,6 @@ module.exports = {
   ],
 
   siteMetadata: {
-    title: `Jason Zhou`,
+    title: "Jason Zhou",
   },
 };

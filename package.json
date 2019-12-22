@@ -1,5 +1,5 @@
 {
-  "name": "zhoujc999-personal-site",
+  "name": "zhoujc999.github.io",
   "version": "4.0.0",
   "private": true,
   "dependencies": {
@@ -17,6 +17,10 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "deploy": "gatsby build && gh-pages -d public -b master"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }
