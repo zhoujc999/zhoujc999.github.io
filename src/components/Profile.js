@@ -10,6 +10,8 @@ import Bio from '../components/Bio'
 
 import {bio, educations} from '../content/Profile';
 
+import display_avatar from '../assets/display_avatar.jpg';
+
 const useStyles = makeStyles(theme => ({
   avatarFrame: {
   },
@@ -40,7 +42,7 @@ export default function Profile(props) {
   return (
     <Grid container direction="column" alignItems="center">
       <Grid item className={classes.avatarFrame}>
-        <Avatar alt={bioDict.name} src={bioDict.avatarUrl} className={classes.avatar} />
+        <Avatar alt={bioDict.name} src={display_avatar} className={classes.avatar} />
       </Grid>
       <Grid item>
         <Grid container direction="column" alignItems="flex-start">

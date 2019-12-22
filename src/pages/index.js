@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
@@ -50,12 +51,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-
 export default function Index(props) {
   const classes = useStyles();
 
   return (
     <React.Fragment>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Jason Zhou</title>
+        <link rel="canonical" href="https://zhoujc999.github.io" />
+      </Helmet>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Hidden mdUp>
