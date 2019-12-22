@@ -21,6 +21,9 @@ const useStyles = makeStyles(theme => ({
   nameFrame: {
     margin: theme.spacing(0, 0, 1, 0),
   },
+  nameText: {
+    display: 'inline-block',
+  },
   bioFrame: {
     margin: theme.spacing(1, 0, 2)
   },
@@ -42,7 +45,7 @@ export default function Profile(props) {
       <Grid item>
         <Grid container direction="column" alignItems="flex-start">
           <Grid item className={classes.nameFrame}>
-            <Typography variant="h4" color="textPrimary">
+            <Typography variant="h4" color="textPrimary" className={classes.nameText} component="span">
               <Box fontWeight="fontWeightMedium">
                 {bioDict.name}
               </Box>

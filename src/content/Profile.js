@@ -1,5 +1,5 @@
 export const bio = {
-  name: "Jingchao Zhou",
+  name: "Jason Zhou",
   avatarUrl: "/static/display_avatar.jpg",
   githubText: "@zhoujc999",
   githubLink: "https://github.com/zhoujc999",

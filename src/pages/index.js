@@ -1,11 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import Slide from '@material-ui/core/Slide';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import theme from '../theme';
 import Profile from '../components/Profile';
 import About from '../components/About';
 import Experience from '../components/Experience';
@@ -56,33 +56,35 @@ export default function Index(props) {
 
   return (
     <React.Fragment>
-      <CssBaseline />
-      <Hidden mdUp>
-        <ButtonAppBar />
-        <div className={classes.filler} />
-      </Hidden>
-      <Grid container spacing={0}>
-        <Grid item xs={12} md={5} lg={4} xl={3} className={classes.leftFrame}>
-          <Profile />
-        </Grid>
-        <Grid item xs={12} md={7} lg={8} xl={9} className={classes.rightFrame}>
-          <Grid container direction="column" alignItems="flex-start">
-            <Grid item className={classes.aboutFrame} id="about">
-              <About />
-            </Grid>
-            <Grid item className={classes.experienceFrame} id="experience">
-              <Experience />
-            </Grid>
-            <Grid item className={classes.projectsFrame} id="projects">
-              <Projects />
-            </Grid>
-            <Grid item className={classes.interestsFrame} id="interests">
-              <Interests />
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Hidden mdUp>
+          <ButtonAppBar />
+          <div className={classes.filler} />
+        </Hidden>
+        <Grid container spacing={0}>
+          <Grid item xs={12} md={5} lg={4} xl={3} className={classes.leftFrame}>
+            <Profile />
+          </Grid>
+          <Grid item xs={12} md={7} lg={8} xl={9} className={classes.rightFrame}>
+            <Grid container direction="column" alignItems="flex-start">
+              <Grid item className={classes.aboutFrame} id="about">
+                <About />
+              </Grid>
+              <Grid item className={classes.experienceFrame} id="experience">
+                <Experience />
+              </Grid>
+              <Grid item className={classes.projectsFrame} id="projects">
+                <Projects />
+              </Grid>
+              <Grid item className={classes.interestsFrame} id="interests">
+                <Interests />
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
-      <Footer />
+        <Footer />
+      </ThemeProvider>
     </React.Fragment>
   );
 }

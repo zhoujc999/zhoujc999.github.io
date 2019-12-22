@@ -1,12 +1,10 @@
 import React from 'react';
-import { ThemeProvider, responsiveFontSizes, createMuiTheme, makeStyles } from '@material-ui/core/styles';
+import { useTheme, responsiveFontSizes, ThemeProvider, makeStyles } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-
-let theme = createMuiTheme();
-theme = responsiveFontSizes(theme);
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -23,10 +21,13 @@ const useStyles = makeStyles(theme => ({
   },
   headerText: {
     margin: theme.spacing(0, 0.5),
+    display: 'inline-block',
   },
 }));
 
 export default function InterestCard(props) {
+  let theme = useTheme();
+  theme = responsiveFontSizes(theme);
   const classes = useStyles();
   const detailsDict = props.details;
 
@@ -39,8 +40,10 @@ export default function InterestCard(props) {
               <img src={detailsDict.imageUrl} alt={detailsDict.name} className={classes.image} />
             </Grid>
             <Grid item className={classes.bodyFrame}>
-              <Typography variant="h6" align="center" className={classes.headerText}>
-                {detailsDict.name}
+              <Typography variant="h6" align="center" className={classes.headerText} component="span">
+                <Box fontWeight="fontWeightRegular">
+                  {detailsDict.name}
+                </Box>
               </Typography>
             </Grid>
           </Grid>

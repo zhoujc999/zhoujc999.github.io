@@ -1,8 +1,8 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@material-ui/core/styles/makeStyles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import { aboutText as about } from '../content/About';
+import { aboutText } from '../content/About';
 
 const useStyles = makeStyles(theme => ({
   titleFrame: {
@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function About(props) {
   const classes = useStyles();
-  const aboutText = about;
+  const about = aboutText;
 
   return (
     <Grid container direction="column" alignItems="flex-start">
@@ -25,7 +25,7 @@ export default function About(props) {
       </Grid>
       <Grid item className={classes.bodyFrame}>
         <Typography variant="body1" paragraph>
-          {aboutText}
+          {about}
         </Typography>
       </Grid>
     </Grid>
