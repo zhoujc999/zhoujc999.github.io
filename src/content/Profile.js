@@ -1,12 +1,12 @@
 export const bio = {
   name: "Jason Zhou",
-  avatarUrl: "../assets/display_avatar.jpg",
+  avatarUrl: "https://zhoujc999.github.io/assets/display_avatar.jpg",
   githubText: "@zhoujc999",
   githubLink: "https://github.com/zhoujc999",
   emailText: "jingchao.zhou@duke.edu",
   emailLink: "mailto:jingchao.zhou@duke.edu",
   location: "United States",
-  resumeLink: "../assets/resume.pdf",
+  resumeLink: "https://zhoujc999.github.io/assets/resume.pdf",
   linkedinText: "jason-jingchao-zhou",
   linkedinLink: "https://www.linkedin.com/in/jason-jingchao-zhou/",
 }

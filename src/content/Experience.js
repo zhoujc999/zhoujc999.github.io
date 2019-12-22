@@ -1,6 +1,6 @@
 const experience1 = {
   experienceHeader: {
-    avatarUrl: "../assets/duke.jpg",
+    avatarUrl: "https://zhoujc999.github.io/assets/duke.jpg",
     position: "Undergraduate Researcher",
     company: "Duke University I^3 Lab",
     duration: "August 2019 – Present",
@@ -14,7 +14,7 @@ const experience1 = {
 
 const experience2 = {
   experienceHeader: {
-    avatarUrl: "../assets/nutanix.jpg",
+    avatarUrl: "https://zhoujc999.github.io/assets/nutanix.jpg",
     position: "Software Engineer Intern",
     company: "Nutanix (Backup and DR)",
     duration: "May 2019 – August 2019",
@@ -28,7 +28,7 @@ const experience2 = {
 
 const experience3 = {
   experienceHeader: {
-    avatarUrl: "../assets/duke_cs.jpg",
+    avatarUrl: "https://zhoujc999.github.io/assets/duke_cs.jpg",
     position: "Undergraduate Teaching Assistant",
     company: "Duke University Department of CS",
     duration: "May 2018 – December 2019",
@@ -42,7 +42,7 @@ const experience3 = {
 
 const experience4 = {
   experienceHeader: {
-    avatarUrl: "../assets/dcus.jpg",
+    avatarUrl: "https://zhoujc999.github.io/assets/dcus.jpg",
     position: "Head of Technology",
     company: "Duke China-US Summit",
     duration: "May 2018 – September 2018",

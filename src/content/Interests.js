@@ -1,18 +1,18 @@
 const interest1 = {
   name: "Machine Learning",
-  imageUrl: "../assets/machine_learning.jpg",
+  imageUrl: "https://zhoujc999.github.io/assets/machine_learning.jpg",
 }
 const interest2 = {
   name: "Augmented Reality",
-  imageUrl: "../assets/augmented_reality.jpg",
+  imageUrl: "https://zhoujc999.github.io/assets/augmented_reality.jpg",
 }
 const interest3 = {
   name: "Distributed Systems",
-  imageUrl: "../assets/distributed_systems.jpg",
+  imageUrl: "https://zhoujc999.github.io/assets/distributed_systems.jpg",
 }
 const interest4 = {
   name: "Computer Architecture",
-  imageUrl: "../assets/computer_architecture.jpg",
+  imageUrl: "https://zhoujc999.github.io/assets/computer_architecture.jpg",
 }
 
 export const interests = [
