@@ -44,27 +44,23 @@ export default function Profile(props) {
       <Grid item className={classes.avatarFrame}>
         <Avatar alt={bioDict.name} src={display_avatar} className={classes.avatar} />
       </Grid>
-      <Grid item>
-        <Grid container direction="column" alignItems="flex-start">
-          <Grid item className={classes.nameFrame}>
-            <Typography variant="h4" color="textPrimary" className={classes.nameText} component="span">
-              <Box fontWeight="fontWeightMedium">
-                {bioDict.name}
-              </Box>
-            </Typography>
-          </Grid>
-          <Grid item className={classes.bioFrame}>
-            <Bio details={bioDict}/>
-          </Grid>
-          {educationList.map((value, index) => {
-            return (
-              <Grid item className={classes.educationFrame} key={index}>
-                <Education details={value} key={index} />
-              </Grid>
-            );
-          })}
-        </Grid>
+      <Grid item className={classes.nameFrame}>
+        <Typography variant="h4" color="textPrimary" className={classes.nameText} component="span">
+          <Box fontWeight="fontWeightMedium">
+            {bioDict.name}
+          </Box>
+        </Typography>
       </Grid>
+      <Grid item className={classes.bioFrame}>
+        <Bio details={bioDict}/>
+      </Grid>
+      {educationList.map((value, index) => {
+        return (
+          <Grid item className={classes.educationFrame} key={index}>
+            <Education details={value} key={index} />
+          </Grid>
+        );
+      })}
     </Grid>
   );
 }
