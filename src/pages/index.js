@@ -1,8 +1,11 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
-import { makeStyles } from '@material-ui/core/styles';
+import Slide from '@material-ui/core/Slide';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Profile from '../components/Profile';
 import About from '../components/About';
 import Experience from '../components/Experience';
@@ -13,45 +16,56 @@ import ButtonAppBar from '../components/Appbar';
 
 const useStyles = makeStyles(theme => ({
   leftFrame: {
-    margin: theme.spacing(2, 0, 4)
+    margin: theme.spacing(2, 0, 6)
     },
+  filler: {
+    height: theme.spacing(6),
+  },
   rightFrame: {
     borderTopStyle: "solid",
     borderTopColor: "#e6e6e6",
     borderTopWidth: "1px",
-    borderLeftStyle: "solid",
-    borderLeftColor: "#e6e6e6",
-    borderLeftWidth: "1px",
+    [theme.breakpoints.up('md')]: {
+      borderTopStyle: "none",
+      borderTopColor: "#ffffff",
+      borderTopWidth: "0px",
+      borderLeftStyle: "solid",
+      borderLeftColor: "#e6e6e6",
+      borderLeftWidth: "1px",
+    },
     backgroundColor: "#f0f5f9",
     padding: theme.spacing(5, 8, 2),
   },
   aboutFrame: {
+    margin: theme.spacing(0, 0, 2)
   },
   experienceFrame: {
-    margin: theme.spacing(0, 0, 2, 0)
+    margin: theme.spacing(2, 0, 4)
   },
   projectsFrame: {
-    margin: theme.spacing(0, 0, 4, 0)
+    margin: theme.spacing(2, 0, 4)
   },
   interestsFrame: {
-    margin: theme.spacing(0, 0, 4, 0)
+    margin: theme.spacing(2, 0, 6)
   },
 }));
 
-export default function Index() {
+
+export default function Index(props) {
   const classes = useStyles();
 
   return (
     <React.Fragment>
       <CssBaseline />
-      <Hidden smUp>
+      <Hidden mdUp>
         <ButtonAppBar />
+        <div className={classes.filler} />
       </Hidden>
       <Grid container spacing={0}>
-        <Grid item xs={12} sm={5} md={4} lg={3} className={classes.leftFrame}>
+        <Grid item xs={12} md={5} lg={4} xl={3} className={classes.leftFrame}>
           <Profile />
         </Grid>
-        <Grid item xs={12} sm={7} md={8} lg={9} className={classes.rightFrame}>
+        <Grid item xs={12} md={7} lg={8} xl={9} className={classes.rightFrame}>
           <Grid container direction="column" alignItems="flex-start">
             <Grid item className={classes.aboutFrame} id="about">
               <About />

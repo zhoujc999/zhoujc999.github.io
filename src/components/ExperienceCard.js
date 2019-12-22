@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { ThemeProvider, responsiveFontSizes, createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -8,6 +8,9 @@ import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
 import WorkIcon from '@material-ui/icons/Work';
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
+
+let theme = createMuiTheme();
+theme = responsiveFontSizes(theme);
 
 const useStyles = makeStyles(theme => ({
   headerFrame: {
@@ -42,18 +45,20 @@ export default function ExperienceCard(props) {
   const bodyText = detailsDict.experienceBody;
 
   return (
-    <Card className={classes.card}>
-      <CardContent>
-        <Grid container direction="column" alignItems="flex-start">
-          <Grid item className={classes.headerFrame}>
-            <CardHeader details={headerText} />
+    <ThemeProvider theme={theme}>
+      <Card className={classes.card}>
+        <CardContent>
+          <Grid container direction="column" alignItems="flex-start">
+            <Grid item className={classes.headerFrame}>
+              <CardHeader details={headerText} />
+            </Grid>
+            <Grid item className={classes.bodyFrame}>
+              <CardBody details={bodyText} />
+            </Grid>
           </Grid>
-          <Grid item className={classes.bodyFrame}>
-            <CardBody details={bodyText} />
-          </Grid>
-        </Grid>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+    </ThemeProvider>
   );
 }
 
@@ -95,7 +100,7 @@ function CardHeader(props) {
             </Grid>
           </Grid>
           <Grid item className={classes.headerDetail}>
-            <Typography variant="body2">
+            <Typography variant="body2" color="textSecondary">
               {detailsDict.duration}
               {" | "}
               {detailsDict.location}
@@ -117,7 +122,7 @@ function CardBody(props) {
       {detailsList.map((value, index) => {
         return (
           <Grid item key={index}>
-            <Typography variant="body2" color="primary" align="left" className={classes.schoolDetails}>
+            <Typography variant="body2" color="textPrimary" align="left" className={classes.experienceDetails}>
               {bull}
               {value}
             </Typography>

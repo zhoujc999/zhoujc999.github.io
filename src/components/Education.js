@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 const useStyles = makeStyles(theme => ({
   nameFrame: {
@@ -15,50 +14,51 @@ const useStyles = makeStyles(theme => ({
   },
   schoolDetails: {
   },
+  bullet: {
+    display: 'inline-block',
+    margin: theme.spacing(0, 1, 0),
+  },
 }));
 
 export default function Education(props) {
   const classes = useStyles();
   const detailsDict = props.details;
+  const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <Grid container direction="column" alignItems="flex-start">
       <Grid item className={classes.nameFrame}>
-        <Typography variant="h6" color="primary" align="left" className={classes.schoolName}>
+        <Typography variant="h6" color="textPrimary" align="left" className={classes.schoolName}>
           {detailsDict.school}
         </Typography>
       </Grid>
       <Grid item className={classes.detailsFrame}>
         <Grid container direction="column" alignItems="flex-start">
           <Grid item>
-            <EducationPoint detail={detailsDict.class} />
+            <Typography variant="body2" color="textPrimary" align="left" className={classes.experienceDetails}>
+              {bull}
+              {detailsDict.class}
+            </Typography>
           </Grid>
           <Grid item>
-            <EducationPoint detail={detailsDict.major} />
+            <Typography variant="body2" color="textPrimary" align="left" className={classes.experienceDetails}>
+              {bull}
+              {detailsDict.major}
+            </Typography>
           </Grid>
           <Grid item>
-            <EducationPoint detail={detailsDict.minor} />
+            <Typography variant="body2" color="textPrimary" align="left" className={classes.experienceDetails}>
+              {bull}
+              {detailsDict.minor}
+            </Typography>
           </Grid>
           <Grid item>
-            <EducationPoint detail={detailsDict.location} />
+            <Typography variant="body2" color="textPrimary" align="left" className={classes.experienceDetails}>
+              {bull}
+              {detailsDict.location}
+            </Typography>
           </Grid>
         </Grid>
-      </Grid>
-    </Grid>
-  );
-}
-
-function EducationPoint(props) {
-  const classes = useStyles();
-  return (
-    <Grid container direction="row" alignItems="center" wrap="nowrap">
-      <Grid item>
-        <ArrowRightIcon fontSize="small" />
-      </Grid>
-      <Grid item>
-        <Typography variant="body2" color="primary" align="left" className={classes.schoolDetails}>
-          {props.detail}
-        </Typography>
       </Grid>
     </Grid>
   );

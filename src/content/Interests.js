@@ -1,19 +1,18 @@
 const interest1 = {
-  name: "Distributed Systems",
-  imageUrl: "https://via.placeholder.com/64/09f/fff.png",
-}
-
-const interest2 = {
   name: "Machine Learning",
-  imageUrl: "https://via.placeholder.com/64/09f/fff.png",
+  imageUrl: "/static/machine_learning.jpg",
+}
+const interest2 = {
+  name: "Augmented Reality",
+  imageUrl: "/static/augmented_reality.jpg",
 }
 const interest3 = {
-  name: "Augmented Reality",
-  imageUrl: "https://via.placeholder.com/64/09f/fff.png",
+  name: "Distributed Systems",
+  imageUrl: "/static/distributed_systems.jpg",
 }
 const interest4 = {
   name: "Computer Architecture",
-  imageUrl: "https://via.placeholder.com/64/09f/fff.png",
+  imageUrl: "/static/computer_architecture.jpg",
 }
 
 export const interests = [

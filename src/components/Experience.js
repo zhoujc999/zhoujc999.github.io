@@ -20,7 +20,7 @@ export default function Experience(props) {
   return (
     <Grid container direction="column" alignItems="flex-start" spacing={1}>
       <Grid item className={classes.titleFrame}>
-        <Typography variant="h5" fontWeight="fontWeightBold" color="primary" gutterBottom>
+        <Typography variant="h5" fontWeight="fontWeightBold" color="textPrimary" gutterBottom>
           {'My Experience'}
         </Typography>
       </Grid>
@@ -28,7 +28,7 @@ export default function Experience(props) {
         <Grid container spacing={3}>
           {experiencesList.map((value, index) => {
             return (
-              <Grid item xs={12} md={6} key={index}>
+              <Grid item xs={12} lg={6} key={index}>
                 <ExperienceCard details={value} key={index} />
               </Grid>
             );

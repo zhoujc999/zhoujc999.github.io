@@ -1,11 +1,14 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { ThemeProvider, responsiveFontSizes, createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LightbulbOn from 'mdi-material-ui/LightbulbOn'
+
+let theme = createMuiTheme();
+theme = responsiveFontSizes(theme);
 
 const useStyles = makeStyles(theme => ({
   headerFrame: {
@@ -36,18 +39,20 @@ export default function ProjectCard(props) {
   const bodyDict = detailsDict.projectBody;
 
   return (
-    <Card className={classes.card}>
-      <CardContent>
-        <Grid container direction="column" alignItems="flex-start">
-          <Grid item className={classes.headerFrame}>
-            <CardHeader details={headerDict} />
+    <ThemeProvider theme={theme}>
+      <Card className={classes.card}>
+        <CardContent>
+          <Grid container direction="column" alignItems="flex-start">
+            <Grid item className={classes.headerFrame}>
+              <CardHeader details={headerDict} />
+            </Grid>
+            <Grid item className={classes.bodyFrame}>
+              <CardBody details={bodyDict} />
+            </Grid>
           </Grid>
-          <Grid item className={classes.bodyFrame}>
-            <CardBody details={bodyDict} />
-          </Grid>
-        </Grid>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+    </ThemeProvider>
   );
 }
 
@@ -56,7 +61,7 @@ function CardHeader(props) {
   const detailsDict = props.details;
 
   return (
-    <Grid container direction="row" alignItems="center" wrap="nowrap">
+    <Grid container direction="row" alignItems="center" wrap="nowrap" spacing={1}>
       <Grid item className={classes.iconFrame}>
         <LightbulbOn fontSize="large" />
       </Grid>
@@ -70,7 +75,7 @@ function CardHeader(props) {
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body2" className={classes.headerText}>
+            <Typography variant="body2" className={classes.headerText} color="textSecondary">
               {detailsDict.duration}
             </Typography>
           </Grid>
@@ -85,7 +90,7 @@ function CardBody(props) {
   const bodyText = props.details;
 
   return (
-    <Typography variant="body2" color="primary" align="left" className={classes.schoolDetails}>
+    <Typography variant="body2" color="textPrimary" align="left" className={classes.projectDetails}>
       {bodyText}
     </Typography>
   );

@@ -6,7 +6,7 @@ export const bio = {
   emailText: "jingchao.zhou@duke.edu",
   emailLink: "mailto:jingchao.zhou@duke.edu",
   location: "United States",
-  resumeLink: "https://github.com/zhoujc999",
+  resumeLink: "/static/Resume.pdf",
   linkedinText: "jason-jingchao-zhou",
   linkedinLink: "https://www.linkedin.com/in/jason-jingchao-zhou/",
 }

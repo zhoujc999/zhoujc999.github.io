@@ -19,7 +19,7 @@ export default function Projects(props) {
   return (
     <Grid container direction="column" alignItems="flex-start" spacing={1}>
       <Grid item className={classes.titleFrame}>
-        <Typography variant="h5" fontWeight="fontWeightBold" color="primary" gutterBottom>
+        <Typography variant="h5" fontWeight="fontWeightBold" color="textPrimary" gutterBottom>
           {'My Projects'}
         </Typography>
       </Grid>
@@ -27,7 +27,7 @@ export default function Projects(props) {
         <Grid container spacing={3}>
           {projectsList.map((value, index) => {
             return (
-              <Grid item xs={12} md={6} lg={4} key={index}>
+              <Grid item xs={12} sm={6} md={12} lg={6} xl={4} key={index}>
                 <ProjectCard details={value} key={index} />
               </Grid>
             );

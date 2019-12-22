@@ -17,9 +17,9 @@ export default function About(props) {
   const aboutText = about;
 
   return (
-    <Grid container direction="column" alignItems="flex-start" spacing={0}>
+    <Grid container direction="column" alignItems="flex-start">
       <Grid item className={classes.titleFrame}>
-        <Typography variant="h5" fontWeight="fontWeightBold" color="primary" gutterBottom>
+        <Typography variant="h5" fontWeight="fontWeightBold" color="textPrimary" gutterBottom>
           {'About Me'}
         </Typography>
       </Grid>
