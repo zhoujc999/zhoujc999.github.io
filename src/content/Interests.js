@@ -1,18 +1,18 @@
 const interest1 = {
   name: "Machine Learning",
-  imageUrl: "/static/machine_learning.jpg",
+  imageUrl: "../assets/machine_learning.jpg",
 }
 const interest2 = {
   name: "Augmented Reality",
-  imageUrl: "/static/augmented_reality.jpg",
+  imageUrl: "../assets/augmented_reality.jpg",
 }
 const interest3 = {
   name: "Distributed Systems",
-  imageUrl: "/static/distributed_systems.jpg",
+  imageUrl: "../assets/distributed_systems.jpg",
 }
 const interest4 = {
   name: "Computer Architecture",
-  imageUrl: "/static/computer_architecture.jpg",
+  imageUrl: "../assets/computer_architecture.jpg",
 }
 
 export const interests = [
