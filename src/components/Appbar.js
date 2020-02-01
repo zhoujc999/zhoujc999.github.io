@@ -7,8 +7,6 @@ import IconButton from '@material-ui/core/IconButton';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 
-const section = "Profile"
-
 const useStyles = makeStyles(theme => ({
   leftFrame: {
     margin: theme.spacing(0, 3),
@@ -25,29 +23,42 @@ const useStyles = makeStyles(theme => ({
   },
   rightButton: {
   },
+  fillerButton: {
+    padding: theme.spacing(3),
+  }
 }));
 
 export default function ButtonAppBar(props) {
   const classes = useStyles();
-  const sectionText = section;
+  const sectionHeaders = ["Profile", "About", "Experience", "Projects", "Interests"];
+  const handleLeftClick = props.leftClickHandler;
+  const handleRightClick = props.rightClickHandler;
+  var page = props.pageIndex;
 
   return (
     <AppBar position="fixed">
       <Grid container direction="row" wrap="nowrap" alignItems="center" justify="space-between">
         <Grid item className={classes.leftFrame}>
-          <IconButton className={classes.leftButton} color="inherit" aria-label="left">
-            <KeyboardArrowLeftIcon />
-          </IconButton>
+        {
+          page !== 0
+          ? <IconButton className={classes.leftButton} color="inherit" aria-label="left" onClick={handleLeftClick}>
+              <KeyboardArrowLeftIcon />
+            </IconButton>
+          : <div className={classes.fillerButton} />
+        }
         </Grid>
         <Grid item className={classes.titleFrame}>
           <Typography variant="h6" className={classes.title} noWrap>
-            {sectionText}
+            {sectionHeaders[page]}
           </Typography>
         </Grid>
         <Grid item className={classes.rightFrame}>
-          <IconButton className={classes.rightButton} color="inherit" aria-label="right">
-            <KeyboardArrowRightIcon />
-          </IconButton>
+        { page !== 4
+          ? <IconButton className={classes.rightButton} color="inherit" aria-label="right" onClick={handleRightClick}>
+              <KeyboardArrowRightIcon />
+            </IconButton>
+          : <div className={classes.fillerButton} />
+        }
         </Grid>
       </Grid>
     </AppBar>
