@@ -1,5 +1,4 @@
 packages/*/yarn.lock
-packages/*/package-lock.json
 
 # Logs
 logs
@@ -29,8 +28,6 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
-examples/biz-website/public/
-examples/blog/public/
 *.un~
 dist
 bin/published.js
@@ -54,7 +51,6 @@ node_modules/
 
 # lock files
 yarn.lock
-package-lock.json
 
 # starters are special; we want to persist the lock files
 !starters/*/package-lock.json
