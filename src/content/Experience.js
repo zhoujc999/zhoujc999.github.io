@@ -3,13 +3,13 @@ const experience1 = {
     avatarUrl: "/static/duke.jpg",
     position: "Undergraduate Researcher",
     company: "Duke University I^3 Lab",
-    duration: "August 2019 – Present",
+    duration: "August 2019 – May 2020",
     location: "Durham, NC",
   },
   experienceBody: [
     "Worked on a system that allows multiple edge-connected devices to collaborate on image recognition tasks using Google’s ARCore and Firebase platforms",
-    "Investigated the spatial and temporal correlations in the images captured by devices from different positions and of heterogeneous quality to improve recognition accuracy",
-    "Implemented a module that detects when the fields of view of 2 or more devices’ cameras collide using Cloud Anchors to identify spatially correlated images"
+    "Implemented a module that determines whether the fields-of-view of multiple cameras collide using ARCore’s CloudAnchors",
+    "Investigated the spatial and temporal correlations in the images captured by devices from different positions and of heterogeneous quality to improve recognition accuracy"
   ],
 }
 
@@ -22,8 +22,9 @@ const experience2 = {
     location: "San Jose, CA",
   },
   experienceBody: [
-    "Created a new workflow to manage clones of VM images via REST APIs as part of the transition to Backup-as-a-Service model while reducing space usage by 30%",
-    "Set up a secure channel for RPCs between VM hypervisor and storage services to enable asynchronous backup scheduling using Google's gRPC framework and Protobuf language"
+    "Implemented a secure channel for RPCs between the VM hypervisor and backup services to enable asynchronous backup scheduling using the gRPC framework",
+    "Created a new backup workflow that clones a VM instance as an image instead of taking an immutable snapshot",
+    "Developed a microservice that manages the backups to support the Backup-as-a-Service architecture using Protobuf"
   ],
 }
 
@@ -56,7 +57,21 @@ const experience4 = {
   ],
 }
 
+const experience5 = {
+  experienceHeader: {
+    avatarUrl: "/static/imre.jpg",
+    position: "Research Assistant",
+    company: "Institute of Materials Research and Engineering",
+    duration: "January 2015 – April 2015",
+    location: "Singapore",
+  },
+  experienceBody: [
+    "Devised a novel approach to synthesize a group of related compounds with AIE properties and characterized them using UV-Vis and IR spectroscopy",
+    "Investigated the prospects of developing such compounds for trace explosive detection and fabricated a film-based prototype to evaluate the efficacy of such applications"
+  ],
+}
+
 export const experiences = [
-  experience1, experience2, experience3, experience4
+  experience1, experience2, experience3, experience4, experience5
 ]
 

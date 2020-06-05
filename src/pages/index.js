@@ -90,7 +90,7 @@ export default function Index(props) {
     <React.Fragment>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Jason Zhou</title>
+        <title>Jingchao Zhou</title>
         <link rel="canonical" href="https://zhoujc999.github.io" />
       </Helmet>
       <ThemeProvider theme={theme}>

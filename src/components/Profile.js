@@ -54,13 +54,15 @@ export default function Profile(props) {
       <Grid item className={classes.bioFrame}>
         <Bio details={bioDict}/>
       </Grid>
-      {educationList.map((value, index) => {
-        return (
-          <Grid item className={classes.educationFrame} key={index}>
-            <Education details={value} key={index} />
-          </Grid>
-        );
-      })}
+      <Grid item>
+        {educationList.map((value, index) => {
+          return (
+            <Grid item className={classes.educationFrame} key={index}>
+              <Education details={value} key={index} />
+            </Grid>
+          );
+        })}
+      </Grid>
     </Grid>
   );
 }

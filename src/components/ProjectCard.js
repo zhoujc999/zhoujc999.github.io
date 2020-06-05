@@ -2,6 +2,8 @@ import React from 'react';
 import { useTheme, responsiveFontSizes, ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
@@ -13,6 +15,14 @@ const useStyles = makeStyles(theme => ({
   },
   bodyFrame: {
     margin: theme.spacing(1),
+  },
+  cardContent: {
+    justifyContent: "center",
+    margin:theme.spacing(0, 0, -2),
+  },
+  cardActions: {
+    margin:theme.spacing(-2, 0, 0),
+    justifyContent: "center",
   },
   avatar: {
     width: theme.spacing(8),
@@ -36,21 +46,27 @@ export default function ProjectCard(props) {
   const classes = useStyles();
   const detailsDict = props.details;
   const headerDict = detailsDict.projectHeader;
-  const bodyDict = detailsDict.projectBody;
+  const body = detailsDict.projectBody;
+  const projectUrl = detailsDict.projectUrl;
 
   return (
     <ThemeProvider theme={theme}>
       <Card className={classes.card}>
-        <CardContent>
+        <CardContent className={classes.cardContent}>
           <Grid container direction="column" alignItems="flex-start">
             <Grid item className={classes.headerFrame}>
               <CardHeader details={headerDict} />
             </Grid>
             <Grid item className={classes.bodyFrame}>
-              <CardBody details={bodyDict} />
+              <CardBody details={body} />
             </Grid>
           </Grid>
         </CardContent>
+        <CardActions className={classes.cardActions}>
+          <Button size="small" href={projectUrl} target="_blank" rel="noreferrer">
+            View on GitHub
+          </Button>
+        </CardActions>
       </Card>
     </ThemeProvider>
   );

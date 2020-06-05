@@ -1,24 +1,37 @@
 export const bio = {
-  name: "Jason Zhou",
+  name: "Jingchao Zhou",
   avatarUrl: "../assets/display_avatar.jpg",
   githubText: "@zhoujc999",
   githubLink: "https://github.com/zhoujc999",
-  emailText: "jingchao.zhou@duke.edu",
-  emailLink: "mailto:jingchao.zhou@duke.edu",
+  emailText: "jingchao_zhou@berkeley.edu",
+  emailLink: "mailto:jingchao_zhou@berkeley.edu",
   location: "United States",
   resumeLink: "/static/resume.pdf",
-  linkedinText: "jason-jingchao-zhou",
-  linkedinLink: "https://www.linkedin.com/in/jason-jingchao-zhou/",
+  linkedinText: "jingchao-jason-zhou",
+  linkedinLink: "https://www.linkedin.com/in/jingchao-jason-zhou/",
 }
 
 const education1 = {
-  school: "Duke University",
-  class: "Class of 2021",
-  major: "B.S. in Computer Science",
-  minor: "Mathematics Minor",
-  location: "Durham, NC",
+  schoolName: "Duke University",
+  detailsList: [
+    "Class of 2020",
+    "B.S. in Computer Science",
+    "B.S. in Economics",
+    "Math Minor",
+    "Durham, NC",
+  ],
+}
+
+const education2 = {
+  schoolName: "UC Berkeley",
+  detailsList: [
+    "Class of 2021",
+    "M.Eng. in EECS",
+    "Berkeley, CA",
+  ],
 }
 
 export const educations = [
-  education1
+  education1,
+  education2
 ];
