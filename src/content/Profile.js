@@ -9,9 +9,19 @@ export const bio = {
   resumeLink: "/static/resume.pdf",
   linkedinText: "jingchao-jason-zhou",
   linkedinLink: "https://www.linkedin.com/in/jingchao-jason-zhou/",
+  callsign: "KO4FUI",
 }
 
 const education1 = {
+  schoolName: "UC Berkeley",
+  detailsList: [
+    "Class of 2021",
+    "M.Eng. in EECS",
+    "Berkeley, CA",
+  ],
+}
+
+const education2 = {
   schoolName: "Duke University",
   detailsList: [
     "Class of 2020",
@@ -19,15 +29,6 @@ const education1 = {
     "B.S. in Economics",
     "Math Minor",
     "Durham, NC",
-  ],
-}
-
-const education2 = {
-  schoolName: "UC Berkeley",
-  detailsList: [
-    "Class of 2021",
-    "M.Eng. in EECS",
-    "Berkeley, CA",
   ],
 }
 

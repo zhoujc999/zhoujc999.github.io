@@ -1,5 +1,14 @@
 const project1 = {
   projectHeader: {
+    name: "Netflix Party with Voice Chat",
+    duration: "May 2020 – Jun 2020",
+  },
+  projectBody: "Added voice chat feature using the WebRTC framework and rerouted the video playback synchronization and group messaging features through the framework’s data channel.",
+  projectUrl: "https://github.com/zhoujc999/netflixparty-server",
+}
+
+const project2 = {
+  projectHeader: {
     name: "Course Schedule Recommender",
     duration: "Oct 2019 – Dec 2019",
   },
@@ -7,7 +16,7 @@ const project1 = {
   projectUrl: "https://github.com/zhoujc999/course-schedule-recommender-cs316",
 }
 
-const project2 = {
+const project3 = {
   projectHeader: {
     name: "VoogaSalad",
     duration: "Nov 2018 – Dec 2018",
@@ -16,7 +25,7 @@ const project2 = {
   projectUrl: "https://github.com/zhoujc999/VoogaSalad",
 }
 
-const project3 = {
+const project4 = {
   projectHeader: {
     name: "SLogo",
     duration: "Oct 2018 – Nov 2018",
@@ -25,7 +34,7 @@ const project3 = {
   projectUrl: "https://github.com/zhoujc999/SLogo",
 }
 
-const project4 = {
+const project5 = {
   projectHeader: {
     name: "Cell Society",
     duration: "Sep 2018 – Oct 2018",
@@ -34,5 +43,5 @@ const project4 = {
   projectUrl: "https://github.com/zhoujc999/Cell-Society",
 }
 export const projects = [
-  project1, project2, project3, project4
+  project1, project2, project3, project4, project5
 ]

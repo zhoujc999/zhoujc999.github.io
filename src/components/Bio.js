@@ -6,6 +6,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import EmailIcon from '@material-ui/icons/Email';
+import RadioIcon from '@material-ui/icons/Radio';
 import LocationCityIcon from '@material-ui/icons/LocationCity';
 import FileDocument from 'mdi-material-ui/FileDocument'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -63,6 +64,12 @@ export default function Bio(props) {
         <ListItemLink href={linkDict.linkedinLink} target="_blank" rel="noreferrer">
           <ListItemText primary={linkDict.linkedinText} />
         </ListItemLink>
+      </ListItem>
+      <ListItem disableGutters dense className={classes.listElement}>
+        <ListItemIcon>
+          <RadioIcon />
+        </ListItemIcon>
+        <ListItemText primary={linkDict.callsign} />
       </ListItem>
     </List>
   );

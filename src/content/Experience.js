@@ -1,5 +1,20 @@
 const experience1 = {
   experienceHeader: {
+    avatarUrl: "/static/apt.jpg",
+    position: "Software Engineer Intern",
+    company: "Applied Predictive Technologies",
+    duration: "June 2020 – August 2020",
+    location: "Arlington, VA",
+  },
+  experienceBody: [
+    "Improved the Test & Learn software’s flexibility in matching test and control groups and added a new analysis method in the test simulator",
+    "Implemented usability improvements including front-end redesign for the test simulator in React and TypeScript",
+    "Set up a workflow that uses Splunk to query for persistent unit test failures in Jenkins logs and notifies teams through Slack"
+  ],
+}
+
+const experience2 = {
+  experienceHeader: {
     avatarUrl: "/static/duke.jpg",
     position: "Undergraduate Researcher",
     company: "Duke University I^3 Lab",
@@ -13,7 +28,7 @@ const experience1 = {
   ],
 }
 
-const experience2 = {
+const experience3 = {
   experienceHeader: {
     avatarUrl: "/static/nutanix.jpg",
     position: "Software Engineer Intern",
@@ -28,7 +43,7 @@ const experience2 = {
   ],
 }
 
-const experience3 = {
+const experience4 = {
   experienceHeader: {
     avatarUrl: "/static/duke_cs.jpg",
     position: "Undergraduate Teaching Assistant",
@@ -43,7 +58,7 @@ const experience3 = {
   ],
 }
 
-const experience4 = {
+const experience5 = {
   experienceHeader: {
     avatarUrl: "/static/dcus.jpg",
     position: "Head of Technology",
@@ -57,7 +72,7 @@ const experience4 = {
   ],
 }
 
-const experience5 = {
+const experience6 = {
   experienceHeader: {
     avatarUrl: "/static/imre.jpg",
     position: "Research Assistant",
@@ -72,6 +87,6 @@ const experience5 = {
 }
 
 export const experiences = [
-  experience1, experience2, experience3, experience4, experience5
+  experience1, experience2, experience3, experience4, experience5, experience6
 ]
 
