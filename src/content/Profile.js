@@ -7,8 +7,8 @@ export const bio = {
   emailLink: "mailto:jingchao_zhou@berkeley.edu",
   location: "United States",
   resumeLink: "/static/resume.pdf",
-  linkedinText: "jingchao-jason-zhou",
-  linkedinLink: "https://www.linkedin.com/in/jingchao-jason-zhou/",
+  linkedinText: "jingchaozhou",
+  linkedinLink: "https://www.linkedin.com/in/jingchaozhou/",
   callsign: "KO4FUI",
 }
 

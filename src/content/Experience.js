@@ -1,8 +1,8 @@
 const experience1 = {
   experienceHeader: {
-    avatarUrl: "/static/apt.jpg",
+    avatarUrl: "/static/mastercard.jpg",
     position: "Software Engineer Intern",
-    company: "Applied Predictive Technologies",
+    company: "Mastercard Data & Services",
     duration: "June 2020 – August 2020",
     location: "Arlington, VA",
   },
@@ -16,13 +16,13 @@ const experience1 = {
 const experience2 = {
   experienceHeader: {
     avatarUrl: "/static/duke.jpg",
-    position: "Undergraduate Researcher",
-    company: "Duke University I^3 Lab",
+    position: "Undergraduate Research Assistant",
+    company: "Duke University I³T Lab",
     duration: "August 2019 – May 2020",
     location: "Durham, NC",
   },
   experienceBody: [
-    "Worked on a system that allows multiple edge-connected devices to collaborate on image recognition tasks using Google’s ARCore and Firebase platforms",
+    "Worked on a system that enables multiple edge-connected devices to collaborate on image recognition tasks using Google’s ARCore and Firebase platforms",
     "Implemented a module that determines whether the fields-of-view of multiple cameras collide using ARCore’s CloudAnchors",
     "Investigated the spatial and temporal correlations in the images captured by devices from different positions and of heterogeneous quality to improve recognition accuracy"
   ],
@@ -32,14 +32,15 @@ const experience3 = {
   experienceHeader: {
     avatarUrl: "/static/nutanix.jpg",
     position: "Software Engineer Intern",
-    company: "Nutanix (Backup and DR)",
+    company: "Nutanix",
     duration: "May 2019 – August 2019",
     location: "San Jose, CA",
   },
   experienceBody: [
-    "Implemented a secure channel for RPCs between the VM hypervisor and backup services to enable asynchronous backup scheduling using the gRPC framework",
     "Created a new backup workflow that clones a VM instance as an image instead of taking an immutable snapshot",
-    "Developed a microservice that manages the backups to support the Backup-as-a-Service architecture using Protobuf"
+    "Implemented a secure channel for RPCs between the VM hypervisor and backup services",
+    "Enabled asynchronous backup scheduling using the gRPC and Protobuf frameworks",
+    "Developed a microservice that manages the backups to support the Backup-as-a-Service architecture"
   ],
 }
 
