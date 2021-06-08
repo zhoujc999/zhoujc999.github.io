@@ -27,7 +27,7 @@ const education2 = {
     "Class of 2020",
     "B.S. in Computer Science",
     "B.S. in Economics",
-    "Math Minor",
+    "Minor in Math",
     "Durham, NC",
   ],
 }
