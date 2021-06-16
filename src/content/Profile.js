@@ -3,7 +3,7 @@ export const bio = {
   avatarUrl: "../assets/display_avatar.jpg",
   githubText: "@zhoujc999",
   githubLink: "https://github.com/zhoujc999",
-  emailText: "jingchao_zhou@berkeley.edu",
+  emailText: "jzhou@nuro.ai",
   emailLink: "mailto:jzhou@nuro.ai",
   location: "United States",
   resumeLink: "/static/resume.pdf",
