@@ -4,7 +4,7 @@ export const bio = {
   githubText: "@zhoujc999",
   githubLink: "https://github.com/zhoujc999",
   emailText: "jingchao_zhou@berkeley.edu",
-  emailLink: "mailto:jingchao_zhou@berkeley.edu",
+  emailLink: "mailto:jzhou@nuro.ai",
   location: "United States",
   resumeLink: "/static/resume.pdf",
   linkedinText: "jingchaozhou",
