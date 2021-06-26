@@ -5,7 +5,7 @@ export const bio = {
   githubLink: "https://github.com/zhoujc999",
   emailText: "zhoujc999@gmail.com",
   emailLink: "mailto:zhoujc999@gmail.com",
-  location: "United States",
+  location: "Mountain View, CA",
   resumeLink: "/static/resume.pdf",
   linkedinText: "jingchaozhou",
   linkedinLink: "https://www.linkedin.com/in/jingchaozhou/",
