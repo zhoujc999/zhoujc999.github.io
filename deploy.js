@@ -4,7 +4,7 @@ var ghpages = require('gh-pages');
 
 ghpages.publish('public',
   {
-    branch: 'master',
+    branch: 'deploy',
     add: true,
   },
   function(err) {});
@@ -14,6 +14,6 @@ ghpages.publish('assets',
   {
     add: true,
     dest: 'static',
-    branch: 'master',
+    branch: 'deploy',
   },
   function(err) {});
