@@ -2,7 +2,7 @@
 
 **Development**:
 - Ensure that the branch is on **develop**.
-- Run `npm install` to install packages.
+- Run `npm install` and `npm install -g gatsby-cli` to install packages.
 - Run `gatsby develop -p PORT_NUMBER` to start the development server.
 - Remember to commit and push the changes.
 
