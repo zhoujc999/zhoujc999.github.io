@@ -1,5 +1,16 @@
 const experience1 = {
   experienceHeader: {
+    avatarUrl: "/static/nuro.jpg",
+    position: "Software Engineer",
+    company: "Nuro",
+    duration: "June 2021 – Present",
+    location: "Mountain View, CA",
+  },
+  experienceBody: [
+  ],
+}
+const experience2 = {
+  experienceHeader: {
     avatarUrl: "/static/mastercard.jpg",
     position: "Software Engineer Intern",
     company: "Mastercard Data & Services",
@@ -13,7 +24,7 @@ const experience1 = {
   ],
 }
 
-const experience2 = {
+const experience3 = {
   experienceHeader: {
     avatarUrl: "/static/duke.jpg",
     position: "Undergraduate Research Assistant",
@@ -28,7 +39,7 @@ const experience2 = {
   ],
 }
 
-const experience3 = {
+const experience4 = {
   experienceHeader: {
     avatarUrl: "/static/nutanix.jpg",
     position: "Software Engineer Intern",
@@ -44,7 +55,7 @@ const experience3 = {
   ],
 }
 
-const experience4 = {
+const experience5 = {
   experienceHeader: {
     avatarUrl: "/static/duke_cs.jpg",
     position: "Undergraduate Teaching Assistant",
@@ -59,7 +70,7 @@ const experience4 = {
   ],
 }
 
-const experience5 = {
+const experience6 = {
   experienceHeader: {
     avatarUrl: "/static/dcus.jpg",
     position: "Head of Technology",
@@ -73,7 +84,7 @@ const experience5 = {
   ],
 }
 
-const experience6 = {
+const experience7 = {
   experienceHeader: {
     avatarUrl: "/static/imre.jpg",
     position: "Research Assistant",
@@ -88,6 +99,6 @@ const experience6 = {
 }
 
 export const experiences = [
-  experience1, experience2, experience3, experience4, experience5, experience6
+  experience1, experience2, experience3, experience4, experience5, experience6, experience7
 ]
 
