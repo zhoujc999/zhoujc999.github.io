@@ -6,9 +6,8 @@ const experience1 = {
     duration: "June 2021 – Present",
     location: "Mountain View, CA",
   },
-  experienceBody: [
-  ],
-}
+  experienceBody: [],
+};
 const experience2 = {
   experienceHeader: {
     avatarUrl: "/static/mastercard.jpg",
@@ -20,26 +19,11 @@ const experience2 = {
   experienceBody: [
     "Improved the Test & Learn software’s flexibility in matching test and control groups and added a new analysis method in the test simulator",
     "Implemented usability improvements including front-end redesign for the test simulator in React and TypeScript",
-    "Set up a workflow that uses Splunk to query for persistent unit test failures in Jenkins logs and notifies teams through Slack"
+    "Set up a workflow that uses Splunk to query for persistent unit test failures in Jenkins logs and notifies teams through Slack",
   ],
-}
+};
 
 const experience3 = {
-  experienceHeader: {
-    avatarUrl: "/static/duke.jpg",
-    position: "Undergraduate Research Assistant",
-    company: "Duke University I³T Lab",
-    duration: "August 2019 – May 2020",
-    location: "Durham, NC",
-  },
-  experienceBody: [
-    "Worked on a system that enables multiple edge-connected devices to collaborate on image recognition tasks using Google’s ARCore and Firebase platforms",
-    "Implemented a module that determines whether the fields-of-view of multiple cameras collide using ARCore’s CloudAnchors",
-    "Investigated the spatial and temporal correlations in the images captured by devices from different positions and of heterogeneous quality to improve recognition accuracy"
-  ],
-}
-
-const experience4 = {
   experienceHeader: {
     avatarUrl: "/static/nutanix.jpg",
     position: "Software Engineer Intern",
@@ -51,11 +35,11 @@ const experience4 = {
     "Created a new backup workflow that clones a VM instance as an image instead of taking an immutable snapshot",
     "Implemented a secure channel for RPCs between the VM hypervisor and backup services",
     "Enabled asynchronous backup scheduling using the gRPC and Protobuf frameworks",
-    "Developed a microservice that manages the backups to support the Backup-as-a-Service architecture"
+    "Developed a microservice that manages the backups to support the Backup-as-a-Service architecture",
   ],
-}
+};
 
-const experience5 = {
+const experience4 = {
   experienceHeader: {
     avatarUrl: "/static/duke_cs.jpg",
     position: "Undergraduate Teaching Assistant",
@@ -66,11 +50,11 @@ const experience5 = {
   experienceBody: [
     "Assisted in teaching CS 250: Computer Architecture and CS 230: Discrete Mathematics for CS",
     "Duties include: grading homework assignments and exams; leading out of class recitation sections with 25 students; holding office hours; preparing study materials; responding to student questions",
-    "Topics covered include: C, assembly (MIPS), processor design, memory and I/O"
+    "Topics covered include: C, assembly (MIPS), processor design, memory and I/O",
   ],
-}
+};
 
-const experience6 = {
+const experience5 = {
   experienceHeader: {
     avatarUrl: "/static/dcus.jpg",
     position: "Head of Technology",
@@ -80,11 +64,11 @@ const experience6 = {
   },
   experienceBody: [
     "Invited more than 5 academics and industry experts to serve as guest panelists for the annual summit, which focused on opportunities and challenges in the age of big data",
-    "Continued maintenance and improvement of the summit website, which was developed with Bootstrap framework and deployed on Netlify platform"
+    "Continued maintenance and improvement of the summit website, which was developed with Bootstrap framework and deployed on Netlify platform",
   ],
-}
+};
 
-const experience7 = {
+const experience6 = {
   experienceHeader: {
     avatarUrl: "/static/imre.jpg",
     position: "Research Assistant",
@@ -94,11 +78,15 @@ const experience7 = {
   },
   experienceBody: [
     "Devised a novel approach to synthesize a group of related compounds with AIE properties and characterized them using UV-Vis and IR spectroscopy",
-    "Investigated the prospects of developing such compounds for trace explosive detection and fabricated a film-based prototype to evaluate the efficacy of such applications"
+    "Investigated the prospects of developing such compounds for trace explosive detection and fabricated a film-based prototype to evaluate the efficacy of such applications",
   ],
-}
+};
 
 export const experiences = [
-  experience1, experience2, experience3, experience4, experience5, experience6, experience7
-]
-
+  experience1,
+  experience2,
+  experience3,
+  experience4,
+  experience5,
+  experience6,
+];
