@@ -1,17 +1,14 @@
-import React from 'react';
-import makeStyles from '@material-ui/core/styles/makeStyles';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import ExperienceCard from '../components/ExperienceCard';
-import { experiences } from '../content/Experience';
+import React from "react";
+import makeStyles from "@mui/styles/makeStyles";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import ExperienceCard from "../components/ExperienceCard";
+import { experiences } from "../content/Experience";
 
-const useStyles = makeStyles(theme => ({
-  titleFrame: {
-  },
-  bodyFrame: {
-  },
+const useStyles = makeStyles((theme) => ({
+  titleFrame: {},
+  bodyFrame: {},
 }));
-
 
 export default function Experience(props) {
   const classes = useStyles();
@@ -20,8 +17,13 @@ export default function Experience(props) {
   return (
     <Grid container direction="column" alignItems="flex-start" spacing={1}>
       <Grid item className={classes.titleFrame}>
-        <Typography variant="h5" fontWeight="fontWeightBold" color="textPrimary" gutterBottom>
-          {'My Experience'}
+        <Typography
+          variant="h5"
+          fontWeight="fontWeightBold"
+          color="textPrimary"
+          gutterBottom
+        >
+          {"My Experience"}
         </Typography>
       </Grid>
       <Grid item className={classes.bodyFrame}>

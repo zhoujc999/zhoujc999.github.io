@@ -1,15 +1,13 @@
-import React from 'react';
-import makeStyles from '@material-ui/core/styles/makeStyles';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import InterestCard from '../components/InterestCard';
-import { interests } from '../content/Interests';
+import React from "react";
+import makeStyles from "@mui/styles/makeStyles";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import InterestCard from "../components/InterestCard";
+import { interests } from "../content/Interests";
 
-const useStyles = makeStyles(theme => ({
-  titleFrame: {
-  },
-  bodyFrame: {
-  },
+const useStyles = makeStyles((theme) => ({
+  titleFrame: {},
+  bodyFrame: {},
 }));
 
 export default function Interests(props) {
@@ -19,8 +17,13 @@ export default function Interests(props) {
   return (
     <Grid container direction="column" alignItems="flex-start" spacing={1}>
       <Grid item className={classes.titleFrame}>
-        <Typography variant="h5" fontWeight="fontWeightBold" color="textPrimary" gutterBottom>
-          {'Some of My Interests'}
+        <Typography
+          variant="h5"
+          fontWeight="fontWeightBold"
+          color="textPrimary"
+          gutterBottom
+        >
+          {"Some of My Interests"}
         </Typography>
       </Grid>
       <Grid item className={classes.bodyFrame}>

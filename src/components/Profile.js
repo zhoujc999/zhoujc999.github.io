@@ -1,20 +1,19 @@
-import React from 'react';
-import makeStyles from '@material-ui/core/styles/makeStyles';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import Avatar from '@material-ui/core/Avatar';
+import React from "react";
+import makeStyles from "@mui/styles/makeStyles";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Avatar from "@mui/material/Avatar";
 
-import Education from '../components/Education'
-import Bio from '../components/Bio'
+import Education from "../components/Education";
+import Bio from "../components/Bio";
 
-import {bio, educations} from '../content/Profile';
+import { bio, educations } from "../content/Profile";
 
-import display_avatar from '../assets/display_avatar.jpg';
+import display_avatar from "../assets/display_avatar.jpg";
 
-const useStyles = makeStyles(theme => ({
-  avatarFrame: {
-  },
+const useStyles = makeStyles((theme) => ({
+  avatarFrame: {},
   avatar: {
     width: theme.spacing(20),
     height: theme.spacing(20),
@@ -24,13 +23,13 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(0, 0, 1, 0),
   },
   nameText: {
-    display: 'inline-block',
+    display: "inline-block",
   },
   bioFrame: {
-    margin: theme.spacing(1, 0, 2)
+    margin: theme.spacing(1, 0, 2),
   },
   educationFrame: {
-    margin: theme.spacing(1, 0, 1)
+    margin: theme.spacing(1, 0, 1),
   },
 }));
 
@@ -42,17 +41,24 @@ export default function Profile(props) {
   return (
     <Grid container direction="column" alignItems="center">
       <Grid item className={classes.avatarFrame}>
-        <Avatar alt={bioDict.name} src={display_avatar} className={classes.avatar} />
+        <Avatar
+          alt={bioDict.name}
+          src={display_avatar}
+          className={classes.avatar}
+        />
       </Grid>
       <Grid item className={classes.nameFrame}>
-        <Typography variant="h4" color="textPrimary" className={classes.nameText} component="span">
-          <Box fontWeight="fontWeightMedium">
-            {bioDict.name}
-          </Box>
+        <Typography
+          variant="h4"
+          color="textPrimary"
+          className={classes.nameText}
+          component="span"
+        >
+          <Box fontWeight="fontWeightMedium">{bioDict.name}</Box>
         </Typography>
       </Grid>
       <Grid item className={classes.bioFrame}>
-        <Bio details={bioDict}/>
+        <Bio details={bioDict} />
       </Grid>
       <Grid item>
         {educationList.map((value, index) => {

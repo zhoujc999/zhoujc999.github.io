@@ -1,15 +1,21 @@
-import React from 'react';
-import { useTheme, responsiveFontSizes, ThemeProvider, makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import LightbulbOn from 'mdi-material-ui/LightbulbOn'
+import React from "react";
+import {
+  useTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+  StyledEngineProvider,
+} from "@mui/material/styles";
+import makeStyles from "@mui/styles/makeStyles";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import LightbulbOn from "mdi-material-ui/LightbulbOn";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   headerFrame: {
     margin: theme.spacing(1),
   },
@@ -18,10 +24,10 @@ const useStyles = makeStyles(theme => ({
   },
   cardContent: {
     justifyContent: "center",
-    margin:theme.spacing(0, 0, -2),
+    margin: theme.spacing(0, 0, -2),
   },
   cardActions: {
-    margin:theme.spacing(-2, 0, 0),
+    margin: theme.spacing(-2, 0, 0),
     justifyContent: "center",
   },
   avatar: {
@@ -36,7 +42,7 @@ const useStyles = makeStyles(theme => ({
   },
   headerText: {
     margin: theme.spacing(0, 0.5),
-    display: 'inline-block',
+    display: "inline-block",
   },
 }));
 
@@ -50,25 +56,32 @@ export default function ProjectCard(props) {
   const projectUrl = detailsDict.projectUrl;
 
   return (
-    <ThemeProvider theme={theme}>
-      <Card className={classes.card}>
-        <CardContent className={classes.cardContent}>
-          <Grid container direction="column" alignItems="flex-start">
-            <Grid item className={classes.headerFrame}>
-              <CardHeader details={headerDict} />
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <Card className={classes.card}>
+          <CardContent className={classes.cardContent}>
+            <Grid container direction="column" alignItems="flex-start">
+              <Grid item className={classes.headerFrame}>
+                <CardHeader details={headerDict} />
+              </Grid>
+              <Grid item className={classes.bodyFrame}>
+                <CardBody details={body} />
+              </Grid>
             </Grid>
-            <Grid item className={classes.bodyFrame}>
-              <CardBody details={body} />
-            </Grid>
-          </Grid>
-        </CardContent>
-        <CardActions className={classes.cardActions}>
-          <Button size="small" href={projectUrl} target="_blank" rel="noreferrer">
-            View on GitHub
-          </Button>
-        </CardActions>
-      </Card>
-    </ThemeProvider>
+          </CardContent>
+          <CardActions className={classes.cardActions}>
+            <Button
+              size="small"
+              href={projectUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              View on GitHub
+            </Button>
+          </CardActions>
+        </Card>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
 
@@ -77,21 +90,33 @@ function CardHeader(props) {
   const detailsDict = props.details;
 
   return (
-    <Grid container direction="row" alignItems="center" wrap="nowrap" spacing={1}>
+    <Grid
+      container
+      direction="row"
+      alignItems="center"
+      wrap="nowrap"
+      spacing={1}
+    >
       <Grid item className={classes.iconFrame}>
         <LightbulbOn fontSize="large" />
       </Grid>
       <Grid item className={classes.textFrame}>
         <Grid container direction="column" alignItems="flex-start">
           <Grid item>
-            <Typography variant="body2" className={classes.headerText} component="span">
-              <Box fontWeight="fontWeightMedium">
-                {detailsDict.name}
-              </Box>
+            <Typography
+              variant="body2"
+              className={classes.headerText}
+              component="span"
+            >
+              <Box fontWeight="fontWeightMedium">{detailsDict.name}</Box>
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body2" className={classes.headerText} color="textSecondary">
+            <Typography
+              variant="body2"
+              className={classes.headerText}
+              color="textSecondary"
+            >
               {detailsDict.duration}
             </Typography>
           </Grid>
@@ -106,7 +131,12 @@ function CardBody(props) {
   const bodyText = props.details;
 
   return (
-    <Typography variant="body2" color="textPrimary" align="left" className={classes.projectDetails}>
+    <Typography
+      variant="body2"
+      color="textPrimary"
+      align="left"
+      className={classes.projectDetails}
+    >
       {bodyText}
     </Typography>
   );

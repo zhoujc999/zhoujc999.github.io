@@ -1,14 +1,19 @@
-import React from 'react';
-import { useTheme, responsiveFontSizes, ThemeProvider, makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
+import React from "react";
+import {
+  useTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+  StyledEngineProvider,
+} from "@mui/material/styles";
+import makeStyles from "@mui/styles/makeStyles";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
 
-const useStyles = makeStyles(theme => ({
-  card: {
-  },
+const useStyles = makeStyles((theme) => ({
+  card: {},
   headerFrame: {
     margin: theme.spacing(1),
   },
@@ -21,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   },
   headerText: {
     margin: theme.spacing(0, 0.5),
-    display: 'inline-block',
+    display: "inline-block",
   },
 }));
 
@@ -32,23 +37,37 @@ export default function InterestCard(props) {
   const detailsDict = props.details;
 
   return (
-    <ThemeProvider theme={theme}>
-      <Card className={classes.card}>
-        <CardContent>
-          <Grid container direction="column" alignItems="center" justify="center">
-            <Grid item className={classes.headerFrame}>
-              <img src={detailsDict.imageUrl} alt={detailsDict.name} className={classes.image} />
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <Card className={classes.card}>
+          <CardContent>
+            <Grid
+              container
+              direction="column"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Grid item className={classes.headerFrame}>
+                <img
+                  src={detailsDict.imageUrl}
+                  alt={detailsDict.name}
+                  className={classes.image}
+                />
+              </Grid>
+              <Grid item className={classes.bodyFrame}>
+                <Typography
+                  variant="h6"
+                  align="center"
+                  className={classes.headerText}
+                  component="span"
+                >
+                  <Box fontWeight="fontWeightRegular">{detailsDict.name}</Box>
+                </Typography>
+              </Grid>
             </Grid>
-            <Grid item className={classes.bodyFrame}>
-              <Typography variant="h6" align="center" className={classes.headerText} component="span">
-                <Box fontWeight="fontWeightRegular">
-                  {detailsDict.name}
-                </Box>
-              </Typography>
-            </Grid>
-          </Grid>
-        </CardContent>
-      </Card>
-    </ThemeProvider>
+          </CardContent>
+        </Card>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
