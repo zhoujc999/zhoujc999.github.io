@@ -1,15 +1,21 @@
-import React from 'react';
-import { useTheme, responsiveFontSizes, ThemeProvider, makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import Avatar from '@material-ui/core/Avatar';
-import WorkIcon from '@material-ui/icons/Work';
-import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
+import React from "react";
+import {
+  useTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+  StyledEngineProvider,
+} from "@mui/material/styles";
+import makeStyles from "@mui/styles/makeStyles";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Avatar from "@mui/material/Avatar";
+import WorkIcon from "@mui/icons-material/Work";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   headerFrame: {
     margin: theme.spacing(1),
   },
@@ -28,10 +34,10 @@ const useStyles = makeStyles(theme => ({
   },
   headerText: {
     margin: theme.spacing(0, 0.5),
-    display: 'inline-block',
+    display: "inline-block",
   },
   bullet: {
-    display: 'inline-block',
+    display: "inline-block",
     margin: theme.spacing(0, 1, 0, 0),
   },
 }));
@@ -45,20 +51,22 @@ export default function ExperienceCard(props) {
   const bodyText = detailsDict.experienceBody;
 
   return (
-    <ThemeProvider theme={theme}>
-      <Card className={classes.card}>
-        <CardContent>
-          <Grid container direction="column" alignItems="flex-start">
-            <Grid item className={classes.headerFrame}>
-              <CardHeader details={headerText} />
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <Card className={classes.card}>
+          <CardContent>
+            <Grid container direction="column" alignItems="flex-start">
+              <Grid item className={classes.headerFrame}>
+                <CardHeader details={headerText} />
+              </Grid>
+              <Grid item className={classes.bodyFrame}>
+                <CardBody details={bodyText} />
+              </Grid>
             </Grid>
-            <Grid item className={classes.bodyFrame}>
-              <CardBody details={bodyText} />
-            </Grid>
-          </Grid>
-        </CardContent>
-      </Card>
-    </ThemeProvider>
+          </CardContent>
+        </Card>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
 
@@ -69,20 +77,27 @@ function CardHeader(props) {
   return (
     <Grid container direction="row" alignItems="center" wrap="nowrap">
       <Grid item className={classes.avatarFrame}>
-        <Avatar alt={detailsDict.company} src={detailsDict.avatarUrl} className={classes.avatar} variant="rounded" />
+        <Avatar
+          alt={detailsDict.company}
+          src={detailsDict.avatarUrl}
+          className={classes.avatar}
+          variant="rounded"
+        />
       </Grid>
       <Grid item className={classes.headerColumn}>
         <Grid container direction="column" alignItems="flex-start">
-        <Grid item className={classes.headerDetail}>
+          <Grid item className={classes.headerDetail}>
             <Grid container direction="row" alignItems="center" wrap="nowrap">
               <Grid item>
                 <WorkIcon fontSize="small" />
               </Grid>
               <Grid item>
-                <Typography variant="body2" className={classes.headerText} component="span">
-                  <Box fontWeight="fontWeightBold">
-                    {detailsDict.position}
-                  </Box>
+                <Typography
+                  variant="body2"
+                  className={classes.headerText}
+                  component="span"
+                >
+                  <Box fontWeight="fontWeightBold">{detailsDict.position}</Box>
                 </Typography>
               </Grid>
             </Grid>
@@ -93,10 +108,12 @@ function CardHeader(props) {
                 <AlternateEmailIcon fontSize="small" />
               </Grid>
               <Grid item>
-                <Typography variant="body2" className={classes.headerText} component="span">
-                  <Box fontWeight="fontWeightMedium">
-                    {detailsDict.company}
-                  </Box>
+                <Typography
+                  variant="body2"
+                  className={classes.headerText}
+                  component="span"
+                >
+                  <Box fontWeight="fontWeightMedium">{detailsDict.company}</Box>
                 </Typography>
               </Grid>
             </Grid>
@@ -124,7 +141,12 @@ function CardBody(props) {
       {detailsList.map((value, index) => {
         return (
           <Grid item key={index}>
-            <Typography variant="body2" color="textPrimary" align="left" className={classes.experienceDetails}>
+            <Typography
+              variant="body2"
+              color="textPrimary"
+              align="left"
+              className={classes.experienceDetails}
+            >
               {bull}
               {value}
             </Typography>
@@ -134,4 +156,3 @@ function CardBody(props) {
     </Grid>
   );
 }
-

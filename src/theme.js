@@ -1,23 +1,23 @@
-import { red } from '@material-ui/core/colors';
-import { createTheme } from '@material-ui/core/styles';
+import { red } from "@mui/material/colors";
+import { createTheme } from "@mui/material/styles";
 
 // A custom theme for this app
 let theme = createTheme({
   palette: {
     primary: {
-      main: '#556cd6',
+      main: "#556cd6",
     },
     secondary: {
-      main: '#19857b',
+      main: "#19857b",
     },
     error: {
       main: red.A400,
     },
     background: {
-      default: '#fff',
+      default: "#fff",
     },
     text: {
-      secondary: "rgba(0, 0, 0, 0.68)"
+      secondary: "rgba(0, 0, 0, 0.68)",
     },
   },
   breakpoints: {
@@ -27,7 +27,7 @@ let theme = createTheme({
       md: 768,
       lg: 1012,
       xl: 1280,
-    }
+    },
   },
 });
 
