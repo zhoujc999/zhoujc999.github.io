@@ -21,7 +21,7 @@
     "deploy": "./deploy.js"
   },
   "devDependencies": {
-    "gatsby": "^2.24.67",
+    "gatsby": "^5.10.0",
     "gh-pages": "^2.1.1"
   }
 }
