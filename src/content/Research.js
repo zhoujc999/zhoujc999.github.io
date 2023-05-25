@@ -7,9 +7,9 @@ const research1 = {
     location: "Berkeley, CA",
   },
   researchBody: [
-    'Co-authored and published "WiP: The Cyber-Physical Immune System" in Proceedings of the 2021 International Conference on Embedded Software (EMSOFT \'21)',
-    "Proposed a conceptual approach of securing Cyber-Physical Systems by deploying an independent network of monitoring components that adapts to the changing environment and reports threats or anomalies",
-    "Implemented a bare-bones vehicular cruise control CPS that comprises cruise and engine controllers, and a simulated physical environment using Mininet to validate the CPIS",
+    'Co-authored and published "WIP: The Cyber-Physical Immune System" in Proceedings of the 2021 International Conference on Embedded Software (EMSOFT \'21)',
+    "Proposed a conceptual approach to secure Cyber-Physical Systems (CPSs) by deploying an independent network of monitoring components that adapts to the changing environment and reports threats or anomalies",
+    "Validated CPIS in the case of a vehicular cruise control system by developing a simulation of the interaction between the vehicular controllers and the physical environment",
   ],
 };
 

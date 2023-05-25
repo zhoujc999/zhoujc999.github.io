@@ -6,7 +6,13 @@ const experience1 = {
     duration: "June 2021 – Present",
     location: "Mountain View, CA",
   },
-  experienceBody: [],
+  experienceBody: [
+    "Worked cross-team with TPMs and TLs to reduce bot boot-up time, utilizing data-driven approaches to discover and resolve issues from on-road operations",
+    "Built and productionized a streaming data pipeline that ingests real-time telemetry messages from individual bots through Google Pub/Sub and uploads the processed and fleet-aggregated data to Google BigQuery",
+    "Created and deployed a service to run large-scale (70k+ parallel workloads) simulation testing and evaluation of failure modes across the autonomy stack, using Nuro's proprietary batch task execution service",
+    "Designed and implemented a framework to enable runtime performance analysis of autonomy modules in cloud-based simulation",
+    "Revamped the weekly onboard systems report and reduced the time spent generating the report by 60+%, leveraging ReTool dashboards and Kubernetes",
+],
 };
 const experience2 = {
   experienceHeader: {
@@ -32,10 +38,8 @@ const experience3 = {
     location: "San Jose, CA",
   },
   experienceBody: [
-    "Created a new backup workflow that clones a VM instance as an image instead of taking an immutable snapshot",
-    "Implemented a secure channel for RPCs between the VM hypervisor and backup services",
-    "Enabled asynchronous backup scheduling using the gRPC and Protobuf frameworks",
-    "Developed a microservice that manages the backups to support the Backup-as-a-Service architecture",
+    "Developed a microservice using gRPC to manage VM backups and enable asynchronous backup scheduling between VM hypervisors and the backup service",
+    "Implemented a new backup workflow that clones a VM instance as an image instead of taking an immutable snapshot",
   ],
 };
 
