@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-white`}>
+      <body className={`${inter.className}`} suppressHydrationWarning={true}>
         <header className="absolute z-10 w-full items-center md:hidden">
           <Navbar />
         </header>
