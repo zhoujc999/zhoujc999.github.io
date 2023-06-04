@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { Transition } from "@headlessui/react";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -11,8 +12,13 @@ export default function Navbar() {
       <div className="">
         <ul className="flex flex-row place-content-between items-center p-4">
           <li>
-            <Link href="#">
-            <Image src="./next.svg" alt="Logo" width={96} height={48} />
+            <Link
+              onClick={() => {
+                setIsOpen(false);
+              }}
+              href="#"
+            >
+              <Image src="./next.svg" alt="Logo" width={96} height={48} />
             </Link>
           </li>
           <li>
@@ -44,28 +50,43 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
-      {isOpen ? (
+      {isOpen && (
         <div className="pb-2 pt-6">
           <ul className="flex flex-col space-y-4">
             <li className="text-center">
-              <Link className="hover:text-gray-500" href="/about">
+              <Link
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+                className="hover:text-gray-500"
+                href="/about"
+              >
                 About
               </Link>
             </li>
             <li className="text-center">
-              <Link className="hover:text-gray-500" href="/portfolio">
+              <Link
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+                className="hover:text-gray-500"
+                href="/portfolio"
+              >
                 Portfolio
               </Link>
             </li>
-            <li className="text-center">
+            <li
+              onClick={() => {
+                setIsOpen(false);
+              }}
+              className="text-center"
+            >
               <Link className="hover:text-gray-500" href="/blog">
                 Blog
               </Link>
             </li>
           </ul>
         </div>
-      ) : (
-        <div></div>
       )}
     </nav>
   );
