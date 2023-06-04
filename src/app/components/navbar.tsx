@@ -31,7 +31,7 @@ export default function Navbar() {
                 <Image
                   src="/close.svg"
                   alt="Close"
-                  className="dark:invert"
+                  className="dark:invert hover:text-gray-500"
                   width={24}
                   height={24}
                   priority
@@ -40,7 +40,7 @@ export default function Navbar() {
                 <Image
                   src="/menu.svg"
                   alt="Menu"
-                  className="dark:invert"
+                  className="dark:invert hover:text-gray-500"
                   width={24}
                   height={24}
                   priority

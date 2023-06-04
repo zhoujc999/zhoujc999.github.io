@@ -1,6 +1,8 @@
 import "./globals.css";
-import Navbar from "./navbar";
+import Navbar from "./components/navbar";
+import Sidebar from "./components/sidebar";
 import { Inter } from "next/font/google";
+// import "tailwindcss-react-native/types.d";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,10 +19,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className="w-full items-center">
+        <header className="absolute z-10 w-full items-center md:hidden">
           <Navbar />
         </header>
-        {children}
+        <div className="flex flex-row justify-center">
+          <div className="grow max-md:hidden">
+            <Sidebar />
+          </div>
+          {children}
+        </div>
       </body>
     </html>
   );
