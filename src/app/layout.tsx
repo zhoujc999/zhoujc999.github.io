@@ -21,11 +21,11 @@ export default function RootLayout({
         <header className="absolute z-10 w-full items-center md:hidden">
           <Navbar />
         </header>
-        <div className="flex flex-row justify-center">
-          <div className="grow max-md:hidden">
+        <div className="flex flex-row justify-stretch">
+          <div className="w-80 max-md:hidden">
             <Sidebar />
           </div>
-          {children}
+          <div className="grow">{children}</div>
         </div>
       </body>
     </html>
