@@ -15,18 +15,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html lang="en">
       <body className={`${inter.className}`} suppressHydrationWarning={true}>
         <header className="absolute z-10 w-full items-center md:hidden">
           <Navbar />
         </header>
-        <div className="flex flex-row justify-stretch">
+        <div className="flex min-h-screen flex-row">
           <div className="w-80 max-md:hidden">
             <Sidebar />
           </div>
-          <div className="grow">{children}</div>
+          <div className="grow px-8 py-20">{children}</div>
         </div>
       </body>
     </html>

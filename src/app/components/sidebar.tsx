@@ -11,7 +11,7 @@ export default function Sidebar() {
     <nav className="h-full bg-white p-16">
       <div className="h-16 w-32 py-8">
         <Link href="#">
-          <Image src="./next.svg" alt="Logo" width={96} height={48} />
+          <Image className="inline-block" src="./next.svg" alt="Logo" width={96} height={48} />
         </Link>
       </div>
       <div className="py-8">

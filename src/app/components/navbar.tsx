@@ -73,9 +73,12 @@ export default function Navbar() {
             }}
             className="text-center"
           >
-            <Link className={`hover:text-gray-500 ${
+            <Link
+              className={`hover:text-gray-500 ${
                 pathname.substring(1) === "blog" ? "font-semibold" : ""
-              }`} href="/blog">
+              }`}
+              href="/blog"
+            >
               Blog
             </Link>
           </li>
