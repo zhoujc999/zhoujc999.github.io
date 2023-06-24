@@ -11,11 +11,17 @@ export default function Sidebar() {
     <nav className="h-full bg-white p-16">
       <div className="h-16 w-32 py-8">
         <Link href="#">
-          <Image className="inline-block" src="./next.svg" alt="Logo" width={96} height={48} />
+          <Image
+            className="inline-block"
+            src="./next.svg"
+            alt="Logo"
+            width={96}
+            height={48}
+          />
         </Link>
       </div>
       <div className="py-8">
-        <ul className="flex flex-col space-y-4">
+        <ol className="flex flex-col space-y-4">
           <li>
             <Link
               className={`hover:text-gray-500 ${
@@ -29,9 +35,9 @@ export default function Sidebar() {
           <li>
             <Link
               className={`hover:text-gray-500 ${
-                pathname.substring(1) === "about" ? "font-semibold" : ""
+                pathname.substring(1) === "experience" ? "font-semibold" : ""
               }`}
-              href="/about"
+              href="/experience"
             >
               About
             </Link>
@@ -56,7 +62,7 @@ export default function Sidebar() {
               Blog
             </Link>
           </li>
-        </ul>
+        </ol>
       </div>
     </nav>
   );

@@ -13,7 +13,7 @@ export default function Navbar() {
   return (
     <nav className="bg-white px-4 py-2 text-base text-black">
       <div>
-        <ul className="flex flex-row place-content-between items-center p-4">
+        <ol className="flex flex-row place-content-between items-center p-4">
           <li>
             <Link
               onClick={() => {
@@ -37,21 +37,21 @@ export default function Navbar() {
               )}
             </button>
           </li>
-        </ul>
+        </ol>
       </div>
       <div className={`${isOpen ? "" : "hidden"} pb-2 pt-6`}>
-        <ul className="flex flex-col space-y-4">
+        <ol className="flex flex-col space-y-4">
           <li className="text-center">
             <Link
               onClick={() => {
                 setIsOpen(false);
               }}
               className={`hover:text-gray-500 ${
-                pathname.substring(1) === "about" ? "font-semibold" : ""
+                pathname.substring(1) === "experience" ? "font-semibold" : ""
               }`}
-              href="/about"
+              href="/experience"
             >
-              About
+              Experience
             </Link>
           </li>
           <li className="text-center">
@@ -82,7 +82,7 @@ export default function Navbar() {
               Blog
             </Link>
           </li>
-        </ul>
+        </ol>
       </div>
     </nav>
   );
