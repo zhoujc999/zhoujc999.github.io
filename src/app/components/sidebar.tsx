@@ -39,7 +39,7 @@ export default function Sidebar() {
               }`}
               href="/experience"
             >
-              About
+              Experience
             </Link>
           </li>
           <li>
