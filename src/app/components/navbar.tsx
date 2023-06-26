@@ -11,7 +11,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-white px-4 py-2 text-base text-black">
+    <nav className="px-4 py-2 text-base">
       <div>
         <ol className="flex flex-row place-content-between items-center p-4">
           <li>
@@ -19,7 +19,7 @@ export default function Navbar() {
               onClick={() => {
                 setIsOpen(false);
               }}
-              href="#"
+              href="/"
             >
               <Image src="./next.svg" alt="Logo" width={96} height={48} />
             </Link>
@@ -31,9 +31,9 @@ export default function Navbar() {
               }}
             >
               {isOpen ? (
-                <MdClose className="h-6 w-6 hover:text-gray-500" />
+                <MdClose className="h-6 w-6 transition hover:text-[#978d94]" />
               ) : (
-                <MdMenu className="h-6 w-6 hover:text-gray-500" />
+                <MdMenu className="h-6 w-6 transition hover:text-[#978d94]" />
               )}
             </button>
           </li>
@@ -41,58 +41,26 @@ export default function Navbar() {
       </div>
       <div className={`${isOpen ? "" : "hidden"} pb-2 pt-6`}>
         <ol className="flex flex-col space-y-4">
-        <li className="text-center">
-            <Link
-              onClick={() => {
-                setIsOpen(false);
-              }}
-              className={`hover:text-gray-500 ${
-                pathname.substring(1) === "" ? "font-semibold" : ""
-              }`}
-              href="#"
-            >
-              Home
-            </Link>
-          </li>
-          <li className="text-center">
-            <Link
-              onClick={() => {
-                setIsOpen(false);
-              }}
-              className={`hover:text-gray-500 ${
-                pathname.substring(1) === "experience" ? "font-semibold" : ""
-              }`}
-              href="/experience"
-            >
-              Experience
-            </Link>
-          </li>
-          <li className="text-center">
-            <Link
-              onClick={() => {
-                setIsOpen(false);
-              }}
-              className={`hover:text-gray-500 ${
-                pathname.substring(1) === "portfolio" ? "font-semibold" : ""
-              }`}
-              href="/portfolio"
-            >
-              Portfolio
-            </Link>
-          </li>
-          <li className="text-center">
-            <Link
-              onClick={() => {
-                setIsOpen(false);
-              }}
-              className={`hover:text-gray-500 ${
-                pathname.substring(1) === "blog" ? "font-semibold" : ""
-              }`}
-              href="/blog"
-            >
-              Blog
-            </Link>
-          </li>
+          {[
+            ["Home", "/"],
+            ["Experience", "/experience"],
+            ["Portfolio", "/portfolio"],
+            ["Blog", "/blog"],
+          ].map(([title, url]) => (
+            <li className="text-center">
+              <Link
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+                className={`transition hover:text-[#978d94] ${
+                  pathname === url ? "font-semibold" : ""
+                }`}
+                href={url}
+              >
+                {title}
+              </Link>
+            </li>
+          ))}
         </ol>
       </div>
     </nav>

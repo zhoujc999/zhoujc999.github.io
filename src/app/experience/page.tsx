@@ -7,7 +7,7 @@ export default function Experience() {
   return (
     <div className="lg:w-2/3 2xl:w-1/2">
       <ol className="space-y-4">
-        <li className="bg-[#cae4ff]">
+        <li className="bg-[#e6dfd8]">
           <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
               <Image src="/nuro.jpg" alt="Logo" width={64} height={64} />
@@ -20,14 +20,10 @@ export default function Experience() {
                   <MdAlternateEmail className="mr-1 inline-block h-6 w-6 align-bottom" />
                   Carta Healthcare
                 </li>
-                <li>
-                  <span className="mr-1 text-gray-500">
-                    May 2022 – Aug 2022
-                  </span>
-                  <span className="mx-1 text-gray-500 max-lg:hidden">|</span>
-                  <span className="mx-1 text-gray-500 max-lg:hidden">
-                    San Mateo, CA
-                  </span>
+                <li className="text-[#756770]">
+                  <span className="mr-1">May 2022 – Aug 2022</span>
+                  <span className="mx-1 max-lg:hidden">|</span>
+                  <span className="mx-1 max-lg:hidden">San Mateo, CA</span>
                 </li>
               </ol>
             </div>
@@ -63,7 +59,7 @@ export default function Experience() {
             </div>
           </div>
         </li>
-        <li className="bg-[#cae4ff]">
+        <li className="bg-[#e6dfd8]">
           <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
               <Image src="/nuro.jpg" alt="Logo" width={64} height={64} />
@@ -76,14 +72,10 @@ export default function Experience() {
                   <MdAlternateEmail className="mr-1 inline-block h-6 w-6 align-bottom" />
                   Duke University, School of Medicine
                 </li>
-                <li>
-                  <span className="mr-1 text-gray-500">
-                    Jun 2021 – Aug 2021
-                  </span>
-                  <span className="mx-1 text-gray-500 max-lg:hidden">|</span>
-                  <span className="mx-1 text-gray-500 max-lg:hidden">
-                    Durham, NC
-                  </span>
+                <li className="text-[#756770]">
+                  <span className="mr-1">Jun 2021 – Aug 2021</span>
+                  <span className="mx-1 max-lg:hidden">|</span>
+                  <span className="mx-1 max-lg:hidden">Durham, NC</span>
                 </li>
               </ol>
             </div>
@@ -109,7 +101,7 @@ export default function Experience() {
             </div>
           </div>
         </li>
-        <li className="bg-[#cae4ff]">
+        <li className="bg-[#e6dfd8]">
           <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
               <Image src="/nuro.jpg" alt="Logo" width={64} height={64} />
@@ -122,14 +114,10 @@ export default function Experience() {
                   <MdAlternateEmail className="mr-1 inline-block h-6 w-6 align-bottom" />
                   Duke University
                 </li>
-                <li>
-                  <span className="mr-1 text-gray-500">
-                    Aug 2021 – Aug 2023
-                  </span>
-                  <span className="mx-1 text-gray-500 max-lg:hidden">|</span>
-                  <span className="mx-1 text-gray-500 max-lg:hidden">
-                    Durham, NC
-                  </span>
+                <li className="text-[#756770]">
+                  <span className="mr-1">Aug 2021 – Aug 2023</span>
+                  <span className="mx-1 max-lg:hidden">|</span>
+                  <span className="mx-1 max-lg:hidden">Durham, NC</span>
                 </li>
               </ol>
             </div>
