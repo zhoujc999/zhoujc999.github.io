@@ -6,6 +6,7 @@ import {
   FaRegEnvelope,
 } from "react-icons/fa";
 import Link from "next/link";
+import Profile from "./components/profile";
 
 export default function Home() {
   return (
@@ -73,8 +74,16 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="w-32">
-        <p>blabla</p>
+      <div>
+        <iframe
+          className="overflow-hidden"
+          loading="eager"
+          width={480}
+          height={480}
+          allowTransparency={true}
+          src="https://www.instagram.com/keep_lifepieces/embed"
+        ></iframe>
+        <Profile />
       </div>
     </div>
   );

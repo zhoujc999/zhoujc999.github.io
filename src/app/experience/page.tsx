@@ -27,8 +27,8 @@ export default function Experience() {
                 </li>
               </ol>
             </div>
-            <div className="mx-3 my-2">
-              <ol className="list-disc space-y-1">
+            <div className="my-2">
+              <ol className="list-inside list-disc space-y-1">
                 <li className="">
                   Defined and developed key metrics in data visualization
                   dashboards
@@ -79,8 +79,8 @@ export default function Experience() {
                 </li>
               </ol>
             </div>
-            <div className="mx-3 my-2">
-              <ol className="list-disc space-y-1">
+            <div className="my-2">
+              <ol className="list-inside list-disc space-y-1">
                 <li className="">
                   Led a team of 3 undergraduate and postdoc students to craft a
                   rare disease genomic data science project end-to-end
@@ -121,8 +121,8 @@ export default function Experience() {
                 </li>
               </ol>
             </div>
-            <div className="mx-3 my-2">
-              <ol className="list-disc space-y-1">
+            <div className="my-2">
+              <ol className="list-inside list-disc space-y-1">
                 <li className="">
                   Authored technical tutorial for doctors on recurrent event
                   survival analysis methods to examine large claim datasets
