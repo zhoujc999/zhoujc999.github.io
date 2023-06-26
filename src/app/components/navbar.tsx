@@ -41,6 +41,19 @@ export default function Navbar() {
       </div>
       <div className={`${isOpen ? "" : "hidden"} pb-2 pt-6`}>
         <ol className="flex flex-col space-y-4">
+        <li className="text-center">
+            <Link
+              onClick={() => {
+                setIsOpen(false);
+              }}
+              className={`hover:text-gray-500 ${
+                pathname.substring(1) === "" ? "font-semibold" : ""
+              }`}
+              href="#"
+            >
+              Home
+            </Link>
+          </li>
           <li className="text-center">
             <Link
               onClick={() => {
@@ -67,13 +80,11 @@ export default function Navbar() {
               Portfolio
             </Link>
           </li>
-          <li
-            onClick={() => {
-              setIsOpen(false);
-            }}
-            className="text-center"
-          >
+          <li className="text-center">
             <Link
+              onClick={() => {
+                setIsOpen(false);
+              }}
               className={`hover:text-gray-500 ${
                 pathname.substring(1) === "blog" ? "font-semibold" : ""
               }`}

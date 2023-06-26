@@ -5,10 +5,10 @@ import Image from "next/image";
 
 export default function Experience() {
   return (
-    <div className="">
-      <ol>
-        <li className="my-4 first:mt-0 last:mb-0">
-          <div className="w-auto bg-blue-100 px-6 py-4">
+    <div className="lg:w-2/3 2xl:w-1/2">
+      <ol className="space-y-4">
+        <li className="bg-[#cae4ff]">
+          <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
               <Image src="/nuro.jpg" alt="Logo" width={64} height={64} />
               <ol className="px-4">
@@ -32,30 +32,30 @@ export default function Experience() {
               </ol>
             </div>
             <div className="mx-3 my-2">
-              <ol className="list-disc">
-                <li className="py-0.5 first:pt-0 last:pb-0">
+              <ol className="list-disc space-y-1">
+                <li className="">
                   Defined and developed key metrics in data visualization
                   dashboards
                 </li>
-                <li className="py-0.5 first:pt-0 last:pb-0">
+                <li className="">
                   Collaborated with Product and Sales team to present dashboards
                   at a client-facing Product Demo
                 </li>
-                <li className="py-0.5 first:pt-0 last:pb-0">
+                <li className="">
                   Implemented comprehensive & robust data cleaning process to
                   reduce platform test errors systematically, reducing 30% of
                   the time bioinformaticians spent on housekeeping tasks
                 </li>
-                <li className="py-0.5 first:pt-0 last:pb-0">
+                <li className="">
                   Built, maintained, debugged infrastructure that streamlined
                   and scaled 100x patient profile simulation based on real-world
                   distribution to reduce manual labor
                 </li>
-                <li className="py-0.5 first:pt-0 last:pb-0">
+                <li className="">
                   Designed SQLAlchemy wrappers to scalably query OLAP
                   multi-dimensional array of data in PostgreSQL databases
                 </li>
-                <li className="py-0.5 first:pt-0 last:pb-0">
+                <li className="">
                   Integrated FreeMarker API with machine learning pipeline to
                   auto-generate free-text notes for NLP pre-training preparation
                 </li>
@@ -63,8 +63,8 @@ export default function Experience() {
             </div>
           </div>
         </li>
-        <li className="my-4 first:mt-0 last:mb-0">
-          <div className="w-auto bg-blue-100 px-6 py-4">
+        <li className="bg-[#cae4ff]">
+          <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
               <Image src="/nuro.jpg" alt="Logo" width={64} height={64} />
               <ol className="px-4">
@@ -74,54 +74,81 @@ export default function Experience() {
                 </li>
                 <li>
                   <MdAlternateEmail className="mr-1 inline-block h-6 w-6 align-bottom" />
-                  Carta Healthcare
+                  Duke University, School of Medicine
                 </li>
                 <li>
                   <span className="mr-1 text-gray-500">
-                    May 2022 – Aug 2022
+                    Jun 2021 – Aug 2021
                   </span>
                   <span className="mx-1 text-gray-500 max-lg:hidden">|</span>
                   <span className="mx-1 text-gray-500 max-lg:hidden">
-                    San Mateo, CA
+                    Durham, NC
                   </span>
                 </li>
               </ol>
             </div>
             <div className="mx-3 my-2">
-              <ol className="list-disc">
-                <li className="py-0.5 first:pt-0 last:pb-0">
-                  Defined and developed key metrics in data visualization
-                  dashboards
+              <ol className="list-disc space-y-1">
+                <li className="">
+                  Led a team of 3 undergraduate and postdoc students to craft a
+                  rare disease genomic data science project end-to-end
                 </li>
-                <li className="py-0.5 first:pt-0 last:pb-0">
-                  Collaborated with Product and Sales team to present dashboards
-                  at a client-facing Product Demo
+                <li className="">
+                  Identified 20 significant genes out of 35,000 using
+                  generalized linear model and effect size shrinkage
                 </li>
-                <li className="py-0.5 first:pt-0 last:pb-0">
-                  Implemented comprehensive & robust data cleaning process to
-                  reduce platform test errors systematically, reducing 30% of
-                  the time bioinformaticians spent on housekeeping tasks
+                <li className="">
+                  Publishing a manuscript (in review) and designing future
+                  research projects with clinical researchers and pediatricians
                 </li>
-                <li className="py-0.5 first:pt-0 last:pb-0">
-                  Built, maintained, debugged infrastructure that streamlined
-                  and scaled 100x patient profile simulation based on real-world
-                  distribution to reduce manual labor
-                </li>
-                <li className="py-0.5 first:pt-0 last:pb-0">
-                  Designed SQLAlchemy wrappers to scalably query OLAP
-                  multi-dimensional array of data in PostgreSQL databases
-                </li>
-                <li className="py-0.5 first:pt-0 last:pb-0">
-                  Integrated FreeMarker API with machine learning pipeline to
-                  auto-generate free-text notes for NLP pre-training preparation
+                <li className="">
+                  Mentored 2 incoming first-year researchers and drafted
+                  biomedical data science starter projects
                 </li>
               </ol>
             </div>
           </div>
         </li>
-        <li className="my-4 bg-blue-500 first:mt-0 last:mb-0">3</li>
-        <li className="my-4 bg-red-500 first:mt-0 last:mb-0">4</li>
+        <li className="bg-[#cae4ff]">
+          <div className="w-auto px-6 py-4">
+            <div className="my-2 flex shrink-0 flex-row items-center">
+              <Image src="/nuro.jpg" alt="Logo" width={64} height={64} />
+              <ol className="px-4">
+                <li>
+                  <MdWork className="mr-1 inline-block h-6 w-6 align-bottom" />
+                  Research & Teaching Assistant
+                </li>
+                <li>
+                  <MdAlternateEmail className="mr-1 inline-block h-6 w-6 align-bottom" />
+                  Duke University
+                </li>
+                <li>
+                  <span className="mr-1 text-gray-500">
+                    Aug 2021 – Aug 2023
+                  </span>
+                  <span className="mx-1 text-gray-500 max-lg:hidden">|</span>
+                  <span className="mx-1 text-gray-500 max-lg:hidden">
+                    Durham, NC
+                  </span>
+                </li>
+              </ol>
+            </div>
+            <div className="mx-3 my-2">
+              <ol className="list-disc space-y-1">
+                <li className="">
+                  Authored technical tutorial for doctors on recurrent event
+                  survival analysis methods to examine large claim datasets
+                </li>
+                <li className="">
+                  Authored manuscript (in review) on the impact of confounding
+                  medical interventions in electronic health records data
+                </li>
+              </ol>
+            </div>
+          </div>
+        </li>
       </ol>
+      <button className="mx-3 my-6">View Full Résumé</button>
     </div>
   );
 }

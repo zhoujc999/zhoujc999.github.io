@@ -17,9 +17,10 @@ export default function Home() {
           <span className="py-2">
             Based in Washington DC, I&apos;m a software engineer by day,
             photographer by night. Prior to joining Mastercard, I graduated from
-            Duke with a B.S. in Statistics and minors in CS and Neuroscience. My
-            other hobbies include playing the piano, cooking, and reading.
-            Please feel free to contact me for any questions or comments!
+            Duke University with a B.S. in Statistics and minors in CS and
+            Neuroscience. My other hobbies include playing the piano, cooking,
+            and reading. Please feel free to contact me for any questions or
+            comments!
           </span>
         </p>
         <div className="py-4">

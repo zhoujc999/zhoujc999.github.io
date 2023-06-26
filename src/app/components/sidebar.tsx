@@ -8,7 +8,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <nav className="h-full bg-white p-16">
+    <nav className="h-full p-16">
       <div className="h-16 w-32 py-8">
         <Link href="#">
           <Image
