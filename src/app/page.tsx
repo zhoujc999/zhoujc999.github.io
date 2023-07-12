@@ -5,6 +5,7 @@ import {
   FaRegClock,
   FaRegEnvelope,
 } from "react-icons/fa";
+import CalButton from "./components/cal-button";
 import Link from "next/link";
 import Profile from "./components/profile";
 
@@ -16,7 +17,7 @@ export default function Home() {
           <span className="block text-xl">Hi, I&apos;m</span>
           <span className="block py-2 text-3xl font-medium">Yihan Shi!</span>
           <span className="py-2">
-            Based in Washington DC, I&apos;m a software engineer by day,
+            Based in Washington DC, I&apos;m a software engineer by day, and
             photographer by night. Prior to joining Mastercard, I graduated from
             Duke University with a B.S. in Statistics and minors in CS and
             Neuroscience. My other hobbies include playing the piano, cooking,
@@ -26,10 +27,7 @@ export default function Home() {
         </p>
         <div className="py-4">
           <div className="py-2">
-            <button className="mr-1 rounded-full border-2 border-[#52414c] px-2 py-1 transition hover:border-[#978d94] hover:text-[#978d94]">
-              <FaRegClock className="mr-1 inline-block align-middle " />
-              <span className="align-middle">Book My Time</span>
-            </button>
+            <CalButton />
             <Link
               href="mailto:yihan.shi@duke.edu"
               target="_blank"
