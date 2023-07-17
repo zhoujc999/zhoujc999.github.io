@@ -8,8 +8,8 @@ import { MdMenu, MdClose } from "react-icons/md";
 export default function Profile() {
   return (
     <div className="flex w-96 flex-col">
-      <div className="flex flex-row items-center justify-between bg-gray-200">
-        <div className="flex flex-row">
+      <div className="border-grey-50 flex flex-row items-center justify-between border-b-2 bg-slate-50 px-4 pb-2 pt-4">
+        <div className="flex flex-row gap-4">
           <div className="flex-none">
             <Link
               target="_blank"
@@ -20,8 +20,8 @@ export default function Profile() {
                 src="https://dummyimage.com/320x320.jpg"
                 alt="Logo"
                 className="rounded-full border border-[#e6dfd8]"
-                width={64}
-                height={64}
+                width={56}
+                height={56}
               />
             </Link>
           </div>
@@ -47,7 +47,7 @@ export default function Profile() {
           </Link>
         </div>
       </div>
-      <div className="grid grid-cols-3 grid-rows-2">
+      <div className="grid grid-cols-3 grid-rows-2 gap-1 bg-slate-50 p-4">
         <div>
           <Link
             target="_blank"
@@ -57,7 +57,7 @@ export default function Profile() {
             <Image
               src="https://dummyimage.com/320x320.jpg"
               alt="Logo"
-              className="rounded-lg border border-[#e6dfd8]"
+              className="rounded-md border border-[#e6dfd8]"
               width={256}
               height={256}
             />
@@ -72,7 +72,7 @@ export default function Profile() {
             <Image
               src="https://dummyimage.com/320x320.jpg"
               alt="Logo"
-              className="rounded-lg border border-[#e6dfd8]"
+              className="rounded-md border border-[#e6dfd8]"
               width={256}
               height={256}
             />
@@ -87,7 +87,7 @@ export default function Profile() {
             <Image
               src="https://dummyimage.com/320x320.jpg"
               alt="Logo"
-              className="rounded-lg border border-[#e6dfd8]"
+              className="rounded-md border border-[#e6dfd8]"
               width={256}
               height={256}
             />
@@ -102,7 +102,7 @@ export default function Profile() {
             <Image
               src="https://dummyimage.com/320x320.jpg"
               alt="Logo"
-              className="rounded-lg border border-[#e6dfd8]"
+              className="rounded-md border border-[#e6dfd8]"
               width={256}
               height={256}
             />
@@ -117,7 +117,7 @@ export default function Profile() {
             <Image
               src="https://dummyimage.com/320x320.jpg"
               alt="Logo"
-              className="rounded-lg border border-[#e6dfd8]"
+              className="rounded-md border border-[#e6dfd8]"
               width={256}
               height={256}
             />
@@ -132,14 +132,14 @@ export default function Profile() {
             <Image
               src="https://dummyimage.com/320x320.jpg"
               alt="Logo"
-              className="rounded-lg border border-[#e6dfd8]"
+              className="rounded-md border border-[#e6dfd8]"
               width={256}
               height={256}
             />
           </Link>
         </div>
       </div>
-      <div className="flex justify-stretch">
+      <div className="border-grey-50 flex justify-stretch border-t-2 bg-slate-50 px-4 pb-4 pt-2">
         <button className="grow rounded-md bg-blue-400">
           View full profile on Instagram
         </button>

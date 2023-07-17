@@ -73,14 +73,6 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <iframe
-          className="overflow-hidden"
-          loading="eager"
-          width={480}
-          height={480}
-          allowTransparency={true}
-          src="https://www.instagram.com/keep_lifepieces/embed"
-        ></iframe>
         <Profile />
       </div>
     </div>
