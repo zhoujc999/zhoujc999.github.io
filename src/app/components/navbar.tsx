@@ -11,7 +11,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="px-4 py-2 text-base">
+    <nav className="px-4 text-base">
       <div>
         <ol className="flex flex-row place-content-between items-center p-4">
           <li>
@@ -21,7 +21,7 @@ export default function Navbar() {
               }}
               href="/"
             >
-              <Image src="./next.svg" alt="Logo" width={96} height={48} />
+              <Image src="./yihan_shi.svg" alt="Logo" width={72} height={48} />
             </Link>
           </li>
           <li>

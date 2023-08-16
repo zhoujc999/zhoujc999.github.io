@@ -9,14 +9,14 @@ export default function Sidebar() {
 
   return (
     <nav className="h-full p-16">
-      <div className="h-16 w-32 py-8">
+      <div className="h-16 w-32 px-4">
         <Link href="#">
           <Image
-            className="inline-block"
-            src="./next.svg"
+            className=""
+            src="/yihan_shi.svg"
             alt="Logo"
             width={96}
-            height={48}
+            height={64}
           />
         </Link>
       </div>
