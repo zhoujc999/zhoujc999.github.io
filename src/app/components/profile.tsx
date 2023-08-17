@@ -7,8 +7,8 @@ import { MdMenu, MdClose } from "react-icons/md";
 
 export default function Profile() {
   return (
-    <div className="flex w-96 flex-col">
-      <div className="border-grey-50 flex flex-row items-center justify-between border-b-2 bg-slate-50 px-4 pb-2 pt-4">
+    <div className="flex w-96 flex-col border border-solid border-[#4a3b44]">
+      <div className="flex flex-row items-center justify-between border-b-2 bg-slate-50 px-4 pb-2 pt-4">
         <div className="flex flex-row gap-4">
           <div className="flex-none">
             <Link
@@ -140,9 +140,14 @@ export default function Profile() {
         </div>
       </div>
       <div className="border-grey-50 flex justify-stretch border-t-2 bg-slate-50 px-4 pb-4 pt-2">
-        <button className="grow rounded-md bg-blue-400">
+        <Link
+          href="https://www.instagram.com/keep_lifepieces/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="grow rounded-md bg-[#0095f6] text-center text-slate-50"
+        >
           View full profile on Instagram
-        </button>
+        </Link>
       </div>
     </div>
   );
