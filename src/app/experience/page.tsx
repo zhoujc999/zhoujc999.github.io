@@ -6,22 +6,25 @@ import Image from "next/image";
 export default function Experience() {
   return (
     <div className="lg:w-2/3 2xl:w-1/2">
-      <ol className="space-y-4">
-        <li className="bg-[#e6dfd8]">
+      <span className="text-3xl font-medium">Experience</span>
+      <ol className="space-y-4 py-4 text-sm">
+        <li className="bg-[#e6dfd8] border-solid border-black">
           <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
-              <Image src="/nuro.jpg" alt="Logo" width={64} height={64} />
+              <Image src="/nuro.jpg" alt="Logo" width={72} height={72} />
               <ol className="px-4">
                 <li>
                   <MdWork className="mr-1 inline-block h-6 w-6 align-bottom" />
-                  Data Science & Engineering Intern
+                  <span className="font-semibold">
+                    Data Science & Engineering Intern
+                  </span>
                 </li>
                 <li>
                   <MdAlternateEmail className="mr-1 inline-block h-6 w-6 align-bottom" />
                   Carta Healthcare
                 </li>
-                <li className="text-[#756770]">
-                  <span className="mr-1">May 2022 – Aug 2022</span>
+                <li className="text-[#737373]">
+                  <span className="mr-1">May 2022 — Aug 2022</span>
                   <span className="mx-1 max-lg:hidden">|</span>
                   <span className="mx-1 max-lg:hidden">San Mateo, CA</span>
                 </li>

@@ -26,14 +26,24 @@ export default function Home() {
           </span>
         </p>
         <div className="py-4">
-          <div className="py-2">
+          <div className="space-x-1 py-2">
             <CalButton />
+            <Link
+              href="https://google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="rounded-full border-2 border-[#52414c] px-2 py-1 transition hover:border-[#978d94] hover:text-[#978d94]">
+                <FaRegEnvelope className="mr-1 inline-block align-middle" />
+                <span className="align-middle">View my Resume</span>
+              </button>
+            </Link>
             <Link
               href="mailto:yihan.shi@duke.edu"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="ml-1 rounded-full border-2 border-[#52414c] px-2 py-1 transition hover:border-[#978d94] hover:text-[#978d94]">
+              <button className="rounded-full border-2 border-[#52414c] px-2 py-1 transition hover:border-[#978d94] hover:text-[#978d94]">
                 <FaRegEnvelope className="mr-1 inline-block align-middle" />
                 <span className="align-middle">Email Me</span>
               </button>

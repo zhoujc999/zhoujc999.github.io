@@ -33,8 +33,8 @@ export default function Profile() {
             >
               <p className="font-bold">keep_lifepieces</p>
             </Link>
-            <p>🫕 and 📸</p>
-            <p className="text-[#92898f]">Photographer</p>
+            <p className="text-xs text-[#737373]">🫕 and 📸</p>
+            <p className="text-xs text-[#737373]">Photographer</p>
           </div>
         </div>
         <div className="flex-none">
