@@ -11,7 +11,12 @@ export default function Experience() {
         <li className="border border-solid border-[#52414c] bg-slate-50">
           <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
-              <Image src="/nuro.jpg" alt="Logo" width={64} height={64} />
+              <Image
+                src="/carta_healthcare.jpg"
+                alt="Logo"
+                width={64}
+                height={64}
+              />
               <ol className="px-4">
                 <li>
                   <MdWork className="mr-1 inline-block h-5 w-5 align-bottom" />
@@ -24,7 +29,7 @@ export default function Experience() {
                   Carta Healthcare
                 </li>
                 <li className="text-[#737373]">
-                  <span className="mr-1">May 2022 — Aug 2022</span>
+                  <span className="mr-1">May 2022 – Aug 2022</span>
                   <span className="mx-1 max-lg:hidden">|</span>
                   <span className="mx-1 max-lg:hidden">San Mateo, CA</span>
                 </li>
@@ -62,41 +67,48 @@ export default function Experience() {
             </div>
           </div>
         </li>
-        <li className="bg-[#e6dfd8]">
+        <li className="border border-solid border-[#52414c] bg-slate-50">
           <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
-              <Image src="/nuro.jpg" alt="Logo" width={64} height={64} />
+              <Image
+                src="/duke_medicine.jpg"
+                alt="Logo"
+                width={64}
+                height={64}
+              />
               <ol className="px-4">
                 <li>
-                  <MdWork className="mr-1 inline-block h-6 w-6 align-bottom" />
-                  Summer Data Science Fellow
+                  <MdWork className="mr-1 inline-block h-5 w-5 align-bottom" />
+                  <span className="font-semibold">
+                    Summer Data Science Fellow
+                  </span>
                 </li>
                 <li>
-                  <MdAlternateEmail className="mr-1 inline-block h-6 w-6 align-bottom" />
+                  <MdAlternateEmail className="mr-1 inline-block h-5 w-5 align-bottom" />
                   Duke University, School of Medicine
                 </li>
-                <li className="text-[#756770]">
+                <li className="text-[#737373]">
                   <span className="mr-1">Jun 2021 – Aug 2021</span>
                   <span className="mx-1 max-lg:hidden">|</span>
                   <span className="mx-1 max-lg:hidden">Durham, NC</span>
                 </li>
               </ol>
             </div>
-            <div className="my-2">
-              <ol className="list-inside list-disc space-y-1">
-                <li className="">
+            <div className="my-1">
+              <ol className="list-outside list-disc space-y-1 px-3">
+                <li className="px-1">
                   Led a team of 3 undergraduate and postdoc students to craft a
                   rare disease genomic data science project end-to-end
                 </li>
-                <li className="">
+                <li className="px-1">
                   Identified 20 significant genes out of 35,000 using
                   generalized linear model and effect size shrinkage
                 </li>
-                <li className="">
+                <li className="px-1">
                   Publishing a manuscript (in review) and designing future
                   research projects with clinical researchers and pediatricians
                 </li>
-                <li className="">
+                <li className="px-1">
                   Mentored 2 incoming first-year researchers and drafted
                   biomedical data science starter projects
                 </li>
@@ -104,33 +116,35 @@ export default function Experience() {
             </div>
           </div>
         </li>
-        <li className="bg-[#e6dfd8]">
+        <li className="border border-solid border-[#52414c] bg-slate-50">
           <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
-              <Image src="/nuro.jpg" alt="Logo" width={64} height={64} />
+              <Image src="/duke.jpg" alt="Logo" width={64} height={64} />
               <ol className="px-4">
                 <li>
-                  <MdWork className="mr-1 inline-block h-6 w-6 align-bottom" />
-                  Research & Teaching Assistant
+                  <MdWork className="mr-1 inline-block h-5 w-5 align-bottom" />
+                  <span className="font-semibold">
+                    Research & Teaching Assistant
+                  </span>
                 </li>
                 <li>
-                  <MdAlternateEmail className="mr-1 inline-block h-6 w-6 align-bottom" />
+                  <MdAlternateEmail className="mr-1 inline-block h-5 w-5 align-bottom" />
                   Duke University
                 </li>
-                <li className="text-[#756770]">
+                <li className="text-[#737373]">
                   <span className="mr-1">Aug 2021 – Aug 2023</span>
                   <span className="mx-1 max-lg:hidden">|</span>
                   <span className="mx-1 max-lg:hidden">Durham, NC</span>
                 </li>
               </ol>
             </div>
-            <div className="my-2">
-              <ol className="list-inside list-disc space-y-1">
-                <li className="">
+            <div className="my-1">
+              <ol className="list-outside list-disc space-y-1 px-3">
+                <li className="px-1">
                   Authored technical tutorial for doctors on recurrent event
                   survival analysis methods to examine large claim datasets
                 </li>
-                <li className="">
+                <li className="px-1">
                   Authored manuscript (in review) on the impact of confounding
                   medical interventions in electronic health records data
                 </li>

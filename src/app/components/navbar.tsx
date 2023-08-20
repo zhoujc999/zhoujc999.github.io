@@ -21,7 +21,7 @@ export default function Navbar() {
               }}
               href="/"
             >
-              <Image src="./yihan_shi.svg" alt="Logo" width={72} height={48} />
+              <Image src="/yihan_shi.svg" alt="Logo" width={72} height={48} />
             </Link>
           </li>
           <li>
