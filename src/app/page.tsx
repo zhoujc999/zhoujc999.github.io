@@ -3,6 +3,7 @@ import {
   FaLinkedin,
   FaGithub,
   FaRegEnvelope,
+  FaRegFolderOpen,
 } from "react-icons/fa";
 import CalButton from "./components/cal-button";
 import Link from "next/link";
@@ -28,13 +29,13 @@ export default function Home() {
           <div className="space-x-1 py-2">
             <CalButton />
             <Link
-              href="https://google.com"
+              href="/yihan_shi_swe_23.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
               <button className="rounded-full border-2 border-[#52414c] px-2 py-1 transition hover:border-[#978d94] hover:text-[#978d94]">
-                <FaRegEnvelope className="mr-1 inline-block align-middle" />
-                <span className="align-middle">View my Resume</span>
+                <FaRegFolderOpen className="mr-1 inline-block align-middle" />
+                <span className="align-middle">View my Résumé</span>
               </button>
             </Link>
             <Link

@@ -140,9 +140,9 @@ export default function Profile() {
           href="https://www.instagram.com/keep_lifepieces/"
           target="_blank"
           rel="noopener noreferrer"
-          className="grow rounded-md bg-[#0095f6] text-center text-slate-50"
+          className="grow rounded-md bg-[#0095f6] text-center text-slate-50 hover:bg-[#33aaf8]"
         >
-          View full profile on Instagram
+          <span className="text-sm">View full profile on Instagram</span>
         </Link>
       </div>
     </div>

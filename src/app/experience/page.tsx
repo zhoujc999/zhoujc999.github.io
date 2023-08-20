@@ -153,7 +153,6 @@ export default function Experience() {
           </div>
         </li>
       </ol>
-      <button className="mx-3 my-6">View Full Résumé</button>
     </div>
   );
 }
