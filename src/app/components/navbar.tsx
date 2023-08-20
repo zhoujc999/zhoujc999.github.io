@@ -45,7 +45,7 @@ export default function Navbar() {
             ["Home", "/"],
             ["Experience", "/experience"],
             ["Portfolio", "/portfolio"],
-            ["Blog", "/blog"],
+            ["Shop", "/shop"],
           ].map(([title, url]) => (
             <li className="text-center">
               <Link
