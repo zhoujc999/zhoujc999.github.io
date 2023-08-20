@@ -28,7 +28,7 @@ export default function RootLayout({
           <header className="sticky top-0 max-h-screen w-80 bg-[#fceaea] max-md:hidden">
             <Sidebar />
           </header>
-          <main className="grow bg-[#fff8f0] px-8 py-20">{children}</main>
+          <main className="grow bg-[#f6f4eb] px-8 py-20">{children}</main>
         </div>
       </body>
     </html>

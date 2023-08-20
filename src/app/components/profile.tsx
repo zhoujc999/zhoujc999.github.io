@@ -1,13 +1,9 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MdMenu, MdClose } from "react-icons/md";
 
 export default function Profile() {
   return (
-    <div className="flex w-96 flex-col border border-solid border-[#4a3b44]">
+    <div className="flex w-96 flex-col border border-solid border-[#52414c]">
       <div className="flex flex-row items-center justify-between border-b-2 bg-slate-50 px-4 pb-2 pt-4">
         <div className="flex flex-row gap-4">
           <div className="flex-none">

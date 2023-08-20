@@ -2,7 +2,6 @@ import {
   FaInstagram,
   FaLinkedin,
   FaGithub,
-  FaRegClock,
   FaRegEnvelope,
 } from "react-icons/fa";
 import CalButton from "./components/cal-button";
