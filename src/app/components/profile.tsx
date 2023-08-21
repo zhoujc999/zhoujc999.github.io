@@ -14,7 +14,7 @@ export default function Profile() {
             >
               <Image
                 src="https://dummyimage.com/320x320.jpg"
-                alt="Logo"
+                alt="Profile"
                 className="rounded-full border border-[#e6dfd8]"
                 width={56}
                 height={56}
@@ -52,7 +52,7 @@ export default function Profile() {
           >
             <Image
               src="https://dummyimage.com/320x320.jpg"
-              alt="Logo"
+              alt="Photo"
               className="rounded-md border border-[#e6dfd8]"
               width={256}
               height={256}
@@ -67,7 +67,7 @@ export default function Profile() {
           >
             <Image
               src="https://dummyimage.com/320x320.jpg"
-              alt="Logo"
+              alt="Photo"
               className="rounded-md border border-[#e6dfd8]"
               width={256}
               height={256}
@@ -82,7 +82,7 @@ export default function Profile() {
           >
             <Image
               src="https://dummyimage.com/320x320.jpg"
-              alt="Logo"
+              alt="Photo"
               className="rounded-md border border-[#e6dfd8]"
               width={256}
               height={256}
@@ -97,7 +97,7 @@ export default function Profile() {
           >
             <Image
               src="https://dummyimage.com/320x320.jpg"
-              alt="Logo"
+              alt="Photo"
               className="rounded-md border border-[#e6dfd8]"
               width={256}
               height={256}
@@ -112,7 +112,7 @@ export default function Profile() {
           >
             <Image
               src="https://dummyimage.com/320x320.jpg"
-              alt="Logo"
+              alt="Photo"
               className="rounded-md border border-[#e6dfd8]"
               width={256}
               height={256}
@@ -127,7 +127,7 @@ export default function Profile() {
           >
             <Image
               src="https://dummyimage.com/320x320.jpg"
-              alt="Logo"
+              alt="Photo"
               className="rounded-md border border-[#e6dfd8]"
               width={256}
               height={256}

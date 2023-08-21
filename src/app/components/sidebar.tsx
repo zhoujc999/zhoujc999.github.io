@@ -28,7 +28,7 @@ export default function Sidebar() {
             ["Portfolio", "/portfolio"],
             ["Shop", "/shop"],
           ].map(([title, url]) => (
-            <li>
+            <li key={title}>
               <Link
                 className={`transition hover:text-[#978d94] ${
                   pathname === url ? "font-semibold" : ""

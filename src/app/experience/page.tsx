@@ -1,5 +1,3 @@
-import {} from "react-icons/fa";
-import Link from "next/link";
 import { MdWork, MdAlternateEmail } from "react-icons/md";
 import Image from "next/image";
 

@@ -47,7 +47,7 @@ export default function Navbar() {
             ["Portfolio", "/portfolio"],
             ["Shop", "/shop"],
           ].map(([title, url]) => (
-            <li className="text-center">
+            <li className="text-center" key={title}>
               <Link
                 onClick={() => {
                   setIsOpen(false);
