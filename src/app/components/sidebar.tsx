@@ -10,7 +10,7 @@ export default function Sidebar() {
   return (
     <nav className="h-full p-16">
       <div className="h-16 w-32 px-4">
-        <Link href="#">
+        <Link href="/">
           <Image
             className=""
             src="/yihan_shi.svg"
