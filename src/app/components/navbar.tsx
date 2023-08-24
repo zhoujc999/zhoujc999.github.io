@@ -13,7 +13,6 @@ export default function Navbar() {
   return (
     <nav className="px-4 text-base">
       <div>
-        <p>{pathname}</p>
         <ol className="flex flex-row place-content-between items-center p-4">
           <li>
             <Link
