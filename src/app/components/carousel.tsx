@@ -37,7 +37,6 @@ export default function Carousel() {
 
   return (
     <div className="group relative m-auto h-[780px] w-full max-w-[1400px] px-4 py-16">
-      <span className="text-3xl font-medium">Experience</span>
       <div className="h-full w-full rounded-2xl bg-cover bg-center duration-500">
         <Image
           src={slides[currentIndex].url}

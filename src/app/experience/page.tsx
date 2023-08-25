@@ -9,6 +9,47 @@ export default function Experience() {
         <li className="rounded-md bg-slate-50">
           <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
+              <Image src="/mastercard.jpg" alt="Logo" width={64} height={64} />
+              <ol className="px-4">
+                <li>
+                  <MdWork className="mr-1 inline-block h-5 w-5 align-bottom" />
+                  <span className="font-semibold">Software Engineer</span>
+                </li>
+                <li>
+                  <MdAlternateEmail className="mr-1 inline-block h-5 w-5 align-bottom" />
+                  Mastercard Data & Services
+                </li>
+                <li className="text-[#737373]">
+                  <span className="mr-1">Aug 2023 – Present</span>
+                  <span className="mx-1 max-lg:hidden">|</span>
+                  <span className="mx-1 max-lg:hidden">Arlington, VA</span>
+                </li>
+              </ol>
+            </div>
+            <div className="my-1">
+              <ol className="list-outside list-disc space-y-1 px-3">
+                <li className="px-1">
+                  Coordinating with the core product team to deprecate legacy
+                  web application written in ColdFusion, saving $2.5m in
+                  licensing cost
+                </li>
+                <li className="px-1">
+                  Developing new web app features using .NET framework, such as
+                  document controller, which is a central location for users to
+                  look up, sort, edit, upload, and delete documents
+                </li>
+                <li className="px-1">
+                  Implementing client-facing web front-end with React, directly
+                  serving enterprise customers such as McDonald’s, Walmart, and
+                  BofA
+                </li>
+              </ol>
+            </div>
+          </div>
+        </li>
+        <li className="rounded-md bg-slate-50">
+          <div className="w-auto px-6 py-4">
+            <div className="my-2 flex shrink-0 flex-row items-center">
               <Image
                 src="/carta_healthcare.jpg"
                 alt="Logo"
