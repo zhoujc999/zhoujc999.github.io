@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Profile() {
   return (
-    <div className="flex w-96 flex-col">
+    <div className="flex max-w-sm flex-col">
       <div className="flex flex-row items-center justify-between rounded-t-md border-b-2 bg-slate-50 px-4 pb-2 pt-4">
         <div className="flex flex-row gap-4">
           <div className="flex-none">

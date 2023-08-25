@@ -19,7 +19,7 @@ export default function CalButton() {
   return (
     <button
       data-cal-link="yihan-shi"
-      className="rounded-full border-2 border-[#52414c] px-2 py-1 transition hover:border-[#978d94] hover:text-[#978d94]"
+      className="my-1 rounded-full border-2 border-[#52414c] px-2 py-1 first-line:transition hover:border-[#978d94] hover:text-[#978d94]"
     >
       <FaRegClock className="mr-1 inline-block align-middle " />
       <span className="pointer-events-none align-middle">Book My Time</span>

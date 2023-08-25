@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 import { SetStateAction, useState } from "react";
-import { RxDotFilled, RxChevronLeft, RxChevronRight } from "react-icons/rx";
+import {
+  RxDot,
+  RxDotFilled,
+  RxChevronLeft,
+  RxChevronRight,
+} from "react-icons/rx";
 
 export default function Carousel() {
   const slides = [
@@ -36,14 +41,9 @@ export default function Carousel() {
   };
 
   return (
-    <div className="group relative m-auto h-[780px] w-full max-w-[1400px] px-4 py-16">
-      <div className="h-full w-full rounded-2xl bg-cover bg-center duration-500">
-        <Image
-          src={slides[currentIndex].url}
-          alt="Photo"
-          width={1280}
-          height={720}
-        />
+    <div className="group relative m-auto h-80 w-full py-4">
+      <div className="m-auto h-full w-full rounded-2xl duration-500">
+        <Image src={slides[currentIndex].url} alt="Photo" fill />
       </div>
       <div className="absolute left-5 top-[50%] hidden -translate-x-0 translate-y-[-50%] cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white group-hover:block">
         <RxChevronLeft onClick={prevSlide} size={30} />
@@ -58,7 +58,7 @@ export default function Carousel() {
             onClick={() => goToSlide(slideIndex)}
             className="cursor-pointer text-2xl"
           >
-            <RxDotFilled />
+            {slideIndex == currentIndex ? <RxDotFilled /> : <RxDot />}
           </div>
         ))}
       </div>

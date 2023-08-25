@@ -22,13 +22,15 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <div className="flex min-h-screen flex-row">
-          <header className="absolute z-10 w-full items-center bg-[#fceaea] md:hidden">
+          <header className="absolute z-10 w-full items-center bg-[#fceaea] lg:hidden">
             <Navbar />
           </header>
-          <header className="sticky top-0 max-h-screen w-80 bg-[#fceaea] max-md:hidden">
+          <header className="sticky top-0 max-h-screen w-1/5 bg-[#fceaea] max-lg:hidden 2xl:w-2/12">
             <Sidebar />
           </header>
-          <main className="grow bg-[#f6f4eb] px-8 py-20">{children}</main>
+          <main className="w-4/5 grow bg-[#f6f4eb] px-8 py-20 2xl:w-10/12">
+            {children}
+          </main>
         </div>
       </body>
     </html>

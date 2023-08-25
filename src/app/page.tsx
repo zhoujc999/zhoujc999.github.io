@@ -16,7 +16,7 @@ export default function Home() {
         <p>
           <span className="block text-xl">Hi, I’m</span>
           <span className="block py-2 text-3xl font-medium">Yihan Shi!</span>
-          <span className="py-2">
+          <span className="max-w-prose py-2">
             Based in Washington DC, I’m a software engineer by day, and
             photographer by night. Prior to joining Mastercard, I graduated from
             Duke University with a B.S. in Statistics and minors in CS and
@@ -25,15 +25,15 @@ export default function Home() {
             comments!
           </span>
         </p>
-        <div className="py-4">
-          <div className="space-x-1 py-2">
+        <div className="py-3">
+          <div className="flex-col space-x-1 py-2">
             <CalButton />
             <Link
               href="/yihan_shi_pm_24.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="rounded-full border-2 border-[#52414c] px-2 py-1 transition hover:border-[#978d94] hover:text-[#978d94]">
+              <button className="my-1 rounded-full border-2 border-[#52414c] px-2 py-1 transition hover:border-[#978d94] hover:text-[#978d94]">
                 <FaRegFolderOpen className="mr-1 inline-block align-middle" />
                 <span className="align-middle">View my Résumé</span>
               </button>
@@ -43,7 +43,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="rounded-full border-2 border-[#52414c] px-2 py-1 transition hover:border-[#978d94] hover:text-[#978d94]">
+              <button className="my-1 rounded-full border-2 border-[#52414c] px-2 py-1 transition hover:border-[#978d94] hover:text-[#978d94]">
                 <FaRegEnvelope className="mr-1 inline-block align-middle" />
                 <span className="align-middle">Email Me</span>
               </button>
