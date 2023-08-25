@@ -14,10 +14,10 @@ export default function Home() {
     <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
       <div>
         <p>
-          <span className="block text-xl">Hi, I&apos;m</span>
+          <span className="block text-xl">Hi, I’m</span>
           <span className="block py-2 text-3xl font-medium">Yihan Shi!</span>
           <span className="py-2">
-            Based in Washington DC, I&apos;m a software engineer by day, and
+            Based in Washington DC, I’m a software engineer by day, and
             photographer by night. Prior to joining Mastercard, I graduated from
             Duke University with a B.S. in Statistics and minors in CS and
             Neuroscience. My other hobbies include playing the piano, cooking,
@@ -29,7 +29,7 @@ export default function Home() {
           <div className="space-x-1 py-2">
             <CalButton />
             <Link
-              href="/yihan_shi_swe_23.pdf"
+              href="/yihan_shi_pm_24.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -39,7 +39,7 @@ export default function Home() {
               </button>
             </Link>
             <Link
-              href="mailto:yihan.shi@duke.edu"
+              href="mailto:yihan.shiwork@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
             >

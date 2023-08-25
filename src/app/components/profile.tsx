@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Profile() {
   return (
-    <div className="flex w-96 flex-col border border-solid border-[#52414c]">
-      <div className="flex flex-row items-center justify-between border-b-2 bg-slate-50 px-4 pb-2 pt-4">
+    <div className="flex w-96 flex-col">
+      <div className="flex flex-row items-center justify-between rounded-t-md border-b-2 bg-slate-50 px-4 pb-2 pt-4">
         <div className="flex flex-row gap-4">
           <div className="flex-none">
             <Link
@@ -135,7 +135,7 @@ export default function Profile() {
           </Link>
         </div>
       </div>
-      <div className="border-grey-50 flex justify-stretch border-t-2 bg-slate-50 px-4 pb-4 pt-2">
+      <div className="border-grey-50 flex justify-stretch rounded-b-md border-t-2 bg-slate-50 px-4 pb-4 pt-2">
         <Link
           href="https://www.instagram.com/keep_lifepieces/"
           target="_blank"
