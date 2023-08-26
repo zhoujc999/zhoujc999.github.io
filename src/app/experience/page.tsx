@@ -6,7 +6,7 @@ export default function Experience() {
     <div className="lg:w-2/3 2xl:w-1/2">
       <span className="text-3xl font-medium">Experience</span>
       <ol className="space-y-4 pt-6 text-sm">
-        <li className="rounded-md bg-slate-50">
+        <li className="rounded-md bg-white">
           <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
               <Image
@@ -47,7 +47,7 @@ export default function Experience() {
             </div>
           </div>
         </li>
-        <li className="rounded-md bg-slate-50">
+        <li className="rounded-md bg-white">
           <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
               <Image
@@ -106,7 +106,7 @@ export default function Experience() {
             </div>
           </div>
         </li>
-        <li className="rounded-md bg-slate-50">
+        <li className="rounded-md bg-white">
           <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
               <Image
@@ -155,7 +155,7 @@ export default function Experience() {
             </div>
           </div>
         </li>
-        <li className="rounded-md bg-slate-50">
+        <li className="rounded-md bg-white">
           <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
               <Image src="/icons/duke.jpg" alt="Logo" width={64} height={64} />
