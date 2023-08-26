@@ -29,7 +29,7 @@ export default function Home() {
           <div className="flex-col space-x-1 py-2">
             <CalButton />
             <Link
-              href="/yihan_shi_pm_24.pdf"
+              href="/documents/yihan_shi_pm_24.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
