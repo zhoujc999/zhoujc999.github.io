@@ -9,7 +9,12 @@ export default function Experience() {
         <li className="rounded-md bg-slate-50">
           <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
-              <Image src="/mastercard.jpg" alt="Logo" width={64} height={64} />
+              <Image
+                src="/icons/mastercard.jpg"
+                alt="Logo"
+                width={64}
+                height={64}
+              />
               <ol className="px-4">
                 <li>
                   <MdWork className="mr-1 inline-block h-5 w-5 align-bottom" />
@@ -29,11 +34,6 @@ export default function Experience() {
             <div className="my-1">
               <ol className="list-outside list-disc space-y-1 px-3">
                 <li className="px-1">
-                  Coordinating with the core product team to deprecate legacy
-                  web application written in ColdFusion, saving $2.5m in
-                  licensing cost
-                </li>
-                <li className="px-1">
                   Developing new web app features using .NET framework, such as
                   document controller, which is a central location for users to
                   look up, sort, edit, upload, and delete documents
@@ -51,7 +51,7 @@ export default function Experience() {
           <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
               <Image
-                src="/carta_healthcare.jpg"
+                src="/icons/carta_healthcare.jpg"
                 alt="Logo"
                 width={64}
                 height={64}
@@ -110,7 +110,7 @@ export default function Experience() {
           <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
               <Image
-                src="/duke_medicine.jpg"
+                src="/icons/duke_medicine.jpg"
                 alt="Logo"
                 width={64}
                 height={64}
@@ -158,7 +158,7 @@ export default function Experience() {
         <li className="rounded-md bg-slate-50">
           <div className="w-auto px-6 py-4">
             <div className="my-2 flex shrink-0 flex-row items-center">
-              <Image src="/duke.jpg" alt="Logo" width={64} height={64} />
+              <Image src="/icons/duke.jpg" alt="Logo" width={64} height={64} />
               <ol className="px-4">
                 <li>
                   <MdWork className="mr-1 inline-block h-5 w-5 align-bottom" />

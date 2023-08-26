@@ -39,7 +39,12 @@ export default function Profile() {
             rel="noopener noreferrer"
             href="https://www.instagram.com/"
           >
-            <Image src="/instagram.png" alt="Logo" width={32} height={32} />
+            <Image
+              src="/icons/instagram.png"
+              alt="Instagram Icon"
+              width={32}
+              height={32}
+            />
           </Link>
         </div>
       </div>

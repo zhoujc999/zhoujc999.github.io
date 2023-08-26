@@ -13,7 +13,7 @@ export default function Sidebar() {
         <Link href="/">
           <Image
             className=""
-            src="/yihan_shi.svg"
+            src="/icons/yihan_shi.svg"
             alt="Logo"
             width={96}
             height={64}
