@@ -13,9 +13,9 @@ export default function Profile() {
               href="https://www.instagram.com/keep_lifepieces/"
             >
               <Image
-                src="https://dummyimage.com/320x320.jpg"
+                src="/photos/profile.jpg"
                 alt="Profile"
-                className="rounded-full border border-[#e6dfd8]"
+                className="rounded-full"
                 width={56}
                 height={56}
               />
@@ -40,7 +40,7 @@ export default function Profile() {
             href="https://www.instagram.com/"
           >
             <Image
-              src="/icons/instagram.png"
+              src="/icons/instagram.svg"
               alt="Instagram Icon"
               width={32}
               height={32}
