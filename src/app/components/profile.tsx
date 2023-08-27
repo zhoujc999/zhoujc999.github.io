@@ -49,12 +49,13 @@ export default function Profile() {
         </div>
       </div>
       <div className="grid grid-cols-3 grid-rows-2 gap-1 border-y border-[#dbdbdb] bg-white p-4">
-        <div>
+        <div className="relative">
           <Link
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.instagram.com/p/CsX4Xl0ueKF/?img_index=1"
+            href="https://www.instagram.com/p/CsX4Xl0ueKF/"
           >
+            <div className="absolute h-full w-full rounded-md hover:bg-black hover:opacity-30"></div>
             <Image
               src="/photos/1.jpg"
               alt="Photo"
@@ -64,12 +65,13 @@ export default function Profile() {
             />
           </Link>
         </div>
-        <div>
+        <div className="relative">
           <Link
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.instagram.com/p/Cq4D-vuLVGk/?img_index=1"
+            href="https://www.instagram.com/p/Cq4D-vuLVGk/"
           >
+            <div className="absolute h-full w-full rounded-md hover:bg-black hover:opacity-30"></div>
             <Image
               src="/photos/2.jpg"
               alt="Photo"
@@ -79,12 +81,13 @@ export default function Profile() {
             />
           </Link>
         </div>
-        <div>
+        <div className="relative">
           <Link
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.instagram.com/p/CpjK1J3rj20/?img_index=1"
+            href="https://www.instagram.com/p/CpjK1J3rj20/"
           >
+            <div className="absolute h-full w-full rounded-md hover:bg-black hover:opacity-30"></div>
             <Image
               src="/photos/3.jpg"
               alt="Photo"
@@ -94,12 +97,13 @@ export default function Profile() {
             />
           </Link>
         </div>
-        <div>
+        <div className="relative">
           <Link
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.instagram.com/p/Cs-LW9aRB8I/?img_index=1"
+            href="https://www.instagram.com/p/Cs-LW9aRB8I/"
           >
+            <div className="absolute h-full w-full rounded-md hover:bg-black hover:opacity-30"></div>
             <Image
               src="/photos/4.jpg"
               alt="Photo"
@@ -109,12 +113,13 @@ export default function Profile() {
             />
           </Link>
         </div>
-        <div>
+        <div className="relative">
           <Link
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.instagram.com/p/Cs-LLOfxC1s/?img_index=1"
+            href="https://www.instagram.com/p/Cs-LLOfxC1s/"
           >
+            <div className="absolute h-full w-full rounded-md hover:bg-black hover:opacity-30"></div>
             <Image
               src="/photos/5.jpg"
               alt="Photo"
@@ -124,12 +129,14 @@ export default function Profile() {
             />
           </Link>
         </div>
-        <div>
+        <div className="relative">
           <Link
+            className=""
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.instagram.com/p/CpjKrZKr_sq/?img_index=1"
+            href="https://www.instagram.com/p/CpjKrZKr_sq/"
           >
+            <div className="absolute h-full w-full rounded-md hover:bg-black hover:opacity-30"></div>
             <Image
               src="/photos/6.jpg"
               alt="Photo"
@@ -145,7 +152,7 @@ export default function Profile() {
           href="https://www.instagram.com/keep_lifepieces/"
           target="_blank"
           rel="noopener noreferrer"
-          className="grow rounded-md bg-[#0095f6] text-center text-white hover:bg-[#33aaf8]"
+          className="grow rounded-md bg-[#0095f6] text-center text-white transition hover:bg-[#33aaf8]"
         >
           <span className="text-sm">View full profile on Instagram</span>
         </Link>
