@@ -6,7 +6,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "dummyimage.com",
+        hostname: "mcdn.wallpapersafari.com",
         port: "",
         pathname: "/**",
       },
