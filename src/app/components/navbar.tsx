@@ -3,71 +3,33 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MdMenu, MdClose } from "react-icons/md";
-import { usePathname } from "next/navigation";
+import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+  const sectionHeaders = ["Profile", "About", "Experience"];
+  const [currentIndex, setCurrentIndex] = useState(1);
+
+  const prevSection = () => {
+    const isFirstSection = currentIndex === 0;
+    const newIndex = isFirstSection ? currentIndex : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const nextSection = () => {
+    const isLastSection = currentIndex === sectionHeaders.length - 1;
+    const newIndex = isLastSection ? currentIndex : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
 
   return (
-    <nav className="px-4 text-base">
-      <div>
-        <ol className="flex flex-row place-content-between items-center p-4">
-          <li>
-            <Link
-              onClick={() => {
-                setIsOpen(false);
-              }}
-              href="/"
-            >
-              <Image
-                src="/icons/yihan_shi.svg"
-                alt="Logo"
-                width={72}
-                height={48}
-              />
-            </Link>
-          </li>
-          <li>
-            <button
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
-              {isOpen ? (
-                <MdClose className="h-6 w-6 transition hover:text-[#978d94]" />
-              ) : (
-                <MdMenu className="h-6 w-6 transition hover:text-[#978d94]" />
-              )}
-            </button>
-          </li>
-        </ol>
-      </div>
-      <div className={`${isOpen ? "" : "hidden"} pb-2 pt-6`}>
-        <ol className="flex flex-col space-y-4">
-          {[
-            ["Home", "/"],
-            ["Experience", "/experience"],
-            ["Portfolio", "/portfolio"],
-            // ["Shop", "/shop"],
-          ].map(([title, url]) => (
-            <li className="text-center" key={title}>
-              <Link
-                onClick={() => {
-                  setIsOpen(false);
-                }}
-                className={`transition hover:text-[#978d94] ${
-                  pathname === url ? "font-semibold" : ""
-                }`}
-                href={url}
-              >
-                {title}
-              </Link>
-            </li>
-          ))}
-        </ol>
-      </div>
+    <nav className="flex h-12 items-center px-8">
+      <ul className="flex flex-grow flex-row place-content-between items-center text-white">
+        <button className="rounded-full p-2" onClick={prevSection}>
+          <MdArrowBackIos />
+        </button>
+        <li>{sectionHeaders.at(currentIndex)}</li>
+        <MdArrowForwardIos onClick={nextSection}>z</MdArrowForwardIos>
+      </ul>
     </nav>
   );
 }
