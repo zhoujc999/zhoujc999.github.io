@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  output: "export",
+  skipTrailingSlashRedirect: true,
+  images: {
+    remotePatterns: [],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
