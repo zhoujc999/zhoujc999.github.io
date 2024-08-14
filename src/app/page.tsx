@@ -45,7 +45,7 @@ export default function Home() {
         />
       </header>
       <div className="flex flex-grow max-md:hidden">
-        <header className="w-80 border-r bg-white px-12 lg:w-96">
+        <header className="w-80 border-r bg-white px-12 md:min-w-[20rem] lg:min-w-[24rem]">
           <Profile />
         </header>
         <main className="flex-auto bg-[#f0f5f9]">
