@@ -10,9 +10,9 @@ import {
 
 export default function Profile() {
   const linkStyle: string =
-    "text-blue-600 visited:text-purple-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-900";
+    "text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800";
   return (
-    <div className="items-left p-6 flex h-full flex-col">
+    <div className="items-left flex h-full flex-col p-6">
       <Image
         className="my-4 self-center rounded-full"
         src="/photos/profile.jpg"
@@ -21,7 +21,9 @@ export default function Profile() {
         height={160}
       />
 
-      <h1 className="my-2 self-center text-3xl font-medium">Jingchao Zhou</h1>
+      <h1 className="my-2 self-center text-3xl font-medium md:text-2xl">
+        Jingchao Zhou
+      </h1>
 
       <ol className=" my-4 flex flex-col gap-4">
         <li className="flex flex-row items-center gap-4">
