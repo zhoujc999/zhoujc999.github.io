@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FaBriefcase, FaAt } from "react-icons/fa6";
+import Markdown from "react-markdown";
 
 export interface ResearchContent {
   readonly imageSrc: string;
@@ -40,7 +41,9 @@ export default function ResearchCard({
       </div>
       <ul className="list-disc space-y-1 pl-6 text-sm">
         {details.map((detail, index) => (
-          <li key={index}>{detail}</li>
+          <li key={index}>
+            <Markdown>{detail}</Markdown>
+          </li>
         ))}
       </ul>
     </div>
