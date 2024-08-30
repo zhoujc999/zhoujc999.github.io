@@ -4,7 +4,7 @@ const experience1: ExperienceContent = {
   imageSrc: "/icons/nuro.jpg",
   position: "Software Engineer",
   company: "Nuro",
-  description: "Jun 2021 – Present | Mountain View, CA",
+  description: "Jun 2021 – Aug 2024 | Mountain View, CA",
   details: [
     "Led the analysis efforts for improving the speed and \
       reliability of the vehicle start-up process, which \
@@ -12,7 +12,7 @@ const experience1: ExperienceContent = {
       from operations, hardware, and autonomy teams",
     "Architected and implemented an Extract, Transform, Load (ETL) \
       pipeline that processes 1M+ raw vehicle data daily from the \
-      fleet through Google Pub/Sub into reliability and performance \
+      fleet through **Google Pub/Sub** into reliability and performance \
       metrics",
     "Created and deployed a fault-injection framework to scalably \
       test 70K+ failure modes across the autonomy stack in the \
@@ -23,7 +23,7 @@ const experience1: ExperienceContent = {
       simulation, achieving a 50% reduction in turnaround time \
       through process parallelization",
     "Revamped the weekly onboard systems report, cutting preparation \
-      time by 60% with Kubernetes, gRPC, and ReTool for enhanced \
+      time by 60% with **Kubernetes** and **ReTool** for enhanced \
       process efficiency",
   ],
 };
@@ -38,8 +38,8 @@ const experience2: ExperienceContent = {
       test and control groups and added a new analysis method in the \
       test simulator",
     "Implemented usability improvements including front-end redesign \
-      for the test simulator in React and TypeScript",
-    "Set up a workflow that uses Splunk to query for persistent unit \
+      for the test simulator in **React** and **TypeScript**",
+    "Set up a workflow that uses **Splunk** to query for persistent unit \
       test failures in Jenkins logs and notifies teams through Slack",
   ],
 };
@@ -50,27 +50,28 @@ const experience3: ExperienceContent = {
   company: "Nutanix",
   description: "May 2019 – Aug 2019 | San Jose, CA",
   details: [
-    "Developed a microservice using gRPC to manage VM backups and \
-      enable asynchronous backup scheduling between VM hypervisors and \
-      the backup service",
-    "Implemented a new backup workflow that clones a VM instance as an \
-      image instead of taking an immutable snapshot",
+    " Engineered a **gRPC**-based microservice to streamline Virtual \
+      Machine (VM) backup management, facilitating asynchronous backup \
+      scheduling among VM hypervisors and the central backup service",
+    "Revised the backup process by implementing a new workflow that clones \
+      VM instances to images, improving data integrity compared to \
+      traditional immutable snapshots",
   ],
 };
 
 const experience4: ExperienceContent = {
   imageSrc: "/icons/duke_cs.jpg",
-  position: "Undergraduate Teaching Assistant",
-  company: "Duke University Department of CS",
+  position: "Undergraduate TA",
+  company: "Duke University Dept. of CS",
   description: "May 2018 – Dec 2019 | Durham, NC",
   details: [
-    "Assisted in teaching CS 250: Computer Architecture and \
-      CS 230: Discrete Mathematics for CS",
+    "Assisted in teaching *CS 250: Computer Architecture* and \
+      *CS 230: Discrete Mathematics for CS*",
     "Duties include: grading homework assignments and exams; leading \
       out of class recitation sections with 25 students; holding office \
       hours; preparing study materials; responding to student questions",
     "Topics covered include: C, assembly (MIPS), processor design, memory \
-      and I/OS",
+      and I/O",
   ],
 };
 

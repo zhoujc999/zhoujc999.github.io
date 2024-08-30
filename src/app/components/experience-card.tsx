@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FaBriefcase, FaAt } from "react-icons/fa6";
+import Markdown from "react-markdown";
 
 export interface ExperienceContent {
   readonly imageSrc: string;
@@ -26,7 +27,7 @@ export default function ExperienceCard({
           width={64}
           height={64}
         />
-        <ul className="leading-tight p-2">
+        <ul className="p-2 leading-tight">
           <li className="flex flex-row items-center gap-2">
             <FaBriefcase />
             <h4 className="font-semibold">{position}</h4>
@@ -40,7 +41,9 @@ export default function ExperienceCard({
       </div>
       <ul className="list-disc space-y-1 pl-6 text-sm">
         {details.map((detail, index) => (
-          <li key={index}>{detail}</li>
+          <li key={index}>
+            <Markdown>{detail}</Markdown>
+          </li>
         ))}
       </ul>
     </div>

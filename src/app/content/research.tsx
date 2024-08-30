@@ -4,11 +4,11 @@ const research1: ResearchContent = {
   imageSrc: "/icons/berkeley.jpg",
   position: "Graduate Researcher",
   company: "Berkeley EECS Department",
-  description: "October 2020 – May 2021 | Berkeley, CA",
+  description: "Oct 2020 – May 2021 | Berkeley, CA",
   details: [
-    "Co-authored and published “WIP: The Cyber-Physical Immune \
-      System” in Proceedings of the 2021 International Conference \
-      on Embedded Software (EMSOFT ’21)",
+    "Co-authored and published [*WIP: The Cyber-Physical Immune \
+      System*](https://doi.org/10.1145/3477244.3477621) in *Proceedings \
+      of the 2021 International Conference on Embedded Software (EMSOFT ’21)*",
     "Proposed a conceptual approach to secure Cyber-Physical Systems \
       (CPSs) by deploying an independent network of monitoring components \
       that adapts to the changing environment and reports threats or \
