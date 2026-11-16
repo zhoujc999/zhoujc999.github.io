@@ -1,0 +1,16 @@
+---
+interface Props {
+  /** Used as the heading's id so the section can point at it with aria-labelledby. */
+  id: string;
+  title: string;
+  /** Short decorative marker shown above the title, e.g. "01". */
+  index?: string;
+}
+
+const { id, title, index } = Astro.props;
+---
+
+<header class="section-heading" data-reveal>
+  {index && <p class="section-heading__index mono" aria-hidden="true">{index}</p>}
+  <h2 class="section-title" id={id}>{title}</h2>
+</header>

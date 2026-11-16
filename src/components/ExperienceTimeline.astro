@@ -1,0 +1,93 @@
+---
+import { experiences } from "../data/experience";
+import ExperienceEntry from "./ExperienceEntry.astro";
+import SectionHeading from "./SectionHeading.astro";
+---
+
+<section class="section" id="experience" aria-labelledby="experience-title">
+  <div class="container">
+    <SectionHeading id="experience-title" title="Experience" index="01" />
+    <!-- The rail is decorative: ::before is the static line, the span is the scroll-filled part. -->
+    <div class="timeline" data-timeline>
+      <span class="timeline__progress" data-timeline-progress aria-hidden="true"></span>
+      <ol class="timeline__list" role="list">
+        {
+          experiences.map((entry) => (
+            <li class:list={["timeline__item", { "timeline__item--featured": entry.featured }]}>
+              <ExperienceEntry entry={entry} />
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    --rail-x: 0.3125rem;
+    --gutter: 1.5rem;
+    position: relative;
+    padding-left: var(--gutter);
+  }
+
+  .timeline::before,
+  .timeline__progress {
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0;
+    left: var(--rail-x);
+  }
+
+  .timeline::before {
+    width: 1px;
+    background: var(--color-border);
+    content: "";
+  }
+
+  /* Hidden until the script sets --timeline-progress; never animates layout. */
+  .timeline__progress {
+    width: 2px;
+    margin-left: -0.5px;
+    background: var(--color-accent);
+    transform: scaleY(var(--timeline-progress, 0));
+    transform-origin: top;
+  }
+
+  .timeline__list {
+    display: grid;
+    gap: clamp(2rem, 4vw, 2.75rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .timeline__item {
+    --marker-top: 1.25rem;
+    position: relative;
+  }
+
+  /* Featured entries are padded cards, so their marker sits lower to stay level with the logo. */
+  .timeline__item--featured {
+    --marker-top: calc(clamp(1.25rem, 3vw, 2rem) + 1.25rem);
+  }
+
+  .timeline__item::before {
+    position: absolute;
+    top: var(--marker-top);
+    left: calc(var(--rail-x) - var(--gutter) - 0.25rem);
+    z-index: 1;
+    width: 0.5625rem;
+    height: 0.5625rem;
+    border: 2px solid var(--color-ink);
+    border-radius: 50%;
+    background: var(--color-bg);
+    content: "";
+  }
+
+  @media (min-width: 48rem) {
+    .timeline {
+      --gutter: 2.5rem;
+    }
+  }
+</style>
