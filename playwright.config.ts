@@ -13,7 +13,10 @@ export default defineConfig({
     trace: "retain-on-failure",
   },
   webServer: {
-    command: `npm run build && npm run preview -- --host 127.0.0.1 --port ${port}`,
+    // --ignore-lock keeps the preview in the foreground and untracked. Without it,
+    // Astro backgrounds the server when an AI agent runs the tests, and refuses to
+    // start when another preview is already running.
+    command: `npm run build && npm run preview -- --host 127.0.0.1 --port ${port} --ignore-lock`,
     url: baseURL,
     reuseExistingServer: false,
   },

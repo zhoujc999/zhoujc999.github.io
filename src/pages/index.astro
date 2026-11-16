@@ -1,6 +1,17 @@
 ---
-const pageTitle = "Jingchao Zhou | Senior Software Engineer";
+import { Image } from "astro:assets";
+import portrait from "../assets/profile.jpg";
+import ExperienceEntry from "../components/ExperienceEntry.astro";
+import ResearchEntry from "../components/ResearchEntry.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import { education } from "../data/education";
+import { experiences } from "../data/experience";
+import { profile } from "../data/profile";
+import { research } from "../data/research";
+
+const pageTitle = `${profile.name} | ${profile.role}`;
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,8 +20,83 @@ const pageTitle = "Jingchao Zhou | Senior Software Engineer";
     <title>{pageTitle}</title>
   </head>
   <body>
+    <header data-header>
+      <nav aria-label="Primary">
+        <a href="/">{profile.name}</a>
+        <ul>
+          <li><a href="#experience" data-nav-link>Experience</a></li>
+          <li><a href="#research" data-nav-link>Research</a></li>
+          <li><a href="#about" data-nav-link>About</a></li>
+        </ul>
+        <a href={profile.links.resume} target="_blank" rel="noopener noreferrer">Résumé</a>
+      </nav>
+    </header>
+
     <main id="main-content">
-      <h1>Jingchao Zhou</h1>
+      <section>
+        <p>{profile.roleLabel}</p>
+        <h1>{profile.name}</h1>
+        <p>{profile.introduction}</p>
+        <Image src={portrait} alt={profile.portraitAlt} width={320} height={320} />
+        <p>
+          <a href={profile.links.resume} target="_blank" rel="noopener noreferrer">View résumé</a>
+          <a href={profile.links.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href={profile.links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </p>
+      </section>
+
+      <section aria-label="Impact">
+        <ul>
+          {
+            profile.metrics.map((metric) => (
+              <li>
+                <p>
+                  {metric.value} {metric.unit}
+                </p>
+                <p>{metric.caption}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section id="experience" aria-labelledby="experience-title">
+        <SectionHeading id="experience-title" title="Experience" />
+        {experiences.map((entry) => <ExperienceEntry entry={entry} />)}
+      </section>
+
+      <section id="research" aria-labelledby="research-title">
+        <SectionHeading id="research-title" title="Research" />
+        {research.map((entry) => <ResearchEntry entry={entry} />)}
+      </section>
+
+      <section id="about" aria-labelledby="about-title">
+        <SectionHeading id="about-title" title="About" />
+        <p data-reveal>{profile.about}</p>
+        <h3>Education</h3>
+        <ul>
+          {
+            education.map((school) => (
+              <li>
+                {school.school}, {school.classOf}: {school.credentials.join(", ")}. {school.location}
+              </li>
+            ))
+          }
+        </ul>
+        <h3>Interests</h3>
+        <ul>
+          {[...profile.interests.technical, ...profile.interests.personal].map((interest) => (
+            <li>{interest}</li>
+          ))}
+        </ul>
+      </section>
     </main>
+
+    <footer>
+      <p>{profile.name} · {profile.location} · {profile.callsign}</p>
+      <a href={profile.links.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href={profile.links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href={profile.links.resume} target="_blank" rel="noopener noreferrer">Résumé</a>
+    </footer>
   </body>
 </html>
