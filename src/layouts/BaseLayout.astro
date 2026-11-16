@@ -61,5 +61,8 @@ const imageURL = new URL(image, Astro.site);
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <slot />
+    <script>
+      import "../scripts/motion";
+    </script>
   </body>
 </html>
