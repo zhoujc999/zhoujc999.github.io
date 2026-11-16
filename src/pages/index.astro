@@ -4,6 +4,7 @@ import portrait from "../assets/profile.jpg";
 import ExperienceEntry from "../components/ExperienceEntry.astro";
 import ResearchEntry from "../components/ResearchEntry.astro";
 import SectionHeading from "../components/SectionHeading.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import { education } from "../data/education";
 import { experiences } from "../data/experience";
 import { profile } from "../data/profile";
@@ -12,16 +13,9 @@ import { research } from "../data/research";
 const pageTitle = `${profile.name} | ${profile.role}`;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
+<BaseLayout title={pageTitle} description={profile.metaDescription}>
     <header data-header>
-      <nav aria-label="Primary">
+      <nav class="container" aria-label="Primary">
         <a href="/">{profile.name}</a>
         <ul>
           <li><a href="#experience" data-nav-link>Experience</a></li>
@@ -33,7 +27,7 @@ const pageTitle = `${profile.name} | ${profile.role}`;
     </header>
 
     <main id="main-content">
-      <section>
+      <section class="container">
         <p>{profile.roleLabel}</p>
         <h1>{profile.name}</h1>
         <p>{profile.introduction}</p>
@@ -45,7 +39,7 @@ const pageTitle = `${profile.name} | ${profile.role}`;
         </p>
       </section>
 
-      <section aria-label="Impact">
+      <section class="container" aria-label="Impact">
         <ul>
           {
             profile.metrics.map((metric) => (
@@ -60,17 +54,17 @@ const pageTitle = `${profile.name} | ${profile.role}`;
         </ul>
       </section>
 
-      <section id="experience" aria-labelledby="experience-title">
+      <section class="section container" id="experience" aria-labelledby="experience-title">
         <SectionHeading id="experience-title" title="Experience" />
         {experiences.map((entry) => <ExperienceEntry entry={entry} />)}
       </section>
 
-      <section id="research" aria-labelledby="research-title">
+      <section class="section container" id="research" aria-labelledby="research-title">
         <SectionHeading id="research-title" title="Research" />
         {research.map((entry) => <ResearchEntry entry={entry} />)}
       </section>
 
-      <section id="about" aria-labelledby="about-title">
+      <section class="section container" id="about" aria-labelledby="about-title">
         <SectionHeading id="about-title" title="About" />
         <p data-reveal>{profile.about}</p>
         <h3>Education</h3>
@@ -92,11 +86,10 @@ const pageTitle = `${profile.name} | ${profile.role}`;
       </section>
     </main>
 
-    <footer>
+    <footer class="container">
       <p>{profile.name} · {profile.location} · {profile.callsign}</p>
       <a href={profile.links.github} target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href={profile.links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href={profile.links.resume} target="_blank" rel="noopener noreferrer">Résumé</a>
     </footer>
-  </body>
-</html>
+</BaseLayout>
