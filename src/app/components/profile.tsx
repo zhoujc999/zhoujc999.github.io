@@ -39,7 +39,7 @@ export default function Profile() {
         </li>
         <li className="flex flex-row items-center gap-4">
           <FaCity className="h-6 w-6 fill-gray-500" />
-          Mountain View, CA
+          New York, NY
         </li>
         <li className="flex flex-row items-center gap-4">
           <FaFileLines className="h-6 w-6 fill-gray-500" />
