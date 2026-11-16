@@ -1,7 +1,7 @@
 import { ExperienceContent } from "../components/experience-card";
 
 const experience1: ExperienceContent = {
-  imageSrc: "/icons/nuro.jpg",
+  imageSrc: "/icons/ramp.jpg",
   position: "Senior Software Engineer",
   company: "Ramp",
   description: "Aug 2024 – Present | New York, NY",
