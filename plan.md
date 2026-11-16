@@ -10,7 +10,7 @@
 
 **Approved design:** Light “engineering editorial”; warm off-white background, near-black text, cobalt accent, Geist typography, hairline borders, subtle shadows, one restrained motion language, and a scroll-filled experience timeline as the only signature scroll effect.
 
-**Execution context:** Work in a dedicated branch/worktree. Do not push or merge as part of these tasks. Preserve `/documents/resume.pdf`, the root production URL, and all existing external profile/publication links.
+**Execution context:** Work in a dedicated branch/worktree. Do not push or merge as part of these tasks. Preserve the root production URL and all existing external profile/publication links. (After the rebuild shipped, the résumé moved from `/documents/resume.pdf` to `/jingchao-zhou-resume.pdf` so the saved file carries the name.)
 
 ---
 
@@ -63,7 +63,7 @@ This is new wording written for the redesign. The rules elsewhere in this plan a
 - Move: `public/photos/profile.jpg` → `src/assets/profile.jpg`
 - Move: `src/app/favicon.ico` → `public/favicon.ico`
 - Move used company/institution images from `public/icons/` → `src/assets/logos/`
-- Preserve: `public/documents/resume.pdf`, `public/.nojekyll`
+- Preserve: the résumé PDF (now `public/jingchao-zhou-resume.pdf`), `public/.nojekyll`
 - Retain temporarily for content migration: `src/app/` and the legacy config files
 
 **Step 1: Verify the starting state**
@@ -252,7 +252,7 @@ Expected before committing: `git status --short` lists no `dist/` or `.astro/` p
 - Exactly one `main` and one level-one heading exist.
 - Seven `[data-experience-entry]` and two `[data-research-entry]` nodes exist at desktop and mobile widths.
 - Ramp, Nuro, Mastercard, Nutanix, Duke CS, Duke China-US Summit, and IMRE appear in that order.
-- The résumé link resolves to `/documents/resume.pdf`.
+- The résumé link resolves to `/jingchao-zhou-resume.pdf`.
 - The paper link resolves to `https://doi.org/10.1145/3477244.3477621` with safe external-link attributes.
 - The rendered text contains no raw Markdown syntax (no `*CS 250` and no `](`).
 - No Previous/Next carousel controls exist.
@@ -327,7 +327,7 @@ After every old content string has been migrated, delete `src/app/`, `next.confi
 Run:
 ```bash
 npm run check && npm test -- tests/content.spec.ts
-test -f dist/documents/resume.pdf
+test -f dist/jingchao-zhou-resume.pdf
 grep -F 'doi.org/10.1145/3477244.3477621' dist/index.html
 ```
 Expected: all content tests PASS; résumé and DOI link exist in static output.

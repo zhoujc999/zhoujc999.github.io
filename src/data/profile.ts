@@ -48,7 +48,7 @@ export const profile: Profile = {
   links: {
     github: "https://github.com/zhoujc999",
     linkedin: "https://www.linkedin.com/in/jingchaozhou/",
-    resume: "/documents/resume.pdf",
+    resume: "/jingchao-zhou-resume.pdf",
   },
   metrics: [
     {

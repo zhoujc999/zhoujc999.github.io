@@ -49,7 +49,7 @@ test("every in-page link has exactly one target and ids are unique", async ({ pa
 });
 
 test("the résumé is served as a PDF", async ({ request }) => {
-  const response = await request.get("/documents/resume.pdf");
+  const response = await request.get("/jingchao-zhou-resume.pdf");
 
   expect(response.status()).toBe(200);
   expect(response.headers()["content-type"]).toContain("application/pdf");

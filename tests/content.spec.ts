@@ -49,7 +49,7 @@ test("every résumé link points at the PDF", async ({ page }) => {
   const links = page.getByRole("link", { name: /résumé/i });
   expect(await links.count()).toBeGreaterThan(0);
   for (const link of await links.all()) {
-    await expect(link).toHaveAttribute("href", "/documents/resume.pdf");
+    await expect(link).toHaveAttribute("href", "/jingchao-zhou-resume.pdf");
   }
 });
 

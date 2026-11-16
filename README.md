@@ -41,8 +41,9 @@ All content lives in typed data files. Edit the data; the components pick it up.
 
 Other assets:
 
-- **Résumé:** replace `public/documents/resume.pdf`. Keep the filename, since the URL is linked
-  from outside the site.
+- **Résumé:** replace `public/jingchao-zhou-resume.pdf`. The filename is what people get when
+  they save the PDF, so it carries the name. If you rename it, update `links.resume` in
+  `src/data/profile.ts` and the two tests that check the path.
 - **Portrait:** replace `src/assets/profile.jpg` with a square image at least 640px wide. It is
   displayed at 320 CSS px at most.
 - **Logos:** add the image to `src/assets/logos/` and import it in the data file. Logos sit in a
