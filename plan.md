@@ -132,8 +132,9 @@ Keep the remaining entries. Later tasks use `git add -A` after building and test
 Delete the old lockfile so it is regenerated from scratch, then install production dependencies:
 ```bash
 rm -f package-lock.json
-npm install astro@^7 @astrojs/sitemap @fontsource-variable/geist @fontsource-variable/geist-mono
+npm install astro@7.4.8 @astrojs/sitemap @fontsource-variable/geist @fontsource-variable/geist-mono
 ```
+Astro is installed at 7.4.8 because the organization’s npm policy blocks newly published packages for a waiting period, and Astro 7.4.9+ depends on two packages (`@astrojs/runtime`, `@astrojs/vite-plugin-astro`) that are still inside it. Upgrade with `npm update astro` once they clear.
 
 Install development dependencies:
 ```bash
