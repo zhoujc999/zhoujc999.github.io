@@ -23,7 +23,7 @@ const research2: ResearchContent = {
   imageSrc: "/icons/duke.jpg",
   position: "Undergraduate Researcher",
   company: "Duke University I³T Lab",
-  description: "Jun 2020 – Aug 2020 | Arlington, VA",
+  description: "Aug 2019 – May 2020 | Durham, NC",
   details: [
     "Developed a system that enables multiple edge-connected devices \
       to collaborate on image recognition tasks using Google’s ARCore \
