@@ -59,6 +59,7 @@ export const experiences = [
     period: "Jun 2020 – Aug 2020",
     location: "Arlington, VA",
     logo: mastercardLogo,
+    featured: true,
     details: [
       "Improved the Test & Learn software’s flexibility in matching test and control groups and added a new analysis method in the test simulator",
       "Implemented usability improvements including front-end redesign for the test simulator in React and TypeScript",
@@ -72,6 +73,7 @@ export const experiences = [
     period: "May 2019 – Aug 2019",
     location: "San Jose, CA",
     logo: nutanixLogo,
+    featured: true,
     details: [
       "Engineered a gRPC-based microservice to streamline Virtual Machine (VM) backup management, facilitating asynchronous backup scheduling among VM hypervisors and the central backup service",
       "Revised the backup process by implementing a new workflow that clones VM instances to images, improving data integrity compared to traditional immutable snapshots",
@@ -84,6 +86,7 @@ export const experiences = [
     period: "May 2018 – Dec 2019",
     location: "Durham, NC",
     logo: dukeCsLogo,
+    featured: true,
     details: [
       "Assisted in teaching CS 250: Computer Architecture and CS 230: Discrete Mathematics for CS",
       "Duties include: grading homework assignments and exams; leading out of class recitation sections with 25 students; holding office hours; preparing study materials; responding to student questions",
@@ -97,6 +100,7 @@ export const experiences = [
     period: "May 2018 – Sep 2018",
     location: "Durham, NC",
     logo: dcusLogo,
+    featured: true,
     details: [
       "Invited more than 5 academics and industry experts to serve as guest panelists for the annual summit, which focused on opportunities and challenges in the age of big data",
       "Continued maintenance and improvement of the summit website, which was developed with Bootstrap framework and deployed on Netlify platform",
@@ -109,6 +113,7 @@ export const experiences = [
     period: "Jan 2015 – Apr 2015",
     location: "Singapore",
     logo: imreLogo,
+    featured: true,
     details: [
       "Devised a novel approach to synthesize a group of related compounds with AIE properties and characterized them using UV-Vis and IR spectroscopy",
       "Investigated the prospects of developing such compounds for trace explosive detection and fabricated a film-based prototype to evaluate the efficacy of such applications",
