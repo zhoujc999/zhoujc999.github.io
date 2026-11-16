@@ -254,6 +254,24 @@ cite {
   object-fit: contain;
 }
 
+/*
+ * Reveal. Only elements the script has marked are ever hidden, so without
+ * JavaScript (or if the script fails to load) everything stays visible.
+ * The transition lives on the revealed state, so hiding is instant and
+ * only the reveal animates.
+ */
+
+.reveal-pending {
+  opacity: 0;
+  transform: translateY(0.875rem);
+}
+
+.is-visible {
+  transition:
+    opacity var(--duration-reveal) var(--ease-out),
+    transform var(--duration-reveal) var(--ease-out);
+}
+
 /* Fallbacks */
 
 @media (prefers-reduced-motion: reduce) {
@@ -274,5 +292,10 @@ cite {
 
   .skip-link {
     display: none;
+  }
+
+  .reveal-pending {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
