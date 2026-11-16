@@ -1,0 +1,86 @@
+---
+import { profile } from "../data/profile";
+---
+
+<section class="impact container" aria-label="Impact" data-impact data-reveal>
+  <ul class="impact__list" role="list">
+    {
+      profile.metrics.map((metric) => (
+        <li class="impact__item">
+          <p class="impact__label">
+            <span class="impact__value">{metric.value}</span>{" "}
+            <span class="impact__unit">{metric.unit}</span>
+          </p>
+          <p class="impact__caption">{metric.caption}</p>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .impact {
+    margin-bottom: var(--section-space);
+  }
+
+  /* One strip between two hairline rules, not three separate cards. */
+  .impact__list {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    border-block: 1px solid var(--color-border);
+    list-style: none;
+  }
+
+  .impact__item {
+    display: grid;
+    align-content: start;
+    gap: 0.625rem;
+    padding-block: 1.5rem;
+  }
+
+  .impact__item + .impact__item {
+    border-top: 1px solid var(--color-border);
+  }
+
+  /* Figure above its unit, so a long unit never changes the row's shape. */
+  .impact__label {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .impact__value {
+    font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .impact__unit {
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .impact__caption {
+    max-width: 26rem;
+    color: var(--color-muted);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  @media (min-width: 48rem) {
+    .impact__list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .impact__item {
+      padding: 2rem 2rem 2rem 0;
+    }
+
+    .impact__item + .impact__item {
+      padding-left: 2rem;
+      border-top: 0;
+      border-left: 1px solid var(--color-border);
+    }
+  }
+</style>

@@ -107,8 +107,10 @@ cite {
   margin-inline: auto;
 }
 
+/* Bottom padding only: stacked sections would otherwise double the gap, and an
+   anchor jump lands with the section heading right below the header. */
 .section {
-  padding-block: var(--section-space);
+  padding-bottom: var(--section-space);
   scroll-margin-top: var(--anchor-offset);
 }
 

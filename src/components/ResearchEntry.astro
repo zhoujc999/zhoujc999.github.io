@@ -13,16 +13,19 @@ const { publication } = entry;
 <article class="research-entry" data-research-entry data-reveal>
   <header class="research-entry__header">
     <span class="logo-tile">
-      <Image src={entry.logo} alt="" width={48} height={48} layout="fixed" />
+      <Image src={entry.logo} alt="" width={52} height={52} layout="fixed" />
     </span>
-    <div class="research-entry__titles">
+    <div>
       <h3 class="research-entry__heading">
         <span class="research-entry__institution">{entry.institution}</span><span
           class="visually-hidden">,
         </span>
         <span class="research-entry__role">{entry.role}</span>
       </h3>
-      <p class="research-entry__meta mono">{entry.period} · {entry.location}</p>
+      <p class="research-entry__meta mono">
+        <span>{entry.period}</span><span class="visually-hidden">, </span>
+        <span>{entry.location}</span>
+      </p>
     </div>
   </header>
   {
@@ -41,3 +44,75 @@ const { publication } = entry;
     {entry.details.map((detail) => <li>{detail}</li>)}
   </ul>
 </article>
+
+<style>
+  .research-entry {
+    display: grid;
+    align-content: start;
+    gap: 1.25rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+  }
+
+  .research-entry__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+  }
+
+  .research-entry__heading {
+    font-size: 1.125rem;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+  }
+
+  .research-entry__heading span,
+  .research-entry__meta span {
+    display: block;
+  }
+
+  .research-entry__role {
+    color: var(--color-muted);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .research-entry__meta {
+    margin-top: 0.375rem;
+    color: var(--color-muted);
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .research-entry__publication {
+    padding-left: 1rem;
+    border-left: 2px solid var(--color-accent);
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .research-entry__publication a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-thickness var(--duration-fast) var(--ease-out);
+  }
+
+  .research-entry__publication a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  .research-entry__details {
+    display: grid;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .research-entry__details li::marker {
+    color: var(--color-muted);
+  }
+</style>

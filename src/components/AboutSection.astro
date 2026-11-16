@@ -1,0 +1,120 @@
+---
+import { education } from "../data/education";
+import { profile } from "../data/profile";
+import SectionHeading from "./SectionHeading.astro";
+
+const interests = [...profile.interests.technical, ...profile.interests.personal];
+---
+
+<section class="section" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <SectionHeading id="about-title" title="About" index="03" />
+    <div class="about__grid">
+      <p class="about__text" data-reveal>{profile.about}</p>
+      <div class="about__aside">
+        <div data-reveal>
+          <h3 class="about__subhead mono">Education</h3>
+          <ul class="education" role="list">
+            {
+              education.map((school) => (
+                <li class="education__item">
+                  <p class="education__school">{school.school}</p>
+                  <p class="education__meta mono">
+                    {school.classOf} · {school.location}
+                  </p>
+                  <ul class="education__credentials" role="list">
+                    {school.credentials.map((credential) => <li>{credential}</li>)}
+                  </ul>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div data-reveal>
+          <h3 class="about__subhead mono">Interests</h3>
+          <ul class="tags" role="list">
+            {interests.map((interest) => <li class="tags__item">{interest}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about__grid {
+    display: grid;
+    gap: 3rem;
+  }
+
+  .about__text {
+    max-width: 40rem;
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+
+  .about__aside {
+    display: grid;
+    align-content: start;
+    gap: 2.5rem;
+  }
+
+  .about__subhead {
+    margin-bottom: 1rem;
+    color: var(--color-muted);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .education,
+  .education__credentials,
+  .tags {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .education {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .education__school {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .education__meta {
+    color: var(--color-muted);
+    font-size: 0.75rem;
+  }
+
+  .education__credentials {
+    margin-top: 0.375rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tags__item {
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 56rem) {
+    .about__grid {
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: clamp(3rem, 8vw, 6rem);
+    }
+  }
+</style>
