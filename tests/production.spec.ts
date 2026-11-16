@@ -61,7 +61,7 @@ test("every image loads and stays inside its container", async ({ page }) => {
   await scrollThroughImages(page);
 
   const images = page.locator("img");
-  expect(await images.count()).toBe(10); // portrait + nine logos
+  expect(await images.count()).toBe(7); // portrait + six logos
 
   for (const image of await images.all()) {
     await expect
@@ -101,9 +101,6 @@ test("the static HTML carries the full content without JavaScript", async () => 
     "fault-injection framework to scalably test 70K+ failure modes",
     "persistent unit test failures in Jenkins logs",
     "gRPC-based microservice",
-    "CS 250: Computer Architecture",
-    "guest panelists for the annual summit",
-    "trace explosive detection",
     "WIP: The Cyber-Physical Immune System",
     "vehicular cruise control system",
     "fields-of-view of multiple cameras",
@@ -112,7 +109,7 @@ test("the static HTML carries the full content without JavaScript", async () => 
   for (const phrase of phrases) {
     expect(html).toContain(phrase);
   }
-  expect(html.match(/data-experience-entry/g)).toHaveLength(7);
+  expect(html.match(/data-experience-entry/g)).toHaveLength(4);
   expect(html.match(/data-research-entry/g)).toHaveLength(2);
 });
 

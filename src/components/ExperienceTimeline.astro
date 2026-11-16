@@ -13,7 +13,7 @@ import SectionHeading from "./SectionHeading.astro";
       <ol class="timeline__list" role="list">
         {
           experiences.map((entry) => (
-            <li class:list={["timeline__item", { "timeline__item--featured": entry.featured }]}>
+            <li class="timeline__item">
               <ExperienceEntry entry={entry} />
             </li>
           ))
@@ -63,18 +63,13 @@ import SectionHeading from "./SectionHeading.astro";
   }
 
   .timeline__item {
-    --marker-top: 1.25rem;
     position: relative;
   }
 
-  /* Featured entries are padded cards, so their marker sits lower to stay level with the logo. */
-  .timeline__item--featured {
-    --marker-top: calc(clamp(1.25rem, 3vw, 2rem) + 1.25rem);
-  }
-
+  /* The marker sits level with the logo inside the card, so its offset includes the card's padding. */
   .timeline__item::before {
     position: absolute;
-    top: var(--marker-top);
+    top: calc(clamp(1.25rem, 3vw, 2rem) + 1.25rem);
     left: calc(var(--rail-x) - var(--gutter) - 0.25rem);
     z-index: 1;
     width: 0.5625rem;

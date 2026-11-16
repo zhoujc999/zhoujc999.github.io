@@ -68,7 +68,7 @@ export const profile: Profile = {
     },
   ],
   about:
-    "Hi, my name is Jingchao Zhou and I’m currently a senior software engineer at Ramp. Prior to joining Ramp, I have worked at Nuro, Mastercard and Nutanix. I graduated from UC Berkeley with an M.Eng. degree in EECS. As an undergraduate, I majored in computer science and economics, and minored in mathematics at Duke University. Some of my areas of interest in CS include IoT, machine learning, augmented reality, and distributed systems. When I’m not busy with work, I enjoy a number of other hobbies and activities in my free time — especially skiing, cooking, and traveling. For any questions or comments, please feel free to contact me!",
+    "The thread through my work is making complex systems safer to change. I started in research, on securing cyber-physical systems at Berkeley and on collaborative augmented reality at Duke, then spent three years on autonomous-vehicle software at Nuro before moving to developer infrastructure and payments at Ramp. When I’m not working, I enjoy skiing, cooking, and traveling.",
   interests: {
     technical: [
       "Machine Learning",
