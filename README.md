@@ -32,12 +32,12 @@ npx playwright install chromium   # once, for the browser tests
 
 All content lives in typed data files. Edit the data; the components pick it up.
 
-| To change                                                    | Edit                      |
-| ------------------------------------------------------------ | ------------------------- |
+| To change                                                      | Edit                      |
+| -------------------------------------------------------------- | ------------------------- |
 | Name, role, hero text, impact metrics, links, About, interests | `src/data/profile.ts`     |
-| Jobs (newest first; `featured: true` gives a role a card)    | `src/data/experience.ts`  |
-| Research entries and the publication link                    | `src/data/research.ts`    |
-| Schools and degrees                                          | `src/data/education.ts`   |
+| Jobs (newest first; `featured: true` gives a role a card)      | `src/data/experience.ts`  |
+| Research entries and the publication link                      | `src/data/research.ts`    |
+| Schools and degrees                                            | `src/data/education.ts`   |
 
 Other assets:
 
