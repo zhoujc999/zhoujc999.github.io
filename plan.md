@@ -210,13 +210,13 @@ export default defineConfig({
     trace: "retain-on-failure",
   },
   webServer: {
-    command: `npm run build && npm run preview -- --host 127.0.0.1 --port ${port}`,
+    command: `npm run build && npm run preview -- --host 127.0.0.1 --port ${port} --ignore-lock`,
     url: baseURL,
     reuseExistingServer: false,
   },
 });
 ```
-The preview has its own port and never reuses a running server, so tests always exercise the built site and never a running `astro dev`.
+The preview has its own port and never reuses a running server, so tests always exercise the built site and never a running `astro dev`. `--ignore-lock` keeps the preview in the foreground: without it, Astro 7 backgrounds the server when an AI agent runs the tests and refuses to start while another preview is running.
 
 **Step 9: Verify the scaffold builds**
 

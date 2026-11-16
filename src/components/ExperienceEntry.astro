@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import type { Experience } from "../data/experience";
+
+interface Props {
+  entry: Experience;
+}
+
+const { entry } = Astro.props;
+---
+
+<article
+  class:list={["entry", { "entry--featured": entry.featured }]}
+  data-experience-entry
+  data-reveal
+>
+  <header class="entry__header">
+    <span class="logo-tile">
+      <Image src={entry.logo} alt="" width={48} height={48} layout="fixed" />
+    </span>
+    <div class="entry__titles">
+      <h3 class="entry__heading">
+        <span class="entry__company">{entry.company}</span><span class="visually-hidden">, </span>
+        <span class="entry__role">{entry.role}</span>
+      </h3>
+      <p class="entry__meta mono">{entry.period} · {entry.location}</p>
+    </div>
+  </header>
+  <ul class="entry__details">
+    {entry.details.map((detail) => <li>{detail}</li>)}
+  </ul>
+</article>
