@@ -6,13 +6,27 @@ import ImpactStrip from "../components/ImpactStrip.astro";
 import ResearchSection from "../components/ResearchSection.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import { education } from "../data/education";
 import { profile } from "../data/profile";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = `${profile.name} | ${profile.role}`;
+
+// Only facts already shown on the page; no contact details.
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  url: new URL("/", Astro.site).href,
+  jobTitle: profile.role,
+  worksFor: { "@type": "Organization", name: profile.employer },
+  alumniOf: education.map((school) => ({ "@type": "CollegeOrUniversity", name: school.school })),
+  sameAs: [profile.links.github, profile.links.linkedin],
+};
 ---
 
 <BaseLayout title={pageTitle} description={profile.metaDescription}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   <SiteHeader />
   <main id="main-content">
     <Hero />
