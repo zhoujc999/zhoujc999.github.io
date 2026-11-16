@@ -1,0 +1,75 @@
+---
+import { profile } from "../data/profile";
+
+const links = [
+  { label: "GitHub", href: profile.links.github },
+  { label: "LinkedIn", href: profile.links.linkedin },
+  { label: "Résumé", href: profile.links.resume },
+];
+---
+
+<footer class="site-footer">
+  <div class="site-footer__inner container">
+    <p class="site-footer__identity">
+      <span class="site-footer__name">{profile.name}</span>
+      <span>{profile.location}</span>
+      <span>Amateur radio <span class="mono">{profile.callsign}</span></span>
+    </p>
+    <ul class="site-footer__links" role="list">
+      {
+        links.map(({ label, href }) => (
+          <li>
+            <a class="arrow-link" href={href} target="_blank" rel="noopener noreferrer">
+              {label}
+              <span class="visually-hidden"> (opens in a new tab)</span>
+              <span class="arrow-link__arrow" aria-hidden="true">
+                ↗
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    color: var(--color-muted);
+    font-size: 0.875rem;
+  }
+
+  .site-footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    padding-block: 2rem;
+  }
+
+  .site-footer__identity {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+  }
+
+  .site-footer__name {
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+
+  .site-footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .site-footer__links .arrow-link {
+    color: var(--color-ink);
+  }
+</style>

@@ -414,7 +414,7 @@ img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-underline-offset: 0.2em; }
 :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 4px; }
 .container { width: min(calc(100% - 2.5rem), var(--content-width)); margin-inline: auto; }
-.section { padding-block: var(--section-space); scroll-margin-top: var(--anchor-offset); }
+.section { padding-bottom: var(--section-space); scroll-margin-top: var(--anchor-offset); }
 .section-title { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.08; letter-spacing: -0.035em; }
 .mono { font-family: var(--font-mono); }
 ```

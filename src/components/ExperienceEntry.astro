@@ -16,17 +16,107 @@ const { entry } = Astro.props;
 >
   <header class="entry__header">
     <span class="logo-tile">
-      <Image src={entry.logo} alt="" width={48} height={48} layout="fixed" />
+      <Image src={entry.logo} alt="" width={52} height={52} layout="fixed" />
     </span>
-    <div class="entry__titles">
+    <div>
       <h3 class="entry__heading">
         <span class="entry__company">{entry.company}</span><span class="visually-hidden">, </span>
         <span class="entry__role">{entry.role}</span>
       </h3>
-      <p class="entry__meta mono">{entry.period} · {entry.location}</p>
+      <p class="entry__meta mono">
+        <span>{entry.period}</span><span class="visually-hidden">, </span>
+        <span>{entry.location}</span>
+      </p>
     </div>
   </header>
   <ul class="entry__details">
     {entry.details.map((detail) => <li>{detail}</li>)}
   </ul>
 </article>
+
+<style>
+  .entry {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .entry__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+  }
+
+  .entry__heading {
+    font-size: 1.0625rem;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  .entry__heading span,
+  .entry__meta span {
+    display: block;
+  }
+
+  .entry__role {
+    color: var(--color-muted);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .entry__meta {
+    margin-top: 0.375rem;
+    color: var(--color-muted);
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  /* Explicit disc: the list is nested inside the timeline list, which would default to circles. */
+  .entry__details {
+    display: grid;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    list-style: disc;
+  }
+
+  .entry__details li::marker {
+    color: var(--color-muted);
+  }
+
+  /* Ramp and Nuro: white surface, larger type, more room. */
+  .entry--featured {
+    gap: 1.25rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    box-shadow: var(--shadow);
+  }
+
+  .entry--featured .entry__heading {
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .entry--featured .entry__role {
+    font-size: 1rem;
+  }
+
+  .entry--featured .entry__details {
+    gap: 0.625rem;
+    font-size: 1rem;
+  }
+
+  /* From 60rem: who and when on the left, what on the right. */
+  @media (min-width: 60rem) {
+    .entry {
+      grid-template-columns: 18rem minmax(0, 1fr);
+      gap: 2.5rem;
+    }
+
+    .entry--featured {
+      gap: 2.5rem;
+    }
+  }
+</style>
