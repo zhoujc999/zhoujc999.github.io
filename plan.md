@@ -132,8 +132,9 @@ Keep the remaining entries. Later tasks use `git add -A` after building and test
 Delete the old lockfile so it is regenerated from scratch, then install production dependencies:
 ```bash
 rm -f package-lock.json
-npm install astro@^7 @astrojs/sitemap @fontsource-variable/geist @fontsource-variable/geist-mono
+npm install astro@7.4.8 @astrojs/sitemap @fontsource-variable/geist @fontsource-variable/geist-mono
 ```
+Astro is installed at 7.4.8 because the organization’s npm policy blocks newly published packages for a waiting period, and Astro 7.4.9+ depends on two packages (`@astrojs/runtime`, `@astrojs/vite-plugin-astro`) that are still inside it. Upgrade with `npm update astro` once they clear.
 
 Install development dependencies:
 ```bash
@@ -209,13 +210,13 @@ export default defineConfig({
     trace: "retain-on-failure",
   },
   webServer: {
-    command: `npm run build && npm run preview -- --host 127.0.0.1 --port ${port}`,
+    command: `npm run build && npm run preview -- --host 127.0.0.1 --port ${port} --ignore-lock`,
     url: baseURL,
     reuseExistingServer: false,
   },
 });
 ```
-The preview has its own port and never reuses a running server, so tests always exercise the built site and never a running `astro dev`.
+The preview has its own port and never reuses a running server, so tests always exercise the built site and never a running `astro dev`. `--ignore-lock` keeps the preview in the foreground: without it, Astro 7 backgrounds the server when an AI agent runs the tests and refuses to start while another preview is running.
 
 **Step 9: Verify the scaffold builds**
 
@@ -413,7 +414,7 @@ img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-underline-offset: 0.2em; }
 :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 4px; }
 .container { width: min(calc(100% - 2.5rem), var(--content-width)); margin-inline: auto; }
-.section { padding-block: var(--section-space); scroll-margin-top: var(--anchor-offset); }
+.section { padding-bottom: var(--section-space); scroll-margin-top: var(--anchor-offset); }
 .section-title { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.08; letter-spacing: -0.035em; }
 .mono { font-family: var(--font-mono); }
 ```

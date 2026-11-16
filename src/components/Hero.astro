@@ -1,0 +1,124 @@
+---
+import { Image } from "astro:assets";
+import portrait from "../assets/profile.jpg";
+import { profile } from "../data/profile";
+
+const profileLinks = [
+  { label: "GitHub", href: profile.links.github },
+  { label: "LinkedIn", href: profile.links.linkedin },
+];
+---
+
+<section class="hero container" data-hero>
+  <div class="hero__text">
+    <p class="hero__role mono">{profile.roleLabel}</p>
+    <h1 class="hero__name">{profile.name}</h1>
+    <p class="hero__intro">{profile.introduction}</p>
+    <div class="hero__actions">
+      <a class="button" href={profile.links.resume} target="_blank" rel="noopener noreferrer">
+        View résumé<span class="visually-hidden"> (opens in a new tab)</span>
+      </a>
+      {
+        profileLinks.map(({ label, href }) => (
+          <a class="arrow-link" href={href} target="_blank" rel="noopener noreferrer">
+            {label}
+            <span class="visually-hidden"> (opens in a new tab)</span>
+            <span class="arrow-link__arrow" aria-hidden="true">
+              ↗
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+  <!-- The source photo is 640px square, so it is never shown wider than 320 CSS px. -->
+  <div class="hero__portrait">
+    <Image
+      src={portrait}
+      alt={profile.portraitAlt}
+      width={320}
+      height={320}
+      sizes="(min-width: 48rem) 20rem, 7.5rem"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: grid;
+    gap: 1.75rem;
+    padding-block: clamp(2.5rem, 7vw, 6rem) clamp(3rem, 7vw, 5.5rem);
+  }
+
+  .hero__role {
+    display: flex;
+    align-items: baseline;
+    gap: 0.625rem;
+    color: var(--color-muted);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    text-wrap: balance;
+  }
+
+  .hero__role::before {
+    flex: none;
+    width: 0.4375rem;
+    height: 0.4375rem;
+    background: var(--color-accent);
+    content: "";
+  }
+
+  .hero__name {
+    margin-top: 1rem;
+    font-size: clamp(3rem, 7vw, 5.25rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  .hero__intro {
+    max-width: 40rem;
+    margin-top: 1.5rem;
+    font-size: clamp(1.125rem, 1.6vw, 1.3125rem);
+    line-height: 1.55;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .hero__portrait {
+    order: -1;
+    width: 7.5rem;
+  }
+
+  .hero__portrait :global(img) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    object-fit: cover;
+  }
+
+  @media (min-width: 48rem) {
+    .hero {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
+      align-items: center;
+      gap: clamp(2rem, 6vw, 5rem);
+    }
+
+    .hero__portrait {
+      order: 0;
+      justify-self: end;
+      width: 100%;
+      max-width: 20rem;
+    }
+  }
+</style>
