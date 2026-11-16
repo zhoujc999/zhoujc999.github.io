@@ -6,16 +6,16 @@ const experience1: ExperienceContent = {
   company: "Ramp",
   description: "Aug 2024 – Present | New York, NY",
   details: [
-    "Led the effort to divide Ramp’s Python monolith into 300+ modules \
-      with enforced dependency boundaries, which lays the groundwork for \
-      teams to build, test and release their code independently",
-    "Built the static-analysis tool that maps the dependency graph \
-      between those modules and blocks changes that break the \
-      boundaries, which runs in CI and pre-commit on every change",
-    "Rebuilt the on-demand test environments engineers use before \
-      release, on AWS with Terraform, Temporal, PostgreSQL and Kafka",
+    "Led decomposition of Ramp’s Python monolith into 300+ modules \
+      with enforced dependency boundaries, laying the foundation for \
+      teams to independently build, test, and release code",
+    "Wrote a static-analysis tool that maps intermodule dependencies \
+      and blocks changes that violate boundaries in pre-commit and CI \
+      checks on every change",
     "Built payment features on Temporal workflows, including bulk payouts \
       and onboarding for businesses in Australia and Singapore.",
+    "Rebuilt the on-demand test environments engineers use before \
+      release, using AWS with Terraform, Temporal, and Kafka",
   ],
 };
 
@@ -25,14 +25,11 @@ const experience2: ExperienceContent = {
   company: "Nuro",
   description: "Jun 2021 – Aug 2024 | Mountain View, CA",
   details: [
-    "Led the analysis efforts for improving the speed and \
-      reliability of the vehicle start-up process, which \
-      involved cross-functional collaboration with stakeholders \
-      from operations, hardware, and autonomy teams",
-    "Architected and implemented an Extract, Transform, Load (ETL) \
-      pipeline that processes 1M+ raw vehicle data daily from the \
-      fleet through Google Pub/Sub into reliability and performance \
-      metrics",
+    "Ran cross-functional analysis with operations, hardware, and \
+      autonomy teams to improve vehicle startup speed and reliability",
+    "Architected and implemented an ETL pipeline that processes 1M+ \
+      raw vehicle events daily from the fleet through Google Pub/Sub \
+      into reliability and performance metrics",
     "Created and deployed a fault-injection framework to scalably \
       test 70K+ failure modes across the autonomy stack in the \
       simulation environment, instrumental in risk assessment and \
