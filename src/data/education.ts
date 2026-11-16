@@ -20,6 +20,6 @@ export const education = [
     school: "Duke University",
     classOf: "Class of 2020",
     location: "Durham, NC",
-    credentials: ["B.S. in CS", "B.S. in Economics", "Minor in Math"],
+    credentials: ["B.S. in CS & Economics", "Minor in Math"],
   },
 ] satisfies Education[];

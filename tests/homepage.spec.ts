@@ -48,20 +48,22 @@ test("hero shows the portrait, role statement, and introduction", async ({ page 
   await expect(hero.getByRole("link", { name: /linkedin/i })).toBeVisible();
 });
 
-test("impact metrics come with their context", async ({ page }) => {
+test("core expertise comes with concise descriptions", async ({ page }) => {
   await page.goto("/");
-  const items = page.locator("[data-impact] li");
+  const strip = page.locator("[data-expertise]");
+  const items = strip.locator("li");
   await expect(items).toHaveCount(3);
 
   const expected = [
-    ["300+ modules", "Ramp’s Python monolith"],
-    ["1M+ vehicle events processed daily", "Nuro’s fleet reliability"],
-    ["70K+ failure modes tested", "Nuro’s autonomy stack"],
+    ["Developer Infrastructure", "Monolith decomposition, dependency boundaries, and CI tooling"],
+    ["Distributed Systems", "Data pipelines and payment systems"],
+    ["Autonomous-Vehicle Software", "Simulation testing, fault injection, and vehicle data infrastructure"],
   ];
-  for (const [index, [label, context]] of expected.entries()) {
+  for (const [index, [label, description]] of expected.entries()) {
     await expect(items.nth(index)).toContainText(label);
-    await expect(items.nth(index)).toContainText(context);
+    await expect(items.nth(index)).toContainText(description);
   }
+  await expect(page.locator("[data-impact]")).toHaveCount(0);
 });
 
 test("sections use level-two headings and entries level-three", async ({ page }) => {
@@ -70,7 +72,7 @@ test("sections use level-two headings and entries level-three", async ({ page })
   for (const name of ["Experience", "Research", "About"]) {
     await expect(page.getByRole("heading", { level: 2, name, exact: true })).toBeVisible();
   }
-  await expect(page.locator("[data-experience-entry] h3")).toHaveCount(7);
+  await expect(page.locator("[data-experience-entry] h3")).toHaveCount(4);
   await expect(page.locator("[data-research-entry] h3")).toHaveCount(2);
   await expect(
     page.locator(":is([data-experience-entry], [data-research-entry]) :is(h1, h2, h4, h5, h6)"),
@@ -82,7 +84,7 @@ test("keeps every entry on the page at mobile width", async ({ page }) => {
   await page.goto("/");
 
   const entries = page.locator("[data-experience-entry], [data-research-entry]");
-  await expect(entries).toHaveCount(9);
+  await expect(entries).toHaveCount(6);
   for (const entry of await entries.all()) {
     await expect(entry).toBeVisible();
     await expect(entry.locator("li").first()).toBeVisible();

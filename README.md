@@ -34,8 +34,8 @@ All content lives in typed data files. Edit the data; the components pick it up.
 
 | To change                                                      | Edit                      |
 | -------------------------------------------------------------- | ------------------------- |
-| Name, role, hero text, impact metrics, links, About, interests | `src/data/profile.ts`     |
-| Jobs (newest first; `featured: true` gives a role a card)      | `src/data/experience.ts`  |
+| Name, role, hero text, core expertise, links, About, interests | `src/data/profile.ts`     |
+| Jobs (newest first; keep the wording in step with the résumé)  | `src/data/experience.ts`  |
 | Research entries and the publication link                      | `src/data/research.ts`    |
 | Schools and degrees                                            | `src/data/education.ts`   |
 
@@ -51,7 +51,7 @@ Other assets:
 - **Social preview image:** run `npm run generate:og` after changing the name or
   `socialRoleLine`, then commit `public/og-image.png`.
 
-Some tests assert specific copy (page title, description, impact metrics, the order of
+Some tests assert specific copy (page title, description, core expertise, the order of
 companies). When you change that copy, update the matching expectation in `tests/`.
 
 ## How it is put together

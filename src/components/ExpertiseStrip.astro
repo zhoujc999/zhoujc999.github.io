@@ -1,0 +1,72 @@
+---
+import { profile } from "../data/profile";
+---
+
+<section class="expertise container" aria-label="Core expertise" data-expertise data-reveal>
+  <ul class="expertise__list" role="list">
+    {
+      profile.expertise.map((area) => (
+        <li class="expertise__item">
+          <p class="expertise__label mono">{area.label}</p>
+          <p class="expertise__description">{area.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .expertise {
+    margin-bottom: var(--section-space);
+  }
+
+  .expertise__list {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    border-block: 1px solid var(--color-border);
+    list-style: none;
+  }
+
+  .expertise__item {
+    display: grid;
+    align-content: start;
+    gap: 0.625rem;
+    padding-block: 1.5rem;
+  }
+
+  .expertise__item + .expertise__item {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .expertise__label {
+    color: var(--color-ink);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+  }
+
+  .expertise__description {
+    max-width: 26rem;
+    color: var(--color-muted);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  @media (min-width: 48rem) {
+    .expertise__list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .expertise__item {
+      padding: 2rem 2rem 2rem 0;
+    }
+
+    .expertise__item + .expertise__item {
+      padding-left: 2rem;
+      border-top: 0;
+      border-left: 1px solid var(--color-border);
+    }
+  }
+</style>

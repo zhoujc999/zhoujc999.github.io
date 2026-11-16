@@ -68,7 +68,7 @@ test.describe("without JavaScript", () => {
   test("keeps all content and links visible and usable", async ({ page }) => {
     await page.goto("/");
 
-    await expect(page.locator("[data-experience-entry]")).toHaveCount(7);
+    await expect(page.locator("[data-experience-entry]")).toHaveCount(4);
     await expect(page.locator("[data-research-entry]")).toHaveCount(2);
     for (const block of await page.locator("[data-reveal]").all()) {
       await expect(block).toHaveCSS("opacity", "1");

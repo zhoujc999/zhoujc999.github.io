@@ -9,11 +9,7 @@ interface Props {
 const { entry } = Astro.props;
 ---
 
-<article
-  class:list={["entry", { "entry--featured": entry.featured }]}
-  data-experience-entry
-  data-reveal
->
+<article class="entry" data-experience-entry data-reveal>
   <header class="entry__header">
     <span class="logo-tile">
       <Image src={entry.logo} alt="" width={52} height={52} layout="fixed" />
@@ -35,9 +31,15 @@ const { entry } = Astro.props;
 </article>
 
 <style>
+  /* Every role is a card. The padding here is also what ExperienceTimeline uses to place its marker. */
   .entry {
     display: grid;
-    gap: 1rem;
+    gap: 1.25rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    box-shadow: var(--shadow);
   }
 
   .entry__header {
@@ -47,9 +49,9 @@ const { entry } = Astro.props;
   }
 
   .entry__heading {
-    font-size: 1.0625rem;
+    font-size: 1.25rem;
     line-height: 1.3;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
   }
 
   .entry__heading span,
@@ -59,7 +61,7 @@ const { entry } = Astro.props;
 
   .entry__role {
     color: var(--color-muted);
-    font-size: 0.9375rem;
+    font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0;
   }
@@ -74,8 +76,8 @@ const { entry } = Astro.props;
   /* Explicit disc: the list is nested inside the timeline list, which would default to circles. */
   .entry__details {
     display: grid;
-    gap: 0.5rem;
-    font-size: 0.9375rem;
+    gap: 0.625rem;
+    font-size: 1rem;
     line-height: 1.6;
     list-style: disc;
   }
@@ -84,38 +86,10 @@ const { entry } = Astro.props;
     color: var(--color-muted);
   }
 
-  /* Ramp and Nuro: white surface, larger type, more room. */
-  .entry--featured {
-    gap: 1.25rem;
-    padding: clamp(1.25rem, 3vw, 2rem);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    background: var(--color-surface);
-    box-shadow: var(--shadow);
-  }
-
-  .entry--featured .entry__heading {
-    font-size: 1.25rem;
-    letter-spacing: -0.02em;
-  }
-
-  .entry--featured .entry__role {
-    font-size: 1rem;
-  }
-
-  .entry--featured .entry__details {
-    gap: 0.625rem;
-    font-size: 1rem;
-  }
-
   /* From 60rem: who and when on the left, what on the right. */
   @media (min-width: 60rem) {
     .entry {
       grid-template-columns: 18rem minmax(0, 1fr);
-      gap: 2.5rem;
-    }
-
-    .entry--featured {
       gap: 2.5rem;
     }
   }

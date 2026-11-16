@@ -20,7 +20,7 @@ for (const viewport of viewports) {
 
     test("renders every experience and research entry in one DOM", async ({ page }) => {
       await page.goto("/");
-      await expect(page.locator("[data-experience-entry]")).toHaveCount(7);
+      await expect(page.locator("[data-experience-entry]")).toHaveCount(4);
       await expect(page.locator("[data-research-entry]")).toHaveCount(2);
     });
   });
@@ -29,15 +29,7 @@ for (const viewport of viewports) {
 test("lists experience newest first", async ({ page }) => {
   await page.goto("/");
   const headings = await page.locator("[data-experience-entry] h3").allTextContents();
-  const expected = [
-    "Ramp",
-    "Nuro",
-    "Mastercard",
-    "Nutanix",
-    "Duke University Dept. of CS",
-    "Duke China-US Summit",
-    "IMRE",
-  ];
+  const expected = ["Ramp", "Nuro", "Mastercard", "Nutanix"];
   expect(headings).toHaveLength(expected.length);
   expected.forEach((company, index) => {
     expect(headings[index]).toContain(company);
