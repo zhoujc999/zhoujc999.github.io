@@ -2,9 +2,9 @@
 
 # zhoujc999.github.io
 
-Personal site of Jingchao Zhou: one static page built with [Astro](https://astro.build/) and
-deployed to GitHub Pages. There is no client framework. The page is plain HTML and CSS, plus one
-small script that only adds polish.
+Personal site of Jingchao Zhou: a static homepage and a small blog, built with
+[Astro](https://astro.build/) and deployed to GitHub Pages. There is no client framework. Every
+page is plain HTML and CSS, plus one small script that only adds polish.
 
 ## Requirements
 
@@ -30,7 +30,8 @@ npx playwright install chromium   # once, for the browser tests
 
 ## Updating content
 
-All content lives in typed data files. Edit the data; the components pick it up.
+The homepage content lives in typed data files. Edit the data; the components pick it up. Blog
+posts are Markdown files; see [Blog](#blog).
 
 | To change                                                      | Edit                      |
 | -------------------------------------------------------------- | ------------------------- |
@@ -52,12 +53,15 @@ Other assets:
   `socialRoleLine`, then commit `public/og-image.png`.
 
 Some tests assert specific copy (page title, description, core expertise, the order of
-companies). When you change that copy, update the matching expectation in `tests/`.
+companies, the blog post). When you change that copy, update the matching expectation in `tests/`.
 
 ## How it is put together
 
-- `src/pages/index.astro` composes the page from the components in `src/components/`.
+- `src/pages/index.astro` composes the homepage from the components in `src/components/`.
   `src/pages/404.astro` is the error page.
+- `src/pages/blog/index.astro` lists the posts, `src/pages/blog/[slug].astro` renders one, and
+  `src/pages/rss.xml.ts` builds the feed. `src/content.config.ts` defines what a post's
+  frontmatter must contain, and `src/components/Prose.astro` styles the rendered Markdown.
 - `src/layouts/BaseLayout.astro` owns the document head: metadata, social tags, fonts.
 - `src/styles/global.css` holds the design tokens and the few shared primitives. Styles for a
   single component are scoped inside that component's `.astro` file.
@@ -76,11 +80,29 @@ Rules the motion code follows:
 build, and the full browser test suite. A push to `master` that passes is then deployed to GitHub
 Pages from `dist/`. Pull requests are verified but never deployed.
 
-## Adding a blog later
+## Blog
 
-Not implemented yet. The intended path:
+Posts are Markdown files in `src/content/posts/`. The file name is the URL: `lorem-ipsum.md` is
+served at `/blog/lorem-ipsum/`. `/blog/` lists every post, newest first, and the "Writing" link in
+the header leads there.
 
-1. Add a typed Markdown content collection for posts, with a `draft` flag.
-2. Add a `/blog/` index and a `/blog/<slug>/` page, both using `BaseLayout`.
-3. Add an RSS feed.
-4. Add a "Writing" link to the header only once the first real post exists.
+Each post starts with frontmatter, which is checked at build time:
+
+```yaml
+---
+title: Lorem ipsum dolor sit amet
+description: One sentence, shown on the blog index and used as the page description.
+date: 2026-11-17
+draft: true # optional
+---
+```
+
+A post with `draft: true` appears in `npm run dev`, labelled "Draft", and is left out of the
+production build, the sitemap, and the feed.
+
+`/rss.xml` is an RSS feed with each post's title, description, date, and link. Every page
+advertises it to feed readers, and the blog index links to it.
+
+The only post so far, `lorem-ipsum.md`, is placeholder text, published like any other post. To
+replace it, add the real post, delete `lorem-ipsum.md`, and update the post path and copy in
+`tests/blog.spec.ts`, `tests/accessibility.spec.ts`, and `tests/production.spec.ts`.

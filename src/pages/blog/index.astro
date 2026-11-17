@@ -1,0 +1,124 @@
+---
+import PostMeta from "../../components/PostMeta.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import { blogDescription, feedPath, getPosts, postPath } from "../../data/posts";
+import { profile } from "../../data/profile";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const posts = await getPosts();
+---
+
+<BaseLayout title={`Writing | ${profile.name}`} description={blogDescription}>
+  <SiteHeader />
+  <main class="blog container" id="main-content">
+    <header class="blog__header">
+      <h1 class="section-title">Writing</h1>
+      <a class="blog__feed mono" href={feedPath}>RSS<span class="visually-hidden"> feed</span></a>
+    </header>
+    {
+      posts.length === 0 ? (
+        <p class="blog__empty">No posts yet.</p>
+      ) : (
+        <ol class="blog__posts" role="list">
+          {posts.map((post) => (
+            <li class="blog__post" data-post>
+              <PostMeta post={post} />
+              <div>
+                <h2 class="blog__post-title">
+                  <a href={postPath(post)}>{post.data.title}</a>
+                </h2>
+                <p class="blog__post-description">{post.data.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      )
+    }
+  </main>
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .blog {
+    padding-block: clamp(2.5rem, 7vw, 5rem) var(--section-space);
+  }
+
+  .blog__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+  }
+
+  .blog__feed {
+    color: var(--color-muted);
+    font-size: 0.8125rem;
+    text-decoration-color: var(--color-border);
+    text-decoration-thickness: 1px;
+    transition:
+      color var(--duration-fast) var(--ease-out),
+      text-decoration-color var(--duration-fast) var(--ease-out);
+  }
+
+  .blog__feed:hover {
+    color: var(--color-ink);
+    text-decoration-color: currentColor;
+  }
+
+  .blog__empty,
+  .blog__posts {
+    margin-top: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  .blog__empty {
+    color: var(--color-muted);
+  }
+
+  .blog__posts {
+    padding: 0;
+    border-bottom: 1px solid var(--color-border);
+    list-style: none;
+  }
+
+  .blog__post {
+    display: grid;
+    gap: 0.5rem;
+    padding-block: 1.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .blog__post-title {
+    font-size: 1.375rem;
+    line-height: 1.3;
+  }
+
+  .blog__post-title a {
+    text-decoration: none;
+  }
+
+  .blog__post-title a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 2px;
+  }
+
+  .blog__post-description {
+    max-width: 40rem;
+    margin-top: 0.375rem;
+    color: var(--color-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* From 48rem: when on the left, what on the right, as in the experience cards. */
+  @media (min-width: 48rem) {
+    .blog__post {
+      grid-template-columns: 12rem minmax(0, 1fr);
+      align-items: baseline;
+      gap: 2rem;
+      padding-block: 2rem;
+    }
+  }
+</style>

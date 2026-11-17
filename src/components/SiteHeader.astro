@@ -1,11 +1,20 @@
 ---
 import { profile } from "../data/profile";
 
+const { pathname } = Astro.url;
+
+// The sections live on the homepage: in-page anchors there, links back to it from any other page.
+const home = pathname === "/" ? "" : "/";
 const sections = [
-  { href: "#experience", label: "Experience" },
-  { href: "#research", label: "Research" },
-  { href: "#about", label: "About" },
+  { href: `${home}#experience`, label: "Experience" },
+  { href: `${home}#research`, label: "Research" },
+  { href: `${home}#about`, label: "About" },
 ];
+
+// Writing is marked as the current page on the blog index, and as the current section on a post.
+const inBlog = /^\/blog(\/|$)/.test(pathname);
+const onBlogIndex = /^\/blog\/?$/.test(pathname);
+const writingCurrent = onBlogIndex ? "page" : inBlog ? "true" : undefined;
 ---
 
 <header class="site-header" data-header>
@@ -22,6 +31,9 @@ const sections = [
           </li>
         ))
       }
+      <li>
+        <a class="site-nav__link" href="/blog/" aria-current={writingCurrent}>Writing</a>
+      </li>
     </ul>
     <a
       class="site-nav__resume button button--quiet button--small"
@@ -64,13 +76,21 @@ const sections = [
     grid-area: resume;
   }
 
+  /* Four links at the full gap need 310px, so phones narrower than 360px get a tighter one. */
   .site-nav__links {
     display: flex;
+    flex-wrap: wrap;
     grid-area: links;
-    gap: 1.5rem;
+    gap: 0 0.75rem;
     margin: 0;
     padding: 0;
     list-style: none;
+  }
+
+  @media (min-width: 22.5rem) {
+    .site-nav__links {
+      column-gap: 1.5rem;
+    }
   }
 
   .site-nav__link {

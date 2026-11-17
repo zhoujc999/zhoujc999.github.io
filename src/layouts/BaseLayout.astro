@@ -3,6 +3,8 @@ import "@fontsource-variable/geist";
 import "@fontsource-variable/geist-mono";
 import "../styles/global.css";
 import geistLatin from "@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url";
+import { feedPath } from "../data/posts";
+import { profile } from "../data/profile";
 
 interface Props {
   title: string;
@@ -11,6 +13,8 @@ interface Props {
   image?: string;
   /** Site-relative path used for the canonical URL. Defaults to the current path. */
   canonicalPath?: string;
+  /** Open Graph type. Blog posts are articles; every other page is a website. */
+  ogType?: "website" | "article";
   /** Keeps the page out of search results and omits its canonical URL. */
   noindex?: boolean;
 }
@@ -20,12 +24,14 @@ const {
   description,
   image = "/og-image.png",
   canonicalPath = Astro.url.pathname,
+  ogType = "website",
   noindex = false,
 } = Astro.props;
 
 // Social crawlers need absolute URLs, so resolve everything against the configured site.
 const canonicalURL = new URL(canonicalPath, Astro.site);
 const imageURL = new URL(image, Astro.site);
+const feedURL = new URL(feedPath, Astro.site);
 ---
 
 <!doctype html>
@@ -37,13 +43,14 @@ const imageURL = new URL(image, Astro.site);
     <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#f7f7f4" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="alternate" type="application/rss+xml" title={profile.name} href={feedURL} />
     <link rel="preload" href={geistLatin} as="font" type="font/woff2" crossorigin />
 
     <title>{title}</title>
     <meta name="description" content={description} />
     {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonicalURL} />}
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     {!noindex && <meta property="og:url" content={canonicalURL} />}

@@ -1,0 +1,38 @@
+---
+import type { Post } from "../data/posts";
+
+interface Props {
+  post: Post;
+}
+
+const { date, draft } = Astro.props.post.data;
+
+// A frontmatter date is a calendar day stored as UTC midnight. Reading it back in
+// UTC keeps the day from shifting with the time zone of the machine that builds.
+const day = date.toISOString().slice(0, 10);
+const label = date.toLocaleDateString("en-US", { dateStyle: "long", timeZone: "UTC" });
+---
+
+<p class="post-meta mono">
+  <time datetime={day}>{label}</time>
+  {draft && <span class="post-meta__draft">Draft</span>}
+</p>
+
+<style>
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.75rem;
+    color: var(--color-muted);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+
+  .post-meta__draft {
+    padding-inline: 0.5rem;
+    border: 1px solid currentColor;
+    border-radius: calc(var(--radius) * 0.5);
+    color: var(--color-accent);
+  }
+</style>

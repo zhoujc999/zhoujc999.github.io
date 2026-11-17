@@ -8,7 +8,7 @@ const viewports = [
   { name: "mobile", width: 390, height: 844 },
 ];
 
-for (const path of ["/", "/404.html"]) {
+for (const path of ["/", "/404.html", "/blog/", "/blog/lorem-ipsum/"]) {
   for (const viewport of viewports) {
     test(`@a11y ${path} has no serious or critical axe violations on ${viewport.name}`, async ({
       page,
@@ -54,7 +54,7 @@ test("@a11y the header is reachable by keyboard in reading order", async ({ page
   const nav = page.getByRole("navigation", { name: "Primary" });
 
   await page.keyboard.press("Tab"); // skip link
-  for (const name of ["Jingchao Zhou", "Experience", "Research", "About", "Résumé"]) {
+  for (const name of ["Jingchao Zhou", "Experience", "Research", "About", "Writing", "Résumé"]) {
     await page.keyboard.press("Tab");
     const link = nav.getByRole("link", { name });
     await expect(link).toBeFocused();

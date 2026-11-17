@@ -8,25 +8,27 @@ async function scrollThroughImages(page: Page) {
   }
 }
 
-test("loads without console errors or failed requests", async ({ page, baseURL }) => {
-  const problems: string[] = [];
-  page.on("console", (message) => {
-    if (message.type() === "error") problems.push(`console: ${message.text()}`);
-  });
-  page.on("pageerror", (error) => problems.push(`exception: ${error.message}`));
-  page.on("requestfailed", (request) => problems.push(`failed: ${request.url()}`));
-  page.on("response", (response) => {
-    if (response.status() >= 400 && response.url().startsWith(baseURL!)) {
-      problems.push(`${response.status()}: ${response.url()}`);
-    }
-  });
+for (const path of ["/", "/blog/", "/blog/lorem-ipsum/"]) {
+  test(`${path} loads without console errors or failed requests`, async ({ page, baseURL }) => {
+    const problems: string[] = [];
+    page.on("console", (message) => {
+      if (message.type() === "error") problems.push(`console: ${message.text()}`);
+    });
+    page.on("pageerror", (error) => problems.push(`exception: ${error.message}`));
+    page.on("requestfailed", (request) => problems.push(`failed: ${request.url()}`));
+    page.on("response", (response) => {
+      if (response.status() >= 400 && response.url().startsWith(baseURL!)) {
+        problems.push(`${response.status()}: ${response.url()}`);
+      }
+    });
 
-  await page.goto("/", { waitUntil: "networkidle" });
-  await scrollThroughImages(page);
-  await page.waitForLoadState("networkidle");
+    await page.goto(path, { waitUntil: "networkidle" });
+    await scrollThroughImages(page);
+    await page.waitForLoadState("networkidle");
 
-  expect(problems).toEqual([]);
-});
+    expect(problems).toEqual([]);
+  });
+}
 
 test("every in-page link has exactly one target and ids are unique", async ({ page }) => {
   await page.goto("/");
@@ -77,7 +79,7 @@ test("every image loads and stays inside its container", async ({ page }) => {
   }
 });
 
-for (const path of ["/", "/404.html"]) {
+for (const path of ["/", "/404.html", "/blog/", "/blog/lorem-ipsum/"]) {
   for (const width of [320, 390, 768, 1024, 1440]) {
     test(`${path} has no horizontal overflow at ${width}px`, async ({ page }) => {
       await page.setViewportSize({ width, height: 900 });
@@ -111,12 +113,6 @@ test("the static HTML carries the full content without JavaScript", async () => 
   }
   expect(html.match(/data-experience-entry/g)).toHaveLength(4);
   expect(html.match(/data-research-entry/g)).toHaveLength(2);
-});
-
-test("there is no blog or writing route yet", async ({ request }) => {
-  for (const path of ["/blog", "/blog/", "/writing", "/writing/"]) {
-    expect((await request.get(path)).status()).toBe(404);
-  }
 });
 
 test("an unknown path gets the 404 page", async ({ page }) => {

@@ -2,16 +2,24 @@ import { expect, test } from "@playwright/test";
 
 const desktop = { width: 1440, height: 1000 };
 const mobile = { width: 390, height: 844 };
-const headerLinks = ["Experience", "Research", "About", "Résumé"];
+const headerLinks = ["Experience", "Research", "About", "Writing", "Résumé"];
 
-test("header offers the four destinations and no Writing link", async ({ page }) => {
+test("header offers the five destinations, with Writing leading to the blog", async ({ page }) => {
   await page.goto("/");
   const nav = page.getByRole("navigation", { name: "Primary" });
 
   for (const name of headerLinks) {
     await expect(nav.getByRole("link", { name })).toBeVisible();
   }
-  await expect(page.getByRole("link", { name: /writing|blog/i })).toHaveCount(0);
+
+  // Writing is another page, so it is never the current location on the homepage.
+  const writing = nav.getByRole("link", { name: "Writing" });
+  await expect(writing).toHaveAttribute("href", "/blog/");
+  await expect(writing).not.toHaveAttribute("aria-current");
+
+  await writing.click();
+  await expect(page).toHaveURL("/blog/");
+  await expect(page.getByRole("heading", { level: 1, name: "Writing" })).toBeVisible();
 });
 
 for (const viewport of [mobile, desktop]) {
@@ -27,6 +35,22 @@ for (const viewport of [mobile, desktop]) {
     await expect(page.getByRole("button")).toHaveCount(0);
   });
 }
+
+test("keeps the header links on one row inside the page margins at 320px", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 700 });
+  await page.goto("/");
+  const nav = page.getByRole("navigation", { name: "Primary" });
+
+  const boxes = [];
+  for (const name of ["Experience", "Research", "About", "Writing"]) {
+    boxes.push((await nav.getByRole("link", { name }).boundingBox())!);
+  }
+  expect(new Set(boxes.map((box) => Math.round(box.y))).size).toBe(1);
+
+  const navBox = (await nav.boundingBox())!;
+  const lastLink = boxes.at(-1)!;
+  expect(lastLink.x + lastLink.width).toBeLessThanOrEqual(navBox.x + navBox.width);
+});
 
 test("hero shows the portrait, role statement, and introduction", async ({ page }) => {
   await page.setViewportSize(desktop);
