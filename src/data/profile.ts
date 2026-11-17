@@ -1,9 +1,6 @@
-export interface ImpactMetric {
-  /** The headline figure, e.g. "300+". */
-  value: string;
-  /** What the figure counts, e.g. "modules". */
-  unit: string;
-  caption: string;
+export interface ExpertiseArea {
+  label: string;
+  description: string;
 }
 
 export interface Profile {
@@ -22,7 +19,7 @@ export interface Profile {
     linkedin: string;
     resume: string;
   };
-  metrics: ImpactMetric[];
+  expertise: ExpertiseArea[];
   about: string;
   interests: {
     technical: string[];
@@ -50,21 +47,19 @@ export const profile: Profile = {
     linkedin: "https://www.linkedin.com/in/jingchaozhou/",
     resume: "/jingchao-zhou-resume.pdf",
   },
-  metrics: [
+  expertise: [
     {
-      value: "300+",
-      unit: "modules",
-      caption: "Carved out of Ramp’s Python monolith, with dependency boundaries enforced in CI.",
+      label: "Developer Infrastructure",
+      description:
+        "Monolith decomposition, dependency boundaries, and CI tooling that help teams ship independently.",
     },
     {
-      value: "1M+",
-      unit: "vehicle events processed daily",
-      caption: "By the ETL pipeline behind Nuro’s fleet reliability and performance metrics.",
+      label: "Distributed Systems",
+      description: "Data pipelines and payment systems built for reliability and scale.",
     },
     {
-      value: "70K+",
-      unit: "failure modes tested",
-      caption: "Across Nuro’s autonomy stack in simulation, using a fault-injection framework.",
+      label: "Autonomous-Vehicle Software",
+      description: "Simulation testing, fault injection, and vehicle data infrastructure.",
     },
   ],
   about:

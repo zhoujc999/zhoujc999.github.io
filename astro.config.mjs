@@ -9,4 +9,7 @@ export default defineConfig({
     layout: "constrained",
     responsiveStyles: true,
   },
+  vite: {
+    tsconfig: "./tsconfig.json",
+  },
 });
