@@ -8,7 +8,7 @@ async function scrollThroughImages(page: Page) {
   }
 }
 
-for (const path of ["/", "/blog/", "/blog/lorem-ipsum/"]) {
+for (const path of ["/", "/blog/", "/blog/the-ghost-jam/"]) {
   test(`${path} loads without console errors or failed requests`, async ({ page, baseURL }) => {
     const problems: string[] = [];
     page.on("console", (message) => {
@@ -79,7 +79,7 @@ test("every image loads and stays inside its container", async ({ page }) => {
   }
 });
 
-for (const path of ["/", "/404.html", "/blog/", "/blog/lorem-ipsum/"]) {
+for (const path of ["/", "/404.html", "/blog/", "/blog/the-ghost-jam/"]) {
   for (const width of [320, 390, 768, 1024, 1440]) {
     test(`${path} has no horizontal overflow at ${width}px`, async ({ page }) => {
       await page.setViewportSize({ width, height: 900 });

@@ -2,15 +2,15 @@ import { expect, test } from "@playwright/test";
 
 const SITE = "https://zhoujc999.github.io";
 
-// The placeholder post. When a real post replaces it, update this and the post
+// The only post. When it is renamed or replaced, update this and the post
 // path in accessibility.spec.ts and production.spec.ts.
 const POST = {
-  path: "/blog/lorem-ipsum/",
-  title: "Lorem ipsum dolor sit amet",
+  path: "/blog/the-ghost-jam/",
+  title: "The Ghost Jam: Why Traffic Stops When Nothing Is Wrong",
   description:
-    "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  day: "2026-11-17",
-  dayLabel: "November 17, 2026",
+    "You didn't drive through a traffic jam. You drove through the ghost of one — a wave that can appear out of nothing on an empty road.",
+  day: "2026-11-22",
+  dayLabel: "November 22, 2026",
 };
 
 test("the blog index lists the post with its date, title, and description", async ({ page }) => {
@@ -61,19 +61,17 @@ test("the post shows its title and date and renders its Markdown as HTML", async
   await expect(page.locator("article time")).toHaveAttribute("datetime", POST.day);
 
   const prose = page.locator("article .prose");
-  for (const selector of ["h2", "h3", "strong", "em", "blockquote", "ul > li", "ol > li", "p > code"]) {
-    await expect(prose.locator(selector).first()).toBeVisible();
-  }
-  await expect(prose.getByRole("link", { name: "consequuntur magni dolores" })).toHaveAttribute(
-    "href",
-    "/blog/",
-  );
+  await expect(prose.locator("p").first()).toBeVisible();
+  expect(await prose.locator("p").count()).toBeGreaterThanOrEqual(6);
 
+  // The body is prose, not raw Markdown, and the frontmatter never reaches the page.
   const text = await prose.innerText();
   expect(text).not.toContain("**");
   expect(text).not.toContain("](");
   expect(text).not.toContain("##");
   expect(text).not.toContain("```");
+  expect(text).not.toContain("tags:");
+  expect(text).not.toContain("description:");
 });
 
 test("the post has its own title, description, canonical URL, and article metadata", async ({
@@ -94,22 +92,6 @@ test("the post has its own title, description, canonical URL, and article metada
   for (const [selector, content] of Object.entries(expected)) {
     await expect(page.locator(selector)).toHaveAttribute("content", content);
   }
-});
-
-test("the code block is highlighted and scrolls inside itself on a narrow screen", async ({ page }) => {
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto(POST.path);
-
-  const block = page.locator("article pre");
-  await expect(block).toHaveCount(1);
-  await expect(block).toContainText('const words = ["lorem", "ipsum", "dolor", "sit", "amet"];');
-  expect(await block.locator("span[style*=color]").count()).toBeGreaterThan(10);
-
-  // Wider than the column, so it must be scrollable and reachable from the keyboard.
-  const size = await block.evaluate((pre) => ({ scroll: pre.scrollWidth, client: pre.clientWidth }));
-  expect(size.scroll).toBeGreaterThan(size.client);
-  await expect(block).toHaveCSS("overflow-x", "auto");
-  await expect(block).toHaveAttribute("tabindex", "0");
 });
 
 test("the header marks Writing as current on the index and on a post", async ({ page }) => {

@@ -82,17 +82,17 @@ Pages from `dist/`. Pull requests are verified but never deployed.
 
 ## Blog
 
-Posts are Markdown files in `src/content/posts/`. The file name is the URL: `lorem-ipsum.md` is
-served at `/blog/lorem-ipsum/`. `/blog/` lists every post, newest first, and the "Writing" link in
+Posts are Markdown files in `src/content/posts/`. The file name is the URL: `the-ghost-jam.md` is
+served at `/blog/the-ghost-jam/`. `/blog/` lists every post, newest first, and the "Writing" link in
 the header leads there.
 
 Each post starts with frontmatter, which is checked at build time:
 
 ```yaml
 ---
-title: Lorem ipsum dolor sit amet
+title: The Ghost Jam: Why Traffic Stops When Nothing Is Wrong
 description: One sentence, shown on the blog index and used as the page description.
-date: 2026-11-17
+date: 2026-11-22
 draft: true # optional
 ---
 ```
@@ -103,6 +103,6 @@ production build, the sitemap, and the feed.
 `/rss.xml` is an RSS feed with each post's title, description, date, and link. Every page
 advertises it to feed readers, and the blog index links to it.
 
-The only post so far, `lorem-ipsum.md`, is placeholder text, published like any other post. To
-replace it, add the real post, delete `lorem-ipsum.md`, and update the post path and copy in
-`tests/blog.spec.ts`, `tests/accessibility.spec.ts`, and `tests/production.spec.ts`.
+There is one post so far, `the-ghost-jam.md`. Add more as new files. Renaming or removing a post
+means updating the post path and copy in `tests/blog.spec.ts`, `tests/accessibility.spec.ts`, and
+`tests/production.spec.ts`.

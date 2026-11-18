@@ -2,7 +2,7 @@ import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
-// One Markdown file per post. The file name is the post's URL: lorem-ipsum.md -> /blog/lorem-ipsum/.
+// One Markdown file per post. The file name is the post's URL: the-ghost-jam.md -> /blog/the-ghost-jam/.
 const posts = defineCollection({
   loader: glob({ base: "./src/content/posts", pattern: "*.md" }),
   schema: z.object({
